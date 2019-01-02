@@ -44,7 +44,7 @@ nav {
     text-transform: lowercase;
 }
 
-.overlay {
+#overlay {
     background-color: white;
     display: none;
     height: 100vh;

@@ -17,21 +17,34 @@
         </div>
         <div class="line">
           <nav>
-            <div id="about" class="nav-item">About Me</div>
+            <div id="about" class="nav-item">
+              <h2>About Me</h2>
+              <div class="js-nav-content" style="display: none;">
+                <p>Hi my name is Kevin ... go Bucks!</p>
+              </div>
+            </div>
             <div id="projects" class="nav-item">
               <h2 id="projects-header">Projects</h2>
-              <div id="projects-list" class="projects" style="display: none;">
+              <div id="projects-list" class="projects js-nav-content" style="display: none;">
                 <a href="https://kevinmtate.github.io/matchgame/" target="_blank">Match Game</a>
                 <a href="https://kevinmtate.github.io/jumpstart/" target="_blank">Jumpstart</a>
                 <a href="https://kevinmtate.github.io/trackster/" target="_blank">Trackster</a>
               </div>
             </div>
-            <div id="contact" class="nav-item">Contact</div>
+            <div id="contact" class="nav-item">
+              <h2 id="contact-header">Contact</h2>
+              <div class="js-nav-content" style="display: none;">
+                <span>LinkedIn</span>
+                <span>Github</span>
+                <span>Codepen</span>
+                <span>Indeed</span>
+              </div>
+            </div>
           </nav>
         </div>
       </div>
     </div>
-    <div class="overlay"></div>
+    <div id="overlay"></div>
     <script src="main.js"></script>
   </body>
 </html>
