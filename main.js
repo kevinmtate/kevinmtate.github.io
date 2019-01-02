@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const showNavItemContent = (id) => {
     const navElement = document.getElementById(id);
-    const content = navElement.querySelector('.js-nav-content');
+    const content = navElement.querySelector('.nav-content');
     const overlayElement = document.getElementById('overlay');
 
     if (content.style.display === 'none') {

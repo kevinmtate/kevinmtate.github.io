@@ -33,12 +33,12 @@ nav {
     cursor: pointer;
 }
 
-.projects {
+.nav-content {
     flex-direction: column;
     padding-top: 10px;
 }
 
-.projects a {
+a {
     color: inherit;
     text-align: left;
     text-transform: lowercase;
