@@ -4,12 +4,15 @@
 
 .content {
     font-size: 1.2em;
-    letter-spacing: 5px;
-    line-height: 40px;
+    letter-spacing: .25rem;
     position: relative;
     text-align: center;
     text-transform: uppercase;
     top: 40%;
+}
+
+.line {
+    margin: 25px;
 }
 
 h1 {
@@ -31,4 +34,23 @@ nav {
 
 .projects {
     display: none;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.projects a {
+    color: inherit;
+    text-align: left;
+    text-transform: lowercase;
+    z-index: 10;
+}
+
+.overlay {
+    background-color: white;
+    display: none;
+    height: 100vh;
+    opacity: .75;
+    position: fixed;
+    width: 100vw;
+    z-index: 2;
 }
