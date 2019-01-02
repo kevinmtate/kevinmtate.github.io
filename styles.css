@@ -26,6 +26,7 @@ nav {
 
 .nav-item {
     margin: 0 25px;
+    width: 150px;
 }
 
 .nav-item:hover {
@@ -33,7 +34,6 @@ nav {
 }
 
 .projects {
-    display: none;
     flex-direction: column;
     padding-top: 10px;
 }
@@ -42,7 +42,6 @@ nav {
     color: inherit;
     text-align: left;
     text-transform: lowercase;
-    z-index: 10;
 }
 
 .overlay {
@@ -51,6 +50,7 @@ nav {
     height: 100vh;
     opacity: .75;
     position: fixed;
+    top: 0;
     width: 100vw;
-    z-index: 2;
+    z-index: 5;
 }
