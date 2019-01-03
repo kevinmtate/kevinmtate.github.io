@@ -7,7 +7,7 @@
 
 .content {
     color: #00005f;
-    font-size: 1.2em;
+    font-size: 1.5em;
     letter-spacing: .25rem;
     position: relative;
     text-align: center;
@@ -25,7 +25,11 @@ nav {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 3rem;
+}
+
+.capital {
+    font-size: 3.5rem;
 }
 
 /* make sure if you change the opacity the visiblity transition is still longer */
@@ -40,6 +44,7 @@ a {
 }
 
 .nav-item {
+    font-size: 1.2rem;
     margin: 0 25px;
     width: 150px;
 }
