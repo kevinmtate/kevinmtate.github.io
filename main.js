@@ -19,9 +19,9 @@ const showNavItemContent = (target) => {
 
     isOpen = true;
     targetContent.style.display = 'flex';
-    contentWrapper.style.color = 'rgb(200, 200, 200)';
+    contentWrapper.style.color = '#c8c8c8';
     [...navHeaders].forEach((element) => {
-        element.style.color = 'rgb(200, 200, 200)';
+        element.style.color = '#c8c8c8';
     });
     target.style.color = 'black';
     targetContent.style.color = 'black';
