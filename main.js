@@ -1,25 +1,43 @@
+let isOpen = false;
+
 document.addEventListener("DOMContentLoaded", function() {
-    const navItems = document.getElementsByClassName('nav-item');
-    [...navItems].forEach((element) => {
-        element.addEventListener("click", function() {
-            showNavItemContent(element.getAttribute('id'));
-        });
+    const navHeaders = document.getElementsByClassName('nav-header');
+
+    document.addEventListener("click", function(event) {
+        if ([...navHeaders].indexOf(event.target) >= 0) {
+            if (!isOpen) {
+                showNavItemContent(event.target);
+            }
+        } else if (isOpen) {
+            reset();
+        }
     });
-    
-  });
+});
 
-const showNavItemContent = (id) => {
-    const navElement = document.getElementById(id);
-    const content = navElement.querySelector('.nav-content');
-    const overlayElement = document.getElementById('overlay');
+const showNavItemContent = (target) => {
+    const targetContent = target.parentElement.querySelector('.nav-content');
+    const navHeaders = document.getElementsByClassName('nav-header');
+    const contentWrapper = document.querySelector('.content');
 
-    if (content.style.display === 'none') {
-        content.style.display = 'flex';
-        navElement.style.zIndex = 10;
-        overlayElement.style.display = 'block';
-    } else {
-        content.style.display = 'none';
-        overlayElement.style.display = 'none';
-        navElement.style.zIndex = 'initial';
-    }
-}
+    isOpen = true;
+    targetContent.style.display = 'flex';
+    contentWrapper.style.color = 'rgb(200, 200, 200)';
+    [...navHeaders].forEach((element) => {
+        element.style.color = 'rgb(200, 200, 200)';
+    });
+    target.style.color = 'black';
+    targetContent.style.color = 'black';
+};
+
+const reset = () => {
+    const navHeaders = document.getElementsByClassName('nav-header');
+    const contentWrapper = document.querySelector('.content');
+
+    isOpen = false;
+    contentWrapper.style.color = 'black';
+    [...navHeaders].forEach((element) => {
+        element.style.color = 'black';
+        elementContent = element.parentElement.querySelector('.nav-content');
+        elementContent.style.display = 'none';
+    });
+};

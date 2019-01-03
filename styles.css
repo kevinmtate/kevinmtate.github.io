@@ -43,14 +43,3 @@ a {
     text-align: left;
     text-transform: lowercase;
 }
-
-#overlay {
-    background-color: white;
-    display: none;
-    height: 100vh;
-    opacity: .75;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    z-index: 5;
-}
