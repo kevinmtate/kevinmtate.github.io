@@ -15,13 +15,23 @@
     margin: 25px;
 }
 
+nav {
+    display: flex;
+    justify-content: center;
+}
+
 h1 {
     font-size: 2rem;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
+#name, #title, .nav-content, h2 {
+    transition: visibility 1s, opacity .35s;
+}
+
+a {
+    color: inherit;
+    text-align: left;
+    text-transform: lowercase;
 }
 
 .nav-item {
@@ -34,12 +44,8 @@ nav {
 }
 
 .nav-content {
+    display: flex;
     flex-direction: column;
+    opacity: 0;
     padding-top: 10px;
-}
-
-a {
-    color: inherit;
-    text-align: left;
-    text-transform: lowercase;
 }

@@ -1,8 +1,9 @@
 let isOpen = false;
+const nameElement = document.getElementById('name');
+const titleElement = document.getElementById('title');
+const navHeaders = document.getElementsByClassName('nav-header');
 
 document.addEventListener("DOMContentLoaded", function() {
-    const navHeaders = document.getElementsByClassName('nav-header');
-
     document.addEventListener("click", function(event) {
         if (isOpen) {
             reset();
@@ -14,28 +15,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const showNavItemContent = (target) => {
     const targetContent = target.parentElement.querySelector('.nav-content');
-    const navHeaders = document.getElementsByClassName('nav-header');
-    const contentWrapper = document.querySelector('.content');
 
     isOpen = true;
-    targetContent.style.display = 'flex';
-    contentWrapper.style.color = '#c8c8c8';
+    targetContent.style.visibility = 'visible';
+    targetContent.style.opacity = 1;
+    nameElement.style.opacity = .25;
+    titleElement.style.opacity = .25;
     [...navHeaders].forEach((element) => {
-        element.style.color = '#c8c8c8';
+        if (element !== target) {
+            element.style.opacity = .25;
+        }
     });
-    target.style.color = 'black';
-    targetContent.style.color = 'black';
 };
 
 const reset = () => {
-    const navHeaders = document.getElementsByClassName('nav-header');
-    const contentWrapper = document.querySelector('.content');
-
     isOpen = false;
-    contentWrapper.style.color = 'black';
+    nameElement.style.opacity = 1;
+    titleElement.style.opacity = 1;
     [...navHeaders].forEach((element) => {
-        element.style.color = 'black';
+        element.style.opacity = 1;
         elementContent = element.parentElement.querySelector('.nav-content');
-        elementContent.style.display = 'none';
+        elementContent.style.visibility = 'hidden';
+        elementContent.style.opacity = 0;
     });
 };
