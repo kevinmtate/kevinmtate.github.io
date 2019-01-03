@@ -8,15 +8,15 @@
 .content {
     color: #00005f;
     font-size: 1.5em;
-    letter-spacing: .25rem;
+    letter-spacing: .4rem;
     position: relative;
     text-align: center;
     text-transform: uppercase;
-    top: 40%;
+    top: 30%;
 }
 
 .line {
-    margin: 25px;
+    margin: 30px;
 }
 
 nav {
@@ -46,7 +46,7 @@ a {
 .nav-item {
     font-size: 1.2rem;
     margin: 0 25px;
-    width: 150px;
+    width: 200px;
 }
 
 .nav-header:hover {
