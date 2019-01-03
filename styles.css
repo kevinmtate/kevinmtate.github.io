@@ -1,8 +1,12 @@
 .wrapper {
+    background-color: #F5F5F5;
     height: 100vh;
+    position: fixed;
+    width: 100%;
 }
 
 .content {
+    color: #00005f;
     font-size: 1.2em;
     letter-spacing: .25rem;
     position: relative;
@@ -24,8 +28,9 @@ h1 {
     font-size: 2rem;
 }
 
+/* make sure if you change the opacity the visiblity transition is still longer */
 #name, #title, .nav-content, h2 {
-    transition: visibility 1s, opacity .35s;
+    transition: visibility .4s, opacity .35s;
 }
 
 a {
@@ -39,7 +44,7 @@ a {
     width: 150px;
 }
 
-.nav-item:hover {
+.nav-header:hover {
     cursor: pointer;
 }
 
