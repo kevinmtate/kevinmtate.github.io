@@ -4,12 +4,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const navHeaders = document.getElementsByClassName('nav-header');
 
     document.addEventListener("click", function(event) {
-        if ([...navHeaders].indexOf(event.target) >= 0) {
-            if (!isOpen) {
-                showNavItemContent(event.target);
-            }
-        } else if (isOpen) {
+        if (isOpen) {
             reset();
+        } else if ([...navHeaders].indexOf(event.target) >= 0) {
+            showNavItemContent(event.target);
         }
     });
 });
