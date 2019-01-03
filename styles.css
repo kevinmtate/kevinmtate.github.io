@@ -37,9 +37,20 @@ h1 {
     transition: visibility .4s, opacity .35s;
 }
 
-a {
-    color: inherit;
+.nav-content {
+    line-height: 1.5em;
     text-align: left;
+    width: 500%;
+}
+
+.nav-content p {
+    letter-spacing: .17rem;
+    margin-top: 15px;
+    text-transform: initial;
+}
+
+.nav-content a {
+    color: inherit;
     text-transform: lowercase;
 }
 
@@ -50,6 +61,7 @@ a {
 }
 
 .nav-header:hover {
+    color: black;
     cursor: pointer;
 }
 
