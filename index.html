@@ -9,7 +9,10 @@
   <body>
     <div class="background">
       <div class="wrapper">
-        <div id="intro">
+
+        <div id="toggle">TOGGLE</div>
+
+        <div id="intro" class="visible not-opaque">
           <h1 class="name line">
             <span class="capital">K</span><span>evin</span><span> </span><span class="capital">T</span><span>ate</span>
           </h1>
@@ -21,31 +24,31 @@
             I have been working at Abercrombie & Fitch on their eCommerce team for over two 
             and a half years. Please see my resume available for download under the contact 
             section along with a few of the projects I was able to complete during my 
-            journey into becoming a web developer. Enjoy :)
+            journey to becoming a web developer. Enjoy :)
           </p>
         </div>
 
-        <div id="main">
+        <div id="main" class="hidden opaque">
           <header>
             <h1 class="name">
               <span class="capital">K</span><span>evin</span><span> </span><span class="capital">T</span><span>ate</span>
             </h1>
             <nav>
-              <span id="journey-header" class="nav-header">My Journey</span>
-              <span id="projects-header" class="nav-header">Projects</span>
-              <span id="contact-header" class="nav-header">Contact</span>
+              <span id="journey-header" class="nav-header not-opaque">My Journey</span>
+              <span id="projects-header" class="nav-header not-opaque">Projects</span>
+              <span id="contact-header" class="nav-header not-opaque">Contact</span>
             </nav>
           </header>
           <div class="content-wrapper">
-            <div id="journey" class="content">
+            <div id="journey" class="content hidden opaque">
               <p>Don't stop believing!</p>
             </div>
-            <div id="projects" class="content">
+            <div id="projects" class="content hidden opaque">
               <a href="https://kevinmtate.github.io/matchgame/" target="_blank">Match Game</a>
               <a href="https://kevinmtate.github.io/jumpstart/" target="_blank">Jumpstart</a>
               <a href="https://kevinmtate.github.io/trackster/" target="_blank">Trackster</a>
             </div>
-            <div id="contact" class="content">
+            <div id="contact" class="content hidden opaque">
               <a href="https://www.linkedin.com/in/kevin-tate-4a08045a/" target="_blank">LinkedIn</a>
               <a href="https://github.com/kevinmtate/" target="_blank">Github</a>
               <a href="https://codepen.io/kevinmtate/" target="_blank">Codepen</a>

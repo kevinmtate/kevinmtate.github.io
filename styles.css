@@ -1,15 +1,14 @@
 /* JS CLASSES */
-.opaque { opacity: 0 !important; }
+.opaque { opacity: 0; }
 .semi-opaque { opacity: .25; }
-.not-opaque { opacity: 1 !important; }
-.hidden { visibility: hidden !important; }
-.visible { visibility: visible !important; }
+.not-opaque { opacity: 1; }
+.hidden { visibility: hidden; }
+.visible { visibility: visible; }
 /* ------------------------------- */
 
 .background {
     background-color: #F5F5F5;
-    height: 100vh;
-    width: 100vw;
+    position: fixed;
 }
 
 .wrapper {
@@ -17,18 +16,22 @@
     color: #00005f;
     height: 100vh;
     padding: 0 50px;
-    width: 100%;
 }
 
+#toggle {
+    position: fixed;
+    right: 100px;
+}
+#toggle:hover {cursor: pointer;}
+
 #intro {
+    font-size: 1.25rem;
     letter-spacing: .4rem;
     position: relative;
     text-align: center;
     text-transform: uppercase;
-    top: 5vh;
-
-    color: red;
-    transition: color 1s;
+    top: 15%;
+    transition: visibility 1s, opacity 1s;
 }
 
 .line {
@@ -36,7 +39,6 @@
 }
 
 #intro p {
-    font-size: 1.25rem;
     letter-spacing: .15rem;
     line-height: 1.5;
     margin: auto;
@@ -47,21 +49,22 @@
 #intro .capital { font-size: 4rem; }
 #title { font-size: 2rem; }
 #begin-button {
-    color: red;
-    font-size: 1.25rem;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: .5;
+    width: 265px;
 }
 #begin-button:hover {
     cursor: pointer;
-    color: #00005f;
-    transition: color .4s;
+    opacity: 1;
+    transition: opacity .4s;
 }
 
-#intro { display: none; }
 #main {
     letter-spacing: .25rem;
-    /* opacity: 0; */
     position: absolute;
-    transition: visibility .2s;
+    top: 0;
+    transition: visibility 1s, opacity 1s;
 }
 
 header {
@@ -97,11 +100,10 @@ nav {
 }
 
 .content {
-    display: none;
+    display: flex;
     flex-direction: column;
     font-size: 1.25rem;
     line-height: 1.5em;
-    opacity: 0;
     position: absolute;
     transition: visibility .4s, opacity .35s; /* make sure if you change the opacity the visiblity transition is still longer */
 }
