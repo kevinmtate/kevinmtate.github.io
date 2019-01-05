@@ -1,41 +1,63 @@
 let isOpen = false;
-const nameElement = document.getElementById('name');
-const titleElement = document.getElementById('title');
 const navHeaders = document.getElementsByClassName('nav-header');
+const classes = {
+    opaque: 'opaque',
+    semiOpaque: 'semi-opaque',
+    notOpaque: 'not-opaque',
+    hidden: 'hidden',
+    visible: 'visible',
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("click", function(event) {
-        if (isOpen) {
-            reset();
+        if (event.target === document.getElementById('begin-button')) {
+            letUsBegin();
         } else if ([...navHeaders].indexOf(event.target) >= 0) {
             showNavItemContent(event.target);
         }
     });
 });
 
+const letUsBegin = () => {
+    const intro = document.getElementById('intro');
+    const main = document.getElementById('main');
+
+    intro.style.color = 'black';
+    intro.addEventListener("transitionend", () => {
+        intro.style.display = 'none';
+    }, false);
+    // main.classList.add(classes.visible);
+    // main.classList.add(classes.notOpaque);
+}
+
 const showNavItemContent = (target) => {
-    const targetContent = target.parentElement.querySelector('.nav-content');
+    let targetContent;
+
+    if (target === navHeaders[0]) {
+        targetContent = document.getElementById('journey');
+    } else if (target === navHeaders[1]) {
+        targetContent = document.getElementById('projects');
+    } else {
+        targetContent = document.getElementById('contact');
+    }
 
     isOpen = true;
-    targetContent.style.visibility = 'visible';
-    targetContent.style.opacity = 1;
-    nameElement.style.opacity = .25;
-    titleElement.style.opacity = .25;
+    targetContent.style.display = 'flex';
+    targetContent.classList.add(classes.notOpaque);
+    // targetContent.classList.replace()
     [...navHeaders].forEach((element) => {
         if (element !== target) {
-            element.style.opacity = .25;
+            element.classList.add(classes.semiOpaque);
         }
     });
 };
 
 const reset = () => {
     isOpen = false;
-    nameElement.style.opacity = 1;
-    titleElement.style.opacity = 1;
     [...navHeaders].forEach((element) => {
-        element.style.opacity = 1;
+        element.classList.remove(classes.semiOpaque);
         elementContent = element.parentElement.querySelector('.nav-content');
-        elementContent.style.visibility = 'hidden';
-        elementContent.style.opacity = 0;
+        elementContent.classList.add(classes.hidden);
+        elementContent.classList.remove(classes.notOpaque);
     });
 };

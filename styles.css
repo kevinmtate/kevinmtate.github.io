@@ -1,63 +1,94 @@
-.wrapper {
+/* JS CLASSES */
+.opaque { opacity: 0 !important; }
+.semi-opaque { opacity: .25; }
+.not-opaque { opacity: 1 !important; }
+.hidden { visibility: hidden !important; }
+.visible { visibility: visible !important; }
+/* ------------------------------- */
+
+.background {
     background-color: #F5F5F5;
     height: 100vh;
-    position: fixed;
+    width: 100vw;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    color: #00005f;
+    height: 100vh;
+    padding: 0 50px;
     width: 100%;
 }
 
-.content {
-    color: #00005f;
-    font-size: 1.5em;
+#intro {
     letter-spacing: .4rem;
     position: relative;
     text-align: center;
     text-transform: uppercase;
-    top: 30%;
+    top: 5vh;
+
+    color: red;
+    transition: color 1s;
 }
 
 .line {
-    margin: 30px;
+    margin: 35px;
+}
+
+#intro p {
+    font-size: 1.25rem;
+    letter-spacing: .15rem;
+    line-height: 1.5;
+    margin: auto;
+    text-transform: initial;
+    width: 75%;
+}
+#intro .name { font-size: 3.5rem; }
+#intro .capital { font-size: 4rem; }
+#title { font-size: 2rem; }
+#begin-button {
+    color: red;
+    font-size: 1.25rem;
+}
+#begin-button:hover {
+    cursor: pointer;
+    color: #00005f;
+    transition: color .4s;
+}
+
+#intro { display: none; }
+#main {
+    letter-spacing: .25rem;
+    /* opacity: 0; */
+    position: absolute;
+    transition: visibility .2s;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    left: 0;
 }
 
 nav {
     display: flex;
-    justify-content: center;
+    position: relative;
+    top: 3px;
 }
 
-h1 {
-    font-size: 3rem;
+#main .name { 
+    font-size: 2rem;
+    padding: 0 10px;
+    text-transform: uppercase;
 }
+#main .capital { font-size: 2.5rem; }
 
-.capital {
-    font-size: 3.5rem;
-}
-
-/* make sure if you change the opacity the visiblity transition is still longer */
-#name, #title, .nav-content, h2 {
-    transition: visibility .4s, opacity .35s;
-}
-
-.nav-content {
-    line-height: 1.5em;
-    text-align: left;
-    width: 500%;
-}
-
-.nav-content p {
-    letter-spacing: .17rem;
-    margin-top: 15px;
-    text-transform: initial;
-}
-
-.nav-content a {
-    color: inherit;
-    text-transform: lowercase;
-}
-
-.nav-item {
-    font-size: 1.2rem;
+.nav-header {
+    font-size: 1.25rem;
     margin: 0 25px;
-    width: 200px;
+    text-transform: lowercase;
+    transition: visibility .4s, opacity .35s; /* make sure if you change the opacity the visiblity transition is still longer */
 }
 
 .nav-header:hover {
@@ -65,9 +96,16 @@ h1 {
     cursor: pointer;
 }
 
-.nav-content {
-    display: flex;
+.content {
+    display: none;
     flex-direction: column;
+    font-size: 1.25rem;
+    line-height: 1.5em;
     opacity: 0;
-    padding-top: 10px;
+    position: absolute;
+    transition: visibility .4s, opacity .35s; /* make sure if you change the opacity the visiblity transition is still longer */
+}
+.content a { 
+    color: #00005f;
+    text-decoration: none;
 }
