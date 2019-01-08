@@ -1,13 +1,16 @@
 let isOpen = false;
 const navHeaders = document.getElementsByClassName('nav-header');
 const contentElements = document.getElementsByClassName('content');
+// const main 
+// const intro
+// ??????????????????????????????????????
 const classes = {
     opaque: 'opaque',
     semiOpaque: 'semi-opaque',
     notOpaque: 'not-opaque',
     hidden: 'hidden',
     visible: 'visible',
-}
+};
 
 document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("click", function(event) {
@@ -22,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 show(intro);
                 hide(main);
-            }
-        }
+            };
+        };
     });
 });
 
@@ -31,20 +34,17 @@ document.addEventListener("DOMContentLoaded", function() {
 const hide = (element) => {
     element.classList.replace(classes.visible, classes.hidden);
     element.classList.replace(classes.notOpaque, classes.opaque);
-}
+};
 
 const show = (element) => {
     element.classList.replace(classes.hidden, classes.visible);
     element.classList.replace(classes.opaque, classes.notOpaque);
-}
+};
 
 const letUsBegin = () => {
-    const intro = document.getElementById('intro');
-    const main = document.getElementById('main');
-
-    hide(intro);
-    show(main);
-}
+    hide(document.getElementById('intro'));
+    show(document.getElementById('main'));
+};
 
 const showNavItemContent = (target) => {
     let targetContent;
@@ -67,7 +67,6 @@ const showNavItemContent = (target) => {
         };
     });
 
-    console.log(contentElements);
     [...contentElements].forEach((element) => {
         if (element !== targetContent) {
             hide(element);
