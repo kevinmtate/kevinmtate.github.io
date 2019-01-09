@@ -124,9 +124,15 @@ nav {
 }
 
 #journey {
+    border: 1px solid red;
     height: 400px;
-    overflow: scroll;
+    overflow: hidden;
     width: 60%;
+}
+
+#journeyer {
+    position: relative;
+    transition: top 1s;
 }
 
 .journey-section {
@@ -155,4 +161,23 @@ nav {
     font-size: 1rem;
     letter-spacing: 2px;
     margin-top: 20px;
+}
+
+.arrow {
+    height: 40px;
+    left: 65%;
+    position: fixed;
+    transform: rotate(45deg);
+    width: 40px;
+}
+.arrow:hover { cursor: pointer; }
+#arrow-top {
+    border-left: 3px solid;
+    border-top: 3px solid;
+    top: 125px;
+}
+#arrow-bottom {
+    border-bottom: 3px solid;
+    border-right: 3px solid;
+    top: 435px;
 }

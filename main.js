@@ -1,4 +1,5 @@
 let isOpen = false;
+let offset = 0;
 const navHeaders = document.getElementsByClassName('nav-header');
 const contentElements = document.getElementsByClassName('content');
 // const main 
@@ -16,17 +17,34 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("click", function(event) {
         if (event.target === document.getElementById('begin-button')) {
             letUsBegin();
-        } else if ([...navHeaders].indexOf(event.target) >= 0) {
+        }
+
+        if ([...navHeaders].indexOf(event.target) >= 0) {
             showNavItemContent(event.target);
-        } else if (event.target === document.getElementById('toggle')) {
+        }
+        
+        if ([...document.getElementsByClassName('arrow')].indexOf(event.target) >= 0) {
+            var journeyer = document.getElementById('journeyer');
+            if (event.target === document.getElementById('arrow-top')) {
+                offset += 50;
+                journeyer.style.top = offset + 'px';
+            } else {
+                offset -= 50;
+                journeyer.style.top = offset + 'px';
+            }
+        }
+        
+        
+        
+        if (event.target === document.getElementById('toggle')) {
             if (document.getElementById('intro').classList.contains(classes.visible)) {
                 show(main);
                 hide(intro);
             } else {
                 show(intro);
                 hide(main);
-            };
-        };
+            }
+        }
     });
 });
 
