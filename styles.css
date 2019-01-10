@@ -79,10 +79,11 @@
 }
 
 header {
-    display: flex;
     align-items: center;
+    display: flex;
     height: 100px;
     left: 0;
+    margin-bottom: 25px;
 }
 
 nav {
@@ -118,16 +119,15 @@ nav {
     position: absolute;
     transition: visibility .4s, opacity .35s; /* make sure if you change the opacity the visiblity transition is still longer */
 }
-.content a { 
+header a { 
     color: #00005f;
     text-decoration: none;
 }
 
 #journey {
-    border: 1px solid red;
-    height: 400px;
-    overflow: hidden;
-    width: 60%;
+    height: 750px;
+    overflow: scroll;
+    width: 70%;
 }
 
 #journeyer {
@@ -165,7 +165,7 @@ nav {
 
 .arrow {
     height: 40px;
-    left: 65%;
+    left: 75%;
     position: fixed;
     transform: rotate(45deg);
     width: 40px;
@@ -180,4 +180,8 @@ nav {
     border-bottom: 3px solid;
     border-right: 3px solid;
     top: 435px;
+}
+
+#final-statement {
+    letter-spacing: .15rem;
 }
