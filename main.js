@@ -2,8 +2,10 @@ let isOpen = false;
 let offset = 0;
 const navHeaders = document.getElementsByClassName('nav-header');
 const contentElements = document.getElementsByClassName('content');
-// const main 
-// const intro
+// ??????????????????????????????????????
+const main = document.getElementById('main');
+const intro = document.getElementById('intro');
+const journeyer = document.getElementById('journeyer');
 // ??????????????????????????????????????
 const classes = {
     opaque: 'opaque',
@@ -14,6 +16,8 @@ const classes = {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
+    console.log(journeyer.getBoundingClientRect());
+
     document.addEventListener("click", function(event) {
         if (event.target === document.getElementById('begin-button')) {
             letUsBegin();
@@ -24,7 +28,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         
         if ([...document.getElementsByClassName('arrow')].indexOf(event.target) >= 0) {
-            var journeyer = document.getElementById('journeyer');
+
+            console.log(journeyer.getBoundingClientRect());
+
             if (event.target === document.getElementById('arrow-top')) {
                 offset += 50;
                 journeyer.style.top = offset + 'px';
