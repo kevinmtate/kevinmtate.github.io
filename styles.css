@@ -7,13 +7,13 @@
 /* ------------------------------- */
 
 /* ------------------------------- */
-#intro {
+/* #intro {
     visibility: hidden;
 }
 #main {
     opacity: 1;
     visibility: visible;
-}
+} */
 /* ------------------------------- */
 
 .background {
@@ -119,7 +119,7 @@ nav {
     position: absolute;
     transition: visibility .4s, opacity .35s; /* make sure if you change the opacity the visiblity transition is still longer */
 }
-header a { 
+header a, #projects a, #contact a { 
     color: #00005f;
     text-decoration: none;
 }

@@ -32,10 +32,10 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log(journeyer.getBoundingClientRect());
 
             if (event.target === document.getElementById('arrow-top')) {
-                offset += 50;
+                offset += 200;
                 journeyer.style.top = offset + 'px';
             } else {
-                offset -= 50;
+                offset -= 200;
                 journeyer.style.top = offset + 'px';
             }
         }
