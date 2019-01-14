@@ -32,7 +32,7 @@
     position: fixed;
     right: 100px;
 }
-#toggle:hover {cursor: pointer;}
+#toggle:hover { cursor: pointer; }
 
 #intro {
     font-size: 1.25rem;
@@ -83,7 +83,6 @@ header {
     display: flex;
     height: 100px;
     left: 0;
-    margin-bottom: 25px;
 }
 
 nav {
@@ -124,8 +123,12 @@ header a, #projects a, #contact a {
     text-decoration: none;
 }
 
+#projects { left: 450px; }
+#contact { left: 600px; }
+
 #journey {
-    height: 750px;
+    height: 100vh;
+    margin-top: 25px;
     overflow: scroll;
     width: 70%;
 }
@@ -133,6 +136,7 @@ header a, #projects a, #contact a {
 #journeyer {
     position: relative;
     transition: top 1s;
+    z-index: 10;
 }
 
 .journey-section {
@@ -184,4 +188,13 @@ header a, #projects a, #contact a {
 
 #final-statement {
     letter-spacing: .15rem;
+    margin-bottom: 50%;
+}
+
+.overlay {
+    background-image: linear-gradient(rgba(245, 245, 245, 0), rgba(245, 245, 245, 1));
+    bottom: 0;
+    height: 60%;
+    position: fixed;
+    width: 70%;
 }
