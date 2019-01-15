@@ -110,6 +110,13 @@ nav {
     cursor: pointer;
 }
 
+.nav-item-expand-header:hover { cursor: pointer; }
+.nav-item-expand-contents {
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -194,7 +201,7 @@ header a, #projects a, #contact a {
 .overlay {
     background-image: linear-gradient(rgba(245, 245, 245, 0), rgba(245, 245, 245, 1));
     bottom: 0;
-    height: 60%;
+    height: 40%;
     position: fixed;
     width: 70%;
 }

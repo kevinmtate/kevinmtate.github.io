@@ -1,4 +1,4 @@
-let isOpen = false;
+let navItemIsOpen = false;
 let offset = 0;
 const navHeaders = document.getElementsByClassName('nav-header');
 const contentElements = document.getElementsByClassName('content');
@@ -16,8 +16,6 @@ const classes = {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-    console.log(journeyer.getBoundingClientRect());
-
     document.addEventListener("click", function(event) {
         if (event.target === document.getElementById('begin-button')) {
             letUsBegin();
@@ -27,28 +25,23 @@ document.addEventListener("DOMContentLoaded", function() {
             showNavItemContent(event.target);
         }
         
-        if ([...document.getElementsByClassName('arrow')].indexOf(event.target) >= 0) {
+        if ([...document.getElementsByClassName('nav-item-expand-header')].indexOf(event.target) >= 0) {
+            const showContents = event.target.parentElement.querySelector('.nav-item-expand-contents');
+            const navItemHeaders = document.getElementsByClassName('nav-item-header');
 
-            console.log(journeyer.getBoundingClientRect());
-
-            if (event.target === document.getElementById('arrow-top')) {
-                offset += 200;
-                journeyer.style.top = offset + 'px';
+            if (!navItemIsOpen) {
+                showContents.style.display = 'flex';
+                [...navItemHeaders].forEach((element) => {
+                    element.parentElement.classList.add(classes.semiOpaque);
+                });
+                event.target.parentElement.classList.remove(classes.semiOpaque);
+                navItemIsOpen = true;
             } else {
-                offset -= 200;
-                journeyer.style.top = offset + 'px';
-            }
-        }
-        
-        
-        
-        if (event.target === document.getElementById('toggle')) {
-            if (document.getElementById('intro').classList.contains(classes.visible)) {
-                show(main);
-                hide(intro);
-            } else {
-                show(intro);
-                hide(main);
+                showContents.style.display = 'none';
+                [...navItemHeaders].forEach((element) => {
+                    element.parentElement.classList.remove(classes.semiOpaque);
+                });
+                navItemIsOpen = false;
             }
         }
     });
