@@ -205,3 +205,21 @@ header a, #projects a, #contact a {
     position: fixed;
     width: 70%;
 }
+
+/* RESPONSIVE */
+
+/* TABLET */
+@media only screen and (max-width: 800px) {
+    #intro {
+        color: red;
+        font-size: 5em;
+    }
+}
+
+/* PHONE */
+@media only screen and (max-width: 450px) {
+    #intro {
+        color: red;
+        font-size: 5em;
+    }
+}
