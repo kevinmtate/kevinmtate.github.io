@@ -17,45 +17,42 @@ const classes = {
 
 document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("click", function(event) {
-        if (event.target === document.getElementById('begin-button')) {
-            letUsBegin();
-        }
-
-        if ([...navHeaders].indexOf(event.target) >= 0) {
-            showNavItemContent(event.target);
-        }
-        
-        if ([...document.getElementsByClassName('nav-item-expand-header')].indexOf(event.target) >= 0) {
-            const showContents = event.target.parentElement.querySelector('.nav-item-expand-contents');
-            const navItemHeaders = document.getElementsByClassName('nav-item-header');
-
-            if (!navItemIsOpen) {
-                showContents.style.display = 'flex';
-                [...navItemHeaders].forEach((element) => {
-                    element.parentElement.classList.add(classes.semiOpaque);
-                });
-                event.target.parentElement.classList.remove(classes.semiOpaque);
-                navItemIsOpen = true;
-            } else {
-                showContents.style.display = 'none';
-                [...navItemHeaders].forEach((element) => {
-                    element.parentElement.classList.remove(classes.semiOpaque);
-                });
-                navItemIsOpen = false;
-            }
-        }
+        eventListenerLogic(event);
+    });
+    document.addEventListener("touchstart", function(event) {
+        eventListenerLogic(event);
     });
 });
 
-// HELPERS
-const hide = (element) => {
-    element.classList.replace(classes.visible, classes.hidden);
-    element.classList.replace(classes.notOpaque, classes.opaque);
-};
+const eventListenerLogic = (event) => {
+    event.preventDefault();
+    if (event.target === document.getElementById('begin-button')) {
+        letUsBegin();
+    }
 
-const show = (element) => {
-    element.classList.replace(classes.hidden, classes.visible);
-    element.classList.replace(classes.opaque, classes.notOpaque);
+    if ([...navHeaders].indexOf(event.target) >= 0) {
+        showNavItemContent(event.target);
+    }
+    
+    if ([...document.getElementsByClassName('nav-item-expand-header')].indexOf(event.target) >= 0) {
+        const showContents = event.target.parentElement.querySelector('.nav-item-expand-contents');
+        const navItemHeaders = document.getElementsByClassName('nav-item-header');
+
+        if (!navItemIsOpen) {
+            showContents.style.display = 'flex';
+            [...navItemHeaders].forEach((element) => {
+                element.parentElement.classList.add(classes.semiOpaque);
+            });
+            event.target.parentElement.classList.remove(classes.semiOpaque);
+            navItemIsOpen = true;
+        } else {
+            showContents.style.display = 'none';
+            [...navItemHeaders].forEach((element) => {
+                element.parentElement.classList.remove(classes.semiOpaque);
+            });
+            navItemIsOpen = false;
+        }
+    }
 };
 
 const letUsBegin = () => {
@@ -90,4 +87,15 @@ const showNavItemContent = (target) => {
             hide(element);
         };
     });
+};
+
+// HELPERS
+const hide = (element) => {
+    element.classList.replace(classes.visible, classes.hidden);
+    element.classList.replace(classes.notOpaque, classes.opaque);
+};
+
+const show = (element) => {
+    element.classList.replace(classes.hidden, classes.visible);
+    element.classList.replace(classes.opaque, classes.notOpaque);
 };
