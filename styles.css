@@ -220,30 +220,28 @@ header a, #projects a, #contact a {
     }
 
     #intro {
-        font-size: 1rem;
-    }
-
-    .line {
-        margin: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.25rem;
+        height: 100vh;
+        justify-content: space-around;
+        padding: 40% 0;
+        top: 0;
     }
 
     #intro .name {
         font-size: 2.5rem;
-        margin-bottom: 5px;
     }
     #intro .capital {
         font-size: 3rem;
     }
 
     #title {
-        font-size: 1rem;
-    }
-
-    #begin-button {
-        margin: 40px auto;
+        font-size: inherit;
     }
 
     #intro p {
-        width: initial;
+        display: none;
     }
 }
