@@ -206,6 +206,13 @@ header a, #projects a, #contact a {
     width: 70%;
 }
 
+#mobile-version {
+    bottom: 5px;
+    font-size: 12px;
+    position: fixed;
+    text-transform: none;
+}
+
 /* RESPONSIVE */
 
 /* TABLET */
@@ -214,7 +221,13 @@ header a, #projects a, #contact a {
 }
 
 /* PHONE */
+@media only screen and (min-width: 450px) {
+    #mobile-version {
+        display: none;
+    }
+}
 @media only screen and (max-width: 450px) {
+
     .wrapper {
         padding: 10px;
     }
