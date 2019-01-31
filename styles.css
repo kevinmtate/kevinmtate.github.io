@@ -225,16 +225,19 @@ header a, #projects a, #contact a {
         flex-direction: column;
         font-size: 1.25rem;
         height: 100vh;
-        justify-content: space-around;
-        padding: 40% 0;
+        justify-content: center;
         top: 0;
     }
 
+    .line {
+        margin: 25px 0;
+    }
+
     #intro .name {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     #intro .capital {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     #title {
