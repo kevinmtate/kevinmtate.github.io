@@ -220,7 +220,6 @@ header a, #projects a, #contact a {
     }
 
     #intro {
-        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         font-size: 1.25rem;

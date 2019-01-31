@@ -61,6 +61,7 @@ const show = (element) => {
 const letUsBegin = () => {
     hide(document.getElementById('intro'));
     show(document.getElementById('main'));
+    showNavItemContent(navHeaders[0]);
 };
 
 const showNavItemContent = (target) => {
