@@ -210,16 +210,40 @@ header a, #projects a, #contact a {
 
 /* TABLET */
 @media only screen and (max-width: 800px) {
-    #intro {
-        color: red;
-        font-size: 5em;
-    }
+    
 }
 
 /* PHONE */
 @media only screen and (max-width: 450px) {
+    .wrapper {
+        padding: 10px;
+    }
+
     #intro {
-        color: red;
-        font-size: 5em;
+        font-size: 1rem;
+    }
+
+    .line {
+        margin: 0;
+    }
+
+    #intro .name {
+        font-size: 2.5rem;
+        margin-bottom: 5px;
+    }
+    #intro .capital {
+        font-size: 3rem;
+    }
+
+    #title {
+        font-size: 1rem;
+    }
+
+    #begin-button {
+        margin: 40px auto;
+    }
+
+    #intro p {
+        width: initial;
     }
 }
