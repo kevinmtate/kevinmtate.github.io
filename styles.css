@@ -213,6 +213,15 @@ header a, #projects a, #contact a {
     text-transform: none;
 }
 
+.hamburger-line {
+    background-color: #00005f;
+    height: 3px;
+    left: 5px;
+    margin: 5px;
+    position: relative;
+    width: 30px;
+}
+
 /* RESPONSIVE */
 
 /* TABLET */
@@ -222,12 +231,11 @@ header a, #projects a, #contact a {
 
 /* PHONE */
 @media only screen and (min-width: 450px) {
-    #mobile-version {
+    .mobile {
         display: none;
     }
 }
 @media only screen and (max-width: 450px) {
-
     .wrapper {
         padding: 10px;
     }
@@ -257,6 +265,20 @@ header a, #projects a, #contact a {
     }
 
     #intro p {
+        display: none;
+    }
+
+    #main {
+        width: initial;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    nav {
         display: none;
     }
 }
