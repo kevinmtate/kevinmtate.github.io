@@ -96,6 +96,7 @@ nav {
     display: flex;
     position: relative;
     top: 3px;
+    z-index: 100;
 }
 
 #main .name { 
@@ -307,7 +308,6 @@ header a, #projects a, #contact a {
         transition: opacity .5s;
         visibility: hidden;
         white-space: nowrap;
-        z-index: 10;
     }
 
     .nav-header {

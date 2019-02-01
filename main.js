@@ -139,5 +139,4 @@ const show = (element) => {
     } else {
         element.classList.add(classes.notOpaque);
     }
-
 };
