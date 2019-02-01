@@ -1,9 +1,12 @@
 let navItemIsOpen = false;
+let hamburgerExpanded = false;
 const classes = {
-    opaque: 'opaque',
-    semiOpaque: 'semi-opaque',
-    notOpaque: 'not-opaque',
     hidden: 'hidden',
+    notOpaque: 'not-opaque',
+    opaque: 'opaque',
+    rotate0: 'rotate-zero',
+    rotate1: 'rotate-one',
+    semiOpaque: 'semi-opaque',
     visible: 'visible',
 };
 
@@ -39,7 +42,23 @@ const beginButtonClick = () => {
 };
 
 const hamburgerMenuClick = () => {
-    document.querySelector('nav').style.display = 'flex';
+    event.preventDefault();
+    const hamburgerLines = document.getElementsByClassName('hamburger-line');
+
+    if (!hamburgerExpanded) {
+        // document.querySelector('nav').style.display = 'flex';
+        show(document.querySelector('nav'));
+        hamburgerLines[0].classList.add(classes.rotate0);
+        hamburgerLines[1].classList.add(classes.rotate1);
+        hamburgerLines[2].style.opacity = '0';
+        hamburgerExpanded = true;
+    } else {
+        hide(document.querySelector('nav'));
+        hamburgerLines[0].classList.remove(classes.rotate0);
+        hamburgerLines[1].classList.remove(classes.rotate1);
+        hamburgerLines[2].style.opacity = '1';
+        hamburgerExpanded = false;
+    }
 };
 
 const navHeaderClick = (event) => {
@@ -95,11 +114,30 @@ const navItemExpandClick = (event) => {
 
 // HELPERS
 const hide = (element) => {
-    element.classList.replace(classes.visible, classes.hidden);
-    element.classList.replace(classes.notOpaque, classes.opaque);
+    if (element.classList.contains(classes.visible)) {
+        element.classList.replace(classes.visible, classes.hidden);
+    } else {
+        element.classList.add(classes.hidden);
+    }
+
+    if (element.classList.contains(classes.notOpaque)) {
+        element.classList.replace(classes.notOpaque, classes.opaque);
+    } else {
+        element.classList.add(classes.opaque);
+    }
 };
 
 const show = (element) => {
-    element.classList.replace(classes.hidden, classes.visible);
-    element.classList.replace(classes.opaque, classes.notOpaque);
+    if (element.classList.contains(classes.hidden)) {
+        element.classList.replace(classes.hidden, classes.visible);
+    } else {
+        element.classList.add(classes.visible);
+    }
+    
+    if (element.classList.contains(classes.opaque)) {
+        element.classList.replace(classes.opaque, classes.notOpaque);
+    } else {
+        element.classList.add(classes.notOpaque);
+    }
+
 };
