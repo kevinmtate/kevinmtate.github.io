@@ -16,52 +16,58 @@ const classes = {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.addEventListener("click", function(event) {
-        eventListenerLogic(event);
-    });
-    document.addEventListener("touchstart", function(event) {
-        eventListenerLogic(event);
-    });
+
+    addEventHandlers();
+
 });
 
-const eventListenerLogic = (event) => {
-    event.preventDefault();
-    if (event.target === document.getElementById('begin-button')) {
-        letUsBegin();
-    }
+const addEventHandlers = () => {
+    document.getElementById('begin-button').addEventListener("click", beginButtonClick);
+    document.getElementById('begin-button').addEventListener("touchstart", beginButtonClick);
 
-    if ([...navHeaders].indexOf(event.target) >= 0) {
-        showNavItemContent(event.target);
-    }
-    
-    if ([...document.getElementsByClassName('nav-item-expand-header')].indexOf(event.target) >= 0) {
-        const showContents = event.target.parentElement.querySelector('.nav-item-expand-contents');
-        const navItemHeaders = document.getElementsByClassName('nav-item-header');
+    document.getElementById('hamburger').addEventListener("click", hamburgerMenuClick);
+    document.getElementById('hamburger').addEventListener("touchstart", hamburgerMenuClick);
 
-        if (!navItemIsOpen) {
-            showContents.style.display = 'flex';
-            [...navItemHeaders].forEach((element) => {
-                element.parentElement.classList.add(classes.semiOpaque);
-            });
-            event.target.parentElement.classList.remove(classes.semiOpaque);
-            navItemIsOpen = true;
-        } else {
-            showContents.style.display = 'none';
-            [...navItemHeaders].forEach((element) => {
-                element.parentElement.classList.remove(classes.semiOpaque);
-            });
-            navItemIsOpen = false;
-        }
-    }
+    [...document.getElementsByClassName('nav-header')].forEach(function(navHeader) {
+        navHeader.addEventListener("click", navHeaderClick);
+    });
+
+    [...document.getElementsByClassName('nav-item-expand-header')].forEach(function(navItemExpandHeader) {
+        navItemExpandHeader.addEventListener("click", navItemExpandClick);
+    });
 };
 
-const letUsBegin = () => {
+const beginButtonClick = () => {
     hide(document.getElementById('intro'));
     show(document.getElementById('main'));
-    showNavItemContent(navHeaders[0]);
 };
 
-const showNavItemContent = (target) => {
+const hamburgerMenuClick = () => {
+
+};
+
+const navItemExpandClick = (event) => {
+    const showContents = event.target.parentElement.querySelector('.nav-item-expand-contents');
+    const navItemHeaders = document.getElementsByClassName('nav-item-header');
+
+    if (!navItemIsOpen) {
+        showContents.style.display = 'flex';
+        [...navItemHeaders].forEach((element) => {
+            element.parentElement.classList.add(classes.semiOpaque);
+        });
+        event.target.parentElement.classList.remove(classes.semiOpaque);
+        navItemIsOpen = true;
+    } else {
+        showContents.style.display = 'none';
+        [...navItemHeaders].forEach((element) => {
+            element.parentElement.classList.remove(classes.semiOpaque);
+        });
+        navItemIsOpen = false;
+    }
+};
+
+const navHeaderClick = (event) => {
+    const target = event.target;
     let targetContent;
 
     if (target === navHeaders[0]) {
