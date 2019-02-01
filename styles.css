@@ -137,7 +137,7 @@ header a, #projects a, #contact a {
     height: 100vh;
     margin-top: 25px;
     overflow: scroll;
-    width: 70%;
+    width: 95%;
 }
 
 #journeyer {
@@ -208,9 +208,7 @@ header a, #projects a, #contact a {
 
 #mobile-version {
     bottom: 5px;
-    font-size: 12px;
     position: fixed;
-    text-transform: none;
 }
 
 .hamburger-line {
@@ -219,6 +217,8 @@ header a, #projects a, #contact a {
     left: 5px;
     margin: 5px;
     position: relative;
+    right: 0;
+    top: 2px;
     width: 30px;
 }
 
@@ -253,12 +253,8 @@ header a, #projects a, #contact a {
         margin: 25px 0;
     }
 
-    #intro .name {
-        font-size: 2rem;
-    }
-    #intro .capital {
-        font-size: 2.5rem;
-    }
+    #intro .name { font-size: 2rem; }
+    #intro .capital { font-size: 2.5rem; }
 
     #title {
         font-size: inherit;
@@ -269,12 +265,18 @@ header a, #projects a, #contact a {
     }
 
     #main {
-        width: initial;
+        width: 90%;
     }
+
+    #main .name { font-size: 1.75rem; }
+
+    #main .capital { font-size: 2.1rem; }
 
     header {
         display: flex;
+        height: initial;
         justify-content: space-between;
+        margin-top: 10px;
         width: 100%;
     }
 

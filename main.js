@@ -1,12 +1,4 @@
 let navItemIsOpen = false;
-let offset = 0;
-const navHeaders = document.getElementsByClassName('nav-header');
-const contentElements = document.getElementsByClassName('content');
-// ??????????????????????????????????????
-const main = document.getElementById('main');
-const intro = document.getElementById('intro');
-const journeyer = document.getElementById('journeyer');
-// ??????????????????????????????????????
 const classes = {
     opaque: 'opaque',
     semiOpaque: 'semi-opaque',
@@ -43,7 +35,7 @@ const beginButtonClick = () => {
 };
 
 const hamburgerMenuClick = () => {
-
+    
 };
 
 const navItemExpandClick = (event) => {
@@ -68,6 +60,8 @@ const navItemExpandClick = (event) => {
 
 const navHeaderClick = (event) => {
     const target = event.target;
+    const contentElements = document.getElementsByClassName('content');
+    const navHeaders = document.getElementsByClassName('nav-header');
     let targetContent;
 
     if (target === navHeaders[0]) {
