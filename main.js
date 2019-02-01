@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     addEventHandlers();
 
+    // if (document.documentElement.clientWidth <= 450) {
+    //     [...document.getElementsByClassName('nav-header')].forEach();
+    // }
+
 });
 
 const addEventHandlers = () => {
@@ -35,27 +39,7 @@ const beginButtonClick = () => {
 };
 
 const hamburgerMenuClick = () => {
-    
-};
-
-const navItemExpandClick = (event) => {
-    const showContents = event.target.parentElement.querySelector('.nav-item-expand-contents');
-    const navItemHeaders = document.getElementsByClassName('nav-item-header');
-
-    if (!navItemIsOpen) {
-        showContents.style.display = 'flex';
-        [...navItemHeaders].forEach((element) => {
-            element.parentElement.classList.add(classes.semiOpaque);
-        });
-        event.target.parentElement.classList.remove(classes.semiOpaque);
-        navItemIsOpen = true;
-    } else {
-        showContents.style.display = 'none';
-        [...navItemHeaders].forEach((element) => {
-            element.parentElement.classList.remove(classes.semiOpaque);
-        });
-        navItemIsOpen = false;
-    }
+    document.querySelector('nav').style.display = 'flex';
 };
 
 const navHeaderClick = (event) => {
@@ -87,6 +71,26 @@ const navHeaderClick = (event) => {
             hide(element);
         };
     });
+};
+
+const navItemExpandClick = (event) => {
+    const showContents = event.target.parentElement.querySelector('.nav-item-expand-contents');
+    const navItemHeaders = document.getElementsByClassName('nav-item-header');
+
+    if (!navItemIsOpen) {
+        showContents.style.display = 'flex';
+        [...navItemHeaders].forEach((element) => {
+            element.parentElement.classList.add(classes.semiOpaque);
+        });
+        event.target.parentElement.classList.remove(classes.semiOpaque);
+        navItemIsOpen = true;
+    } else {
+        showContents.style.display = 'none';
+        [...navItemHeaders].forEach((element) => {
+            element.parentElement.classList.remove(classes.semiOpaque);
+        });
+        navItemIsOpen = false;
+    }
 };
 
 // HELPERS
