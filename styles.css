@@ -11,7 +11,14 @@
 .rotate-one {
     transform: rotate(-45deg);
 }
-/* ------------------------------- */
+.mobile-menu-expanded-overlay {
+    background-color: black;
+    background-image: none !important;
+    height: 100% !important;
+    left: 0;
+    opacity: .5;
+    top: 65px;
+}
 
 /* ------------------------------- */
 /* #intro {
@@ -279,9 +286,9 @@ header a, #projects a, #contact a {
         display: none;
     }
 
-    #main {
-        width: 90%;
-    }
+    /* #main {
+        width: 100%;
+    } */
 
     .name {
         white-space: nowrap;
@@ -299,18 +306,42 @@ header a, #projects a, #contact a {
     }
 
     nav {
-        background-color: inherit;
+        background-color: #F5F5F5;
         flex-direction: column;
-        opacity: 0;
+        height: 100vh;
+        padding: 25px;
         position: fixed;
-        right: 25px;
+        right: -70%;
         top: 65px;
-        transition: opacity .5s;
-        visibility: hidden;
+        transition: right .5s;
         white-space: nowrap;
+        width: 50%;
     }
 
     .nav-header {
         margin: 5px 0;
+        text-align: right;
+    }
+
+    .left-side-journey {
+        display: flex;
+        justify-content: space-between;
+        width: initial;
+    }
+
+    .journey-section h3 {
+        width: initial;
+    }
+
+    .right-side-journey {
+        width: initial;
+    }
+
+    .overlay {
+        width: 100%;
+    }
+
+    #projects, #contact {
+        left: 0;
     }
 }

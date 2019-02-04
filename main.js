@@ -8,6 +8,7 @@ const classes = {
     rotate1: 'rotate-one',
     semiOpaque: 'semi-opaque',
     visible: 'visible',
+    "mobile-overlay": "mobile-menu-expanded-overlay",
 };
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -46,14 +47,19 @@ const hamburgerMenuClick = () => {
     const hamburgerLines = document.getElementsByClassName('hamburger-line');
 
     if (!hamburgerExpanded) {
-        // document.querySelector('nav').style.display = 'flex';
-        show(document.querySelector('nav'));
+        document.querySelector('nav').style.right = 0;
+        [...document.getElementsByClassName('overlay')].forEach((overlayEl) => {
+            overlayEl.classList.add(classes["mobile-overlay"]);
+        });
         hamburgerLines[0].classList.add(classes.rotate0);
         hamburgerLines[1].classList.add(classes.rotate1);
         hamburgerLines[2].style.opacity = '0';
         hamburgerExpanded = true;
     } else {
-        hide(document.querySelector('nav'));
+        document.querySelector('nav').style.right = '-70%';
+        [...document.getElementsByClassName('overlay')].forEach((overlayEl) => {
+            overlayEl.classList.remove(classes["mobile-overlay"]);
+        });
         hamburgerLines[0].classList.remove(classes.rotate0);
         hamburgerLines[1].classList.remove(classes.rotate1);
         hamburgerLines[2].style.opacity = '1';
