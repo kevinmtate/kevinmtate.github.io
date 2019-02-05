@@ -295,7 +295,10 @@ header a, #projects a, #contact a {
         letter-spacing: 1.5px;
     }
 
-    #main .name { font-size: 1.75rem; }
+    #main .name { 
+        font-size: 1.75rem; 
+        padding: 0 15px;
+    }
 
     #main .capital { font-size: 2.1rem; }
 
@@ -322,6 +325,10 @@ header a, #projects a, #contact a {
     .nav-header {
         margin: 5px 0;
         text-align: right;
+    }
+
+    .content {
+        padding-left: 10px;
     }
 
     #journey {
