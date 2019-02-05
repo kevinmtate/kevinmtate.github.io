@@ -214,7 +214,7 @@ header a, #projects a, #contact a {
 
 #final-statement {
     letter-spacing: .15rem;
-    margin-bottom: 50%;
+    margin-bottom: 100vh;
 }
 
 .overlay {
@@ -267,12 +267,9 @@ header a, #projects a, #contact a {
     }
 
     #intro {
-        display: flex;
-        flex-direction: column;
         font-size: 1.25rem;
-        height: 100vh;
-        justify-content: center;
-        top: 0;
+        height: 100%;
+        top: 25%;
     }
 
     .line {
@@ -345,7 +342,8 @@ header a, #projects a, #contact a {
     }
 
     .overlay {
-        width: 100%;
+        left: -50px;
+        width: 200%;
     }
 
     #projects, #contact {
