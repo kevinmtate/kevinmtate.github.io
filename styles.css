@@ -12,12 +12,11 @@
     transform: rotate(-45deg);
 }
 .mobile-menu-expanded-overlay {
-    background-color: black;
-    background-image: none !important;
+    background-image: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.6)) !important;
     height: 100% !important;
     left: 0;
-    opacity: .5;
     top: 65px;
+    width: 100% !important;
 }
 
 /* ------------------------------- */
@@ -225,11 +224,6 @@ header a, #projects a, #contact a {
     width: 70%;
 }
 
-#mobile-version {
-    bottom: 5px;
-    position: fixed;
-}
-
 #hamburger {
     position: fixed;
     right: 25px;
@@ -348,11 +342,6 @@ header a, #projects a, #contact a {
         width: initial;
     }
 
-    .overlay {
-        left: -50px;
-        width: 200%;
-    }
-
     #projects, #contact {
         left: 0;
     }
@@ -365,5 +354,9 @@ header a, #projects a, #contact a {
         font-size: .9rem;
         letter-spacing: 1px;
         line-height: 1.5;
+    }
+
+    .overlay {
+        width: 100%;
     }
 }

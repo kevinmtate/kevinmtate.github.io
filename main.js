@@ -43,13 +43,11 @@ const beginButtonClick = () => {
 const checkForHamburgerClose = (event) => {
     const overlays = document.getElementsByClassName('overlay');
 
-    console.log(event.target);
-
     if (hamburgerExpanded) {
         [...overlays].forEach((el) => {
             if (event.target === el) {
                 closeHamburgerMenu();
-                return;
+                // return;
             }
         });
     }
@@ -69,20 +67,22 @@ const closeHamburgerMenu = () => {
 };
 
 const hamburgerMenuClick = () => {
-    event.preventDefault();
-    const hamburgerLines = document.getElementsByClassName('hamburger-line');
-
-    if (!hamburgerExpanded) {
-        document.querySelector('nav').style.right = 0;
-        [...document.getElementsByClassName('overlay')].forEach((overlayEl) => {
-            overlayEl.classList.add(classes["mobile-overlay"]);
-        });
-        hamburgerLines[0].classList.add(classes.rotate0);
-        hamburgerLines[1].classList.add(classes.rotate1);
-        hamburgerLines[2].style.opacity = '0';
-        hamburgerExpanded = true;
-    } else {
-        closeHamburgerMenu();
+    if (event.cancelable) {
+        event.preventDefault();
+        const hamburgerLines = document.getElementsByClassName('hamburger-line');
+    
+        if (!hamburgerExpanded) {
+            document.querySelector('nav').style.right = 0;
+            [...document.getElementsByClassName('overlay')].forEach((overlayEl) => {
+                overlayEl.classList.add(classes["mobile-overlay"]);
+            });
+            hamburgerLines[0].classList.add(classes.rotate0);
+            hamburgerLines[1].classList.add(classes.rotate1);
+            hamburgerLines[2].style.opacity = '0';
+            hamburgerExpanded = true;
+        } else {
+            closeHamburgerMenu();
+        }
     }
 };
 
