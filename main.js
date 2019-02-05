@@ -31,6 +31,8 @@ const addEventHandlers = () => {
     [...document.getElementsByClassName('nav-item-expand-header')].forEach(function(navItemExpandHeader) {
         navItemExpandHeader.addEventListener("click", navItemExpandClick);
     });
+
+    document.addEventListener("touchstart", checkForHamburgerClose);
 };
 
 const beginButtonClick = () => {
@@ -38,9 +40,24 @@ const beginButtonClick = () => {
     show(document.getElementById('main'));
 };
 
+const checkForHamburgerClose = (event) => {
+    const overlays = document.getElementsByClassName('overlay');
+
+    console.log(event.target);
+
+    if (hamburgerExpanded) {
+        [...overlays].forEach((el) => {
+            if (event.target === el) {
+                closeHamburgerMenu();
+                return;
+            }
+        });
+    }
+};
+
 const closeHamburgerMenu = () => {
     const hamburgerLines = document.getElementsByClassName('hamburger-line');
-    
+
     document.querySelector('nav').style.right = '-70%';
     [...document.getElementsByClassName('overlay')].forEach((overlayEl) => {
         overlayEl.classList.remove(classes["mobile-overlay"]);
