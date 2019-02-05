@@ -15,10 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     addEventHandlers();
 
-    // if (document.documentElement.clientWidth <= 450) {
-    //     [...document.getElementsByClassName('nav-header')].forEach();
-    // }
-
 });
 
 const addEventHandlers = () => {
@@ -42,6 +38,19 @@ const beginButtonClick = () => {
     show(document.getElementById('main'));
 };
 
+const closeHamburgerMenu = () => {
+    const hamburgerLines = document.getElementsByClassName('hamburger-line');
+    
+    document.querySelector('nav').style.right = '-70%';
+    [...document.getElementsByClassName('overlay')].forEach((overlayEl) => {
+        overlayEl.classList.remove(classes["mobile-overlay"]);
+    });
+    hamburgerLines[0].classList.remove(classes.rotate0);
+    hamburgerLines[1].classList.remove(classes.rotate1);
+    hamburgerLines[2].style.opacity = '1';
+    hamburgerExpanded = false;
+};
+
 const hamburgerMenuClick = () => {
     event.preventDefault();
     const hamburgerLines = document.getElementsByClassName('hamburger-line');
@@ -56,14 +65,7 @@ const hamburgerMenuClick = () => {
         hamburgerLines[2].style.opacity = '0';
         hamburgerExpanded = true;
     } else {
-        document.querySelector('nav').style.right = '-70%';
-        [...document.getElementsByClassName('overlay')].forEach((overlayEl) => {
-            overlayEl.classList.remove(classes["mobile-overlay"]);
-        });
-        hamburgerLines[0].classList.remove(classes.rotate0);
-        hamburgerLines[1].classList.remove(classes.rotate1);
-        hamburgerLines[2].style.opacity = '1';
-        hamburgerExpanded = false;
+        closeHamburgerMenu();
     }
 };
 
@@ -96,6 +98,8 @@ const navHeaderClick = (event) => {
             hide(element);
         };
     });
+
+    closeHamburgerMenu();
 };
 
 const navItemExpandClick = (event) => {

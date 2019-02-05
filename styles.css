@@ -263,7 +263,7 @@ header a, #projects a, #contact a {
 
 @media only screen and (max-width: 450px) {
     .wrapper {
-        padding: 10px;
+        padding: 0px;
     }
 
     #intro {
@@ -316,7 +316,7 @@ header a, #projects a, #contact a {
         top: 65px;
         transition: right .5s;
         white-space: nowrap;
-        width: 50%;
+        width: 30%;
     }
 
     .nav-header {
