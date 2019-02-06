@@ -1,5 +1,6 @@
 let navItemIsOpen = false;
 let hamburgerExpanded = false;
+let isMobile = window.innerWidth <= 450 ? true : false;
 const classes = {
     hidden: 'hidden',
     notOpaque: 'not-opaque',
@@ -47,7 +48,7 @@ const checkForHamburgerClose = (event) => {
         [...overlays].forEach((el) => {
             if (event.target === el) {
                 closeHamburgerMenu();
-                // return;
+                return;
             }
         });
     }
@@ -116,7 +117,9 @@ const navHeaderClick = (event) => {
         };
     });
 
-    closeHamburgerMenu();
+    if (isMobile) {
+        closeHamburgerMenu();
+    }
 };
 
 const navItemExpandClick = (event) => {
