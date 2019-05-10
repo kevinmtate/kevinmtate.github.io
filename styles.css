@@ -18,19 +18,10 @@
     top: 75px;
     width: 100% !important;
 }
-
-/* ------------------------------- */
-/* #intro {
-    visibility: hidden;
-}
-#main {
-    opacity: 1;
-    visibility: visible;
-} */
-/* ------------------------------- */
+/*-----------------------------------------------------------------------------------------------*/
 
 .background {
-    background-color: #F5F5F5;
+    background-color: #c3c3c3;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -38,41 +29,35 @@
 
 .wrapper {
     color: #00005f;
-}
-
-#main {
-    letter-spacing: .25rem;
+    display: flex;
+    height: 100%;
     position: absolute;
-    top: 0;
-    transition: visibility 1s, opacity 1s;
     width: 100%;
 }
 
-header {
+#main {
     align-items: center;
     display: flex;
-    height: 100px;
-    left: 0;
-    z-index: 100;
+    flex-direction: column;
+    letter-spacing: .25rem;
+    margin: auto;
+    transition: visibility 1s, opacity 1s;
 }
 
 nav {
-    display: flex;
-    position: relative;
-    top: 3px;
-    z-index: 100;
+    
 }
 
 #main .name { 
     font-size: 2rem;
-    padding: 0 10px;
+    margin-bottom: 10px;
     text-transform: uppercase;
 }
 #main .capital { font-size: 2.5rem; }
 
 .nav-header {
     font-size: 1.25rem;
-    margin: 0 25px;
+    padding: 0 25px;
     text-transform: lowercase;
     transition: visibility .4s, opacity .35s; /* make sure if you change the opacity the visiblity transition is still longer */
 }
