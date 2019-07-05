@@ -13,6 +13,10 @@ header {
     color: rgba(255, 0, 0, .75);
     font-size: 5em;
     text-transform: uppercase;
+
+    position: relative;
+    left: -200%;
+    transition: left 2s;
 }
 
 .capital {
@@ -23,6 +27,10 @@ header {
 .title {
     color: rgba(0, 0, 0, .3);
     font-size: 2em;
+
+    position: relative;
+    right: -200%;
+    transition: right 2s;
 }
 
 /* NAV */
@@ -36,7 +44,56 @@ nav {
 .ham {
     border-bottom: 3px solid red;
     height: 10px;
+    transition: 1s;
     width: 45px;
+}
+
+.nav-links {
+    letter-spacing: 1px;
+    line-height: 25px;
+    position: absolute;
+    top: 55px;
+    right: -200px;
+    transition: right 1s;
+    visibility: hidden;
+    width: 120px;
+}
+
+.nav-links-clicked {
+    right: 5px;
+}
+
+.one-clicked {
+    left: 6px;
+    position: relative;
+    top: 12px;
+    transform: rotate(45deg);
+}
+
+.two-clicked {
+    opacity: 0;
+    transition: none;
+}
+
+.three-clicked {
+    bottom: 13px;
+    position: relative;
+    transform: rotate(-45deg);
+}
+
+.visible {
+    visibility: visible !important;
+}
+
+.nav-links li a {
+    color: black;
+    font-size: 1.5em;
+    opacity: 0;
+    transition: 1s;
+}
+
+.nav-link-opaque {
+    opacity: .75 !important;
 }
 
 /* PORTFOLIO GRID */

@@ -14,7 +14,19 @@ const classes = {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    addEventHandlers();
+    // addEventHandlers();
+    document.querySelector('.name').style.left = '0';
+    document.querySelector('.title').style.right = '0';
+    document.querySelector('.ham-menu').addEventListener("click", function() {
+        document.querySelector('.nav-links').classList.add("visible");
+        document.querySelector('.nav-links').classList.add("nav-links-clicked");
+        [...document.querySelectorAll('.nav-links li a')].forEach(function(el) {
+            el.classList.add("nav-link-opaque");
+        });
+        document.querySelector('.ham.one').classList.add('one-clicked');
+        document.querySelector('.ham.two').classList.add('two-clicked');
+        document.querySelector('.ham.three').classList.add('three-clicked');
+    });
 
 });
 
