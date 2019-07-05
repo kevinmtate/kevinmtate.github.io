@@ -1,9 +1,83 @@
-html {
-    font-size: 16px;
+/* HEADER */
+header {
+    display: flex;
+    height: 50vh;
+    text-align: center;
 }
 
+.banner {
+    margin: auto;
+}
+
+.name {
+    color: rgba(255, 0, 0, .75);
+    font-size: 5em;
+    text-transform: uppercase;
+}
+
+.capital {
+    font-size: 1.25em;
+    text-transform: uppercase;
+}
+
+.title {
+    color: rgba(0, 0, 0, .3);
+    font-size: 2em;
+}
+
+/* NAV */
+nav {
+    position: fixed;
+    right: 35px;
+    top: 35px;
+}
+
+nav:hover {
+    cursor: pointer;
+}
+
+.ham {
+    border-bottom: 2px solid red;
+    width: 37px;
+}
+
+.ham.middle {
+    margin: 8px 0;
+}
+
+/* PORTFOLIO GRID */
+.portfolio {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, minmax(350px, 1fr));
+    padding: 25px;
+}
+
+.square {
+    height: 350px;
+    width: 100%;
+}
+
+.square img {
+    height: 100%;
+    width: 100%;
+}
+
+.anfhco {
+    display: flex;
+}
+
+.anfhco > img {
+    width: 50%;
+}
+
+
+
+
+
+
 .wrapper {
-    background-color: #dcdcdc;
+    background-color: #F5F5F5;
     color: #00005f;
     height: 100%;
     letter-spacing: .25rem;
@@ -20,16 +94,6 @@ html {
     top: 30%;
     transition: visibility 1s, opacity 1s;
     width: 500px;
-}
-
-.name { 
-    font-size: 2rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.capital { 
-    font-size: 2.5rem;
 }
 
 
