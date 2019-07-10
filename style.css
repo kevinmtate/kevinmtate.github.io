@@ -3,15 +3,18 @@
     background-image: url("nycbi.jpg");
     height: 100vh;
     position: fixed;
-    transition: transform 1s;
-    /* transform: scale(.95); */
+    transition: 2s;
     width: 100%;
+}
+
+.background-intro {
+    transform: scale(1.05);
 }
 
 /* HEADER */
 header {
     display: flex;
-    height: 45vh;
+    height: 80vh;
     text-align: center;
 }
 
@@ -26,7 +29,11 @@ header {
 
     position: relative;
     left: -100vw;
-    transition: left 2s;
+    transition: 2s;
+}
+
+.name-intro {
+    left: 0px;
 }
 
 .capital {
@@ -35,25 +42,35 @@ header {
 }
 
 .title {
-    color: rgba(0, 0, 0, .3);
+    color: rgba(0, 0, 0, .75);
     font-size: 2em;
 
     position: relative;
     right: -100vw;
-    transition: right 2s;
+    transition: 2s;
+}
+
+.title-intro {
+    right: 0px;
 }
 
 /* NAV */
 nav {
     cursor: pointer;
     position: absolute;
-    right: 50px;
+    right: -50px;
     top: 35px;
+    transition: 2s;
+}
+
+.nav-intro {
+    right: 50px;
 }
 
 .ham {
     border-bottom: 3px solid red;
     height: 10px;
+    position: relative;
     transition: 1s;
     width: 45px;
 }
@@ -64,35 +81,27 @@ nav {
     position: absolute;
     top: 55px;
     right: -200px;
-    transition: right 1s;
+    transition: 1s;
     visibility: hidden;
     width: 120px;
 }
 
-.nav-links-clicked {
+.nav-links-visible {
     right: 5px;
+    visibility: visible;
 }
 
 .one-clicked {
-    left: 6px;
-    position: relative;
-    top: 12px;
-    transform: rotate(45deg);
+    transform: rotate(45deg) translate(9px, 5px);
 }
 
 .two-clicked {
     opacity: 0;
-    transition: none;
+    transition: .5s;
 }
 
 .three-clicked {
-    bottom: 13px;
-    position: relative;
-    transform: rotate(-45deg);
-}
-
-.visible {
-    visibility: visible !important;
+    transform: rotate(-45deg) translate(9px, -14px);
 }
 
 .nav-links li a {
@@ -111,6 +120,7 @@ nav {
     display: grid;
     grid-gap: 50px;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    margin-top: 20vh;
     padding: 0 50px;
 }
 
