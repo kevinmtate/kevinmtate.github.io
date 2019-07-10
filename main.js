@@ -21,8 +21,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const intro = () => {
-    document.querySelector('.name').style.left = '0';
-    document.querySelector('.title').style.right = '0';
+    document.querySelector('.name').style.left = "0";
+    document.querySelector('.title').style.right = "0";
+    document.querySelector('.background').style.transform = "scale(1.05)";
 };
 
 const hamburgerMenuClick = () => {

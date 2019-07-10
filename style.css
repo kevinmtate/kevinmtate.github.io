@@ -1,7 +1,11 @@
-body {
-    background-image: url("nycbi.jpg");
-    width: 100%;
+.background {
     background-size: cover;
+    background-image: url("nycbi.jpg");
+    height: 100vh;
+    position: fixed;
+    transition: transform 1s;
+    /* transform: scale(.95); */
+    width: 100%;
 }
 
 /* HEADER */
