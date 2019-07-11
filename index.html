@@ -25,17 +25,19 @@
         <div class="ham two"></div>
         <div class="ham three"></div>
       </div>
-      <ul class="nav-links">
-        <li><a href="#about">about me</a></li>
-        <li><a href="#portfolio">projects</a></li>
-        <li><a href="#contact">contact me</a></li>
-        <li><a href="resources/KevinTateResume.docx" download>resume</a></li>
-        <!-- <li id="night"><a>night mode</a></li> -->
-      </ul>
+      <div class="nav-links">
+        <ul class="nav-links-list color-scheme">
+          <li><a class="scroll" section="about" href="#about">about me</a></li>
+          <li><a class="scroll" section="portfolio" href="#portfolio">projects</a></li>
+          <li><a class="scroll" section="contact" href="#contact">contact me</a></li>
+          <li><a href="resources/KevinTateResume.docx" download>resume</a></li>
+          <!-- <li id="night"><a>night mode</a></li> -->
+        </ul>
+      </div>
     </nav>
 
     <section class="container">
-      <div id="about" class="about">
+      <div id="about" class="about scroll">
         <div class="about-paragraph">
           <p>
             My name is Kevin Tate and I am Web Developer living in New York City. Between reading 
@@ -51,30 +53,19 @@
             Kevin
           </p>
         </div>
-        <!-- <p>
-          <q>" History is happening in Manhattan and we just happen to be in the greatest city in the 
-          world "</q><br><br>
-          Between singing Hamilton, reading history books, cheering on my favorite sports teams, and
-          soaking in this great city, I love to code and build websites. My name is Kevin Tate and I 
-          am a Web Developer living in New York City. I have over 3 years of experience in the 
-          software development industry and am a self-taugh web developer. Please see the contact 
-          info section if you would like to chat, hire me, or karaoke Hamilton songs with me. <br><br>
-          Looking forward to hearing from you,<br>
-          Kevin
-        </p> -->
       </div>
       <div id="portfolio" class="portfolio">
         <div class="portfolio-grid">
           <div class="square anfhco">
             <a href="https://www.abercrombie.com" target="_blank">
               <div class="image-overlay anf-br">
-                <div class="project-title">ANF</div>
+                <div class="project-title color-scheme">ANF</div>
               </div>
               <img class="anf-br" src="resources/img/ss_anf.png">
             </a>
             <a href="https://www.hollisterco.com" target="_blank">
               <div class="image-overlay hco-br">
-                <div class="project-title">HCO</div>
+                <div class="project-title color-scheme">HCO</div>
               </div>
               <img class="hco-br" src="resources/img/ss_hco.png">
             </a>
@@ -82,7 +73,7 @@
           <div class="square">
             <a href="https://kevinmtate.github.io/matchgame/" target="_blank">
               <div class="image-overlay">
-                <div class="project-title">Matchgame</div>
+                <div class="project-title color-scheme">Matchgame</div>
               </div>
               <img src="resources/img/ss_matchgame.png">
             </a>
@@ -90,7 +81,7 @@
           <div class="square">
             <a href="https://kevinmtate.github.io/trackster/" target="_blank">
               <div class="image-overlay">
-                <div class="project-title">Trackster</div>
+                <div class="project-title color-scheme">Trackster</div>
               </div>
               <img src="resources/img/ss_trackster.png">
             </a>
@@ -99,18 +90,22 @@
       </div>
     </section>
 
+    <div class="scroll-to-top">
+      <i class="fas fa-arrow-up fa-2x"></i>
+    </div>
+
     <footer id="contact">
       <ul>
         <li>
           <a>
             <i class="fas fa-phone fa-2x link-with-popup"></i>
-            <div class="popup">(513) 532-2007</div>
+            <div class="popup color-scheme">(513) 532-2007</div>
           </a>
         </li>
         <li>
           <a>
             <i class="fas fa-envelope fa-2x link-with-popup"></i>
-            <div class="popup">2kmtate@gmail.com</div>
+            <div class="popup color-scheme">2kmtate@gmail.com</div>
           </a>
         </li>
         <li><a href="https://www.linkedin.com/in/kevin-tate-4a08045a/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></li>

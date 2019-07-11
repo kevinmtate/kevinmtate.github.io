@@ -12,8 +12,25 @@ document.addEventListener("DOMContentLoaded", function() {
 const addEventHandlers = () => {
 
     document.querySelector('.ham-menu').addEventListener("click", hamburgerMenuClick);
+
+    [...document.querySelectorAll('.scroll')].forEach(function(el) {
+        el.addEventListener("click", smoothScrolling);
+    });
+
     [...document.querySelectorAll('.link-with-popup')].forEach(function(el) {
         el.addEventListener("click", contactLinkClick);
+    });
+
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > 0) {
+            document.querySelector('.scroll-to-top').classList.add('scroll-to-top-visible');
+        } else {
+            document.querySelector('.scroll-to-top').classList.remove('scroll-to-top-visible');
+        }
+    })
+
+    document.querySelector('.scroll-to-top').addEventListener("click", function() {
+        window.scrollTo(0, 0);
     });
 
 };
@@ -26,7 +43,7 @@ const intro = () => {
 };
 
 const hamburgerMenuClick = () => {
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks = document.querySelector('.nav-links ul');
     const hamOne = document.querySelector('.ham.one');
     const hamTwo = document.querySelector('.ham.two');
     const hamThree = document.querySelector('.ham.three');
@@ -51,12 +68,15 @@ const hamburgerMenuClick = () => {
 const contactLinkClick = () => {
     const isPopupVisible = event.target.nextElementSibling.classList.contains('popup-visible');
 
-    console.log(event.target);
-
     if (!isPopupVisible) {
         event.target.nextElementSibling.classList.add('popup-visible');
     } else {
-        console.log('NYC');
         event.target.nextElementSibling.classList.remove('popup-visible');
     }
+};
+
+const smoothScrolling = () => {
+    document.getElementById(event.target.getAttribute('section')).scrollIntoView({
+        behavior: 'smooth'
+    });
 };
