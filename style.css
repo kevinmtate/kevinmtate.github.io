@@ -62,14 +62,14 @@ header {
 /* NAV */
 nav {
     cursor: pointer;
+    left: -50px;
     position: fixed;
-    right: -50px;
     top: 35px;
     transition: 2s;
 }
 
 .nav-intro {
-    right: 50px;
+    left: 50px;
 }
 
 .ham {
@@ -81,18 +81,18 @@ nav {
 }
 
 .nav-links {
+    left: -200px;
     letter-spacing: 1px;
     line-height: 25px;
     position: absolute;
     top: 55px;
-    right: -200px;
     transition: 1s;
     visibility: hidden;
     width: 120px;
 }
 
 .nav-links-visible {
-    right: 5px;
+    left: 5px;
     visibility: visible;
 }
 
@@ -134,7 +134,7 @@ nav {
     justify-content: center;
 }
 
-.about p {
+.about-paragraph {
     background-color: rgba(0, 0, 0, .5);
     border-radius: 5px;
     color: white;
@@ -143,11 +143,15 @@ nav {
     line-height: 28px;
     margin: 0 150px;
     padding: 50px;
+}
+
+.quote {
+    font-style: italic;
     text-align: center;
 }
 
-.about q {
-    font-style: italic;
+blockquote {
+    padding: 50px;
 }
 
 /* PORTFOLIO GRID */
@@ -206,7 +210,7 @@ nav {
     width: 40%;
 }
 
-a {
+.portfolio-grid .square a {
     color: black;
 }
 
@@ -214,16 +218,24 @@ a {
     display: flex;
 }
 
+.anfhco a {
+    width: 50%;
+}
+
+.anfhco .image-overlay {
+    width: 50%;
+}
+
 .anfhco > img {
     width: 50%;
 }
 
-.anfhco .anf-img {
+.anfhco .anf-br {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.anfhco .hco-img {
+.anfhco .hco-br {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -236,35 +248,38 @@ footer ul {
     display: flex;
     justify-content: space-evenly;
     padding: 25px;
-    position: relative;
 }
 
 footer a {
     color: white;
     /* color: red; */
     /* color: gray; */
-    cursor: pointer;
+    position: relative;
 }
 
 footer a i {
-    transform: scale(2.5);
+    cursor: pointer;
+    z-index: 5;
 }
 
 .popup {
     background-color: rgba(245,245,245,.9);
     border-radius: 5px;
+    bottom: 0;
     color: red;
     font-size: 1.5em;
     font-weight: bold;
-    left: 13%;
     opacity: 0;
-    padding: 15px;
+    padding: 10px;
     position: absolute;
-    top: 0;
+    text-align: center;
     transition: 1s;
+    white-space: nowrap;
+    z-index: -1;
 }
 
 .popup-visible {
+    bottom: 65px;
     opacity: 1;
-    top: -75px;
+    z-index: 1;
 }
