@@ -1,0 +1,270 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.background {
+    background-size: cover;
+    background-image: url("nycbi.jpg");
+    height: 100vh;
+    position: fixed;
+    transition: 2s;
+    width: 100%;
+    z-index: -1;
+}
+
+.background-intro {
+    transform: scale(1.05);
+}
+
+/* HEADER */
+header {
+    display: flex;
+    height: 80vh;
+    text-align: center;
+}
+
+.banner {
+    margin: auto;
+}
+
+.name {
+    color: rgba(255, 0, 0, .75);
+    font-size: 5em;
+    text-transform: uppercase;
+
+    position: relative;
+    left: -100vw;
+    transition: 2s;
+}
+
+.name-intro {
+    left: 0px;
+}
+
+.capital {
+    font-size: 1.25em;
+    text-transform: uppercase;
+}
+
+.title {
+    color: rgba(0, 0, 0, .75);
+    font-size: 2em;
+
+    position: relative;
+    right: -100vw;
+    transition: 2s;
+}
+
+.title-intro {
+    right: 0px;
+}
+
+/* NAV */
+nav {
+    cursor: pointer;
+    position: fixed;
+    right: -50px;
+    top: 35px;
+    transition: 2s;
+}
+
+.nav-intro {
+    right: 50px;
+}
+
+.ham {
+    border-bottom: 3px solid red;
+    height: 10px;
+    position: relative;
+    transition: 1s;
+    width: 45px;
+}
+
+.nav-links {
+    letter-spacing: 1px;
+    line-height: 25px;
+    position: absolute;
+    top: 55px;
+    right: -200px;
+    transition: 1s;
+    visibility: hidden;
+    width: 120px;
+}
+
+.nav-links-visible {
+    right: 5px;
+    visibility: visible;
+}
+
+.one-clicked {
+    transform: rotate(45deg) translate(9px, 5px);
+}
+
+.two-clicked {
+    opacity: 0;
+    transition: .5s;
+}
+
+.three-clicked {
+    transform: rotate(-45deg) translate(9px, -14px);
+}
+
+.nav-links li a {
+    color: black;
+    font-size: 1.5em;
+    opacity: 0;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.nav-link-opaque {
+    opacity: .75 !important;
+}
+
+/* CONTAINER */
+.container {
+    margin: 20vh 50px 0 50px;
+}
+
+/* ABOUT ME PARAGRAPH */
+.about {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.about p {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+    line-height: 28px;
+    margin: 0 150px;
+    padding: 50px;
+    text-align: center;
+}
+
+.about q {
+    font-style: italic;
+}
+
+/* PORTFOLIO GRID */
+.portfolio {
+    display: flex;
+    height: 100vh;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    margin: auto;
+}
+
+.square {
+    border-radius: 10px;
+    cursor: pointer;
+    height: 350px;
+    position: relative;
+    width: 100%;
+}
+
+.square img {
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.image-overlay {
+    background-color: rgba(0, 0, 0, .75);
+    border-radius: 10px;
+    display: flex;
+    height: 100%;
+    position: absolute;
+    transition: .3s;
+    width: 100%;
+}
+
+.image-overlay:hover {
+    opacity: 0;
+}
+
+.project-title {
+    align-items: center;
+    background-color: rgba(245, 245, 245, .9);
+    border: 1px solid rgba(255, 0, 0, .5);
+    border-radius: 5px;
+    display: flex;
+    font-size: 1.1em;
+    height: 15%;
+    justify-content: center;
+    letter-spacing: 2px;
+    margin: auto;
+    text-align: center;
+    width: 40%;
+}
+
+a {
+    color: black;
+}
+
+.anfhco {
+    display: flex;
+}
+
+.anfhco > img {
+    width: 50%;
+}
+
+.anfhco .anf-img {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.anfhco .hco-img {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* FOOTER */
+footer ul {
+    background-color: rgba(128,128,128,.9);
+    /* background-color: rgba(245,245,245,.9); */
+    /* background-color: rgba(245,245,245,.9); */
+    display: flex;
+    justify-content: space-evenly;
+    padding: 25px;
+    position: relative;
+}
+
+footer a {
+    color: white;
+    /* color: red; */
+    /* color: gray; */
+    cursor: pointer;
+}
+
+footer a i {
+    transform: scale(2.5);
+}
+
+.popup {
+    background-color: rgba(245,245,245,.9);
+    border-radius: 5px;
+    color: red;
+    font-size: 1.5em;
+    font-weight: bold;
+    left: 13%;
+    opacity: 0;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    transition: 1s;
+}
+
+.popup-visible {
+    opacity: 1;
+    top: -75px;
+}
