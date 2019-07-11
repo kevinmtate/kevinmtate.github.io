@@ -13,6 +13,9 @@ html {
 }
 
 .background-intro {
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
     transform: scale(1.05);
 }
 
@@ -30,10 +33,9 @@ header {
 .name {
     color: rgba(255, 0, 0, .75);
     font-size: 5em;
-    text-transform: uppercase;
-
-    position: relative;
     left: -100vw;
+    position: relative;
+    text-transform: uppercase;
     transition: 2s;
 }
 
@@ -49,7 +51,6 @@ header {
 .title {
     color: rgba(0, 0, 0, .75);
     font-size: 2em;
-
     position: relative;
     right: -100vw;
     transition: 2s;
@@ -61,11 +62,14 @@ header {
 
 /* NAV */
 nav {
+    align-items: center;
     cursor: pointer;
+    display: flex;
     left: -50px;
     position: fixed;
     top: 35px;
     transition: 2s;
+    z-index: 10;
 }
 
 .nav-intro {
@@ -80,23 +84,35 @@ nav {
     width: 45px;
 }
 
+.ham-menu {
+    display: inline-block;
+}
+
 .nav-links {
-    left: -200px;
+    display: inline-block;
+}
+
+.nav-links-list {
+    display: flex;
+    left: -600px;
     letter-spacing: 1px;
     line-height: 25px;
-    position: absolute;
-    top: 55px;
+    opacity: 0;
+    position: relative;
     transition: 1s;
     visibility: hidden;
-    width: 120px;
 }
 
 .nav-links-visible {
     left: 5px;
+    opacity: 1;
     visibility: visible;
 }
 
 .one-clicked {
+    -moz-transform: rotate(45deg) translate(9px, 5px);
+    -ms-transform: rotate(45deg) translate(9px, 5px);
+    -webkit-transform: rotate(45deg) translate(9px, 5px);
     transform: rotate(45deg) translate(9px, 5px);
 }
 
@@ -106,15 +122,20 @@ nav {
 }
 
 .three-clicked {
+    -moz-transform: rotate(-45deg) translate(9px, -14px);
+    -ms-transform: rotate(-45deg) translate(9px, -14px);
+    -webkit-transform: rotate(-45deg) translate(9px, -14px);
     transform: rotate(-45deg) translate(9px, -14px);
 }
 
 .nav-links li a {
     color: black;
     font-size: 1.5em;
+    margin: 25px;
     opacity: 0;
     text-decoration: none;
     transition: 1s;
+    white-space: nowrap;
 }
 
 .nav-link-opaque {
@@ -247,7 +268,7 @@ footer ul {
     /* background-color: rgba(245,245,245,.9); */
     display: flex;
     justify-content: space-evenly;
-    padding: 25px;
+    padding: 10px;
 }
 
 footer a {

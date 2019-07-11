@@ -26,7 +26,7 @@ const intro = () => {
 };
 
 const hamburgerMenuClick = () => {
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks = document.querySelector('.nav-links ul');
     const hamOne = document.querySelector('.ham.one');
     const hamTwo = document.querySelector('.ham.two');
     const hamThree = document.querySelector('.ham.three');
