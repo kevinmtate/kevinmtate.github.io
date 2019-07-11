@@ -62,14 +62,14 @@ header {
 /* NAV */
 nav {
     cursor: pointer;
+    left: -50px;
     position: fixed;
-    right: -50px;
     top: 35px;
     transition: 2s;
 }
 
 .nav-intro {
-    right: 50px;
+    left: 50px;
 }
 
 .ham {
@@ -81,18 +81,18 @@ nav {
 }
 
 .nav-links {
+    left: -200px;
     letter-spacing: 1px;
     line-height: 25px;
     position: absolute;
     top: 55px;
-    right: -200px;
     transition: 1s;
     visibility: hidden;
     width: 120px;
 }
 
 .nav-links-visible {
-    right: 5px;
+    left: 5px;
     visibility: visible;
 }
 
@@ -206,7 +206,7 @@ nav {
     width: 40%;
 }
 
-a {
+.portfolio-grid .square a {
     color: black;
 }
 
@@ -214,16 +214,24 @@ a {
     display: flex;
 }
 
+.anfhco a {
+    width: 50%;
+}
+
+.anfhco .image-overlay {
+    width: 50%;
+}
+
 .anfhco > img {
     width: 50%;
 }
 
-.anfhco .anf-img {
+.anfhco .anf-br {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.anfhco .hco-img {
+.anfhco .hco-br {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
