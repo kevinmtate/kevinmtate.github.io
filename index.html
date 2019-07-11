@@ -25,43 +25,64 @@
         <div class="ham three"></div>
       </div>
       <ul class="nav-links">
-        <li id="about"><a>about me</a></li>
-        <li id="projects"><a>projects</a></li>
+        <li><a href="#about">about me</a></li>
+        <li><a href="#portfolio">projects</a></li>
         <li id="resume"><a>resume</a></li>
-        <li id="contact"><a>contact me</a></li>
-        <li id="night"><a>night mode</a></li>
+        <li><a href="contact">contact me</a></li>
+        <!-- <li id="night"><a>night mode</a></li> -->
       </ul>
     </nav>
 
-    <section class="portfolio">
-      <div class="square anfhco">
-        <div class="image-overlay">
-          <div class="project-title">ANF + HCO Websites</div>
+    <section class="container">
+      <div id="about" class="about">
+        <p>
+          <q>" History is happening in Manhattan and we just happen to be in the greatest city in the 
+          world "</q><br><br>
+          Between singing Hamilton, reading history books, cheering on my favorite sports teams, and
+          soaking in this great city, I love to code and build websites. My name is Kevin Tate and I 
+          am a Web Developer living in New York City. I have over 3 years of experience in the 
+          software development industry and am a self-taugh web developer. Please see the contact 
+          info section if you would like to chat, hire me, or karaoke Hamilton songs with me. <br><br>
+          Looking forward to hearing from you,<br>
+          Kevin
+        </p>
+      </div>
+      <div id="portfolio" class="portfolio">
+        <div class="portfolio-grid">
+          <div class="square anfhco">
+            <div class="image-overlay">
+              <div class="project-title">ANF + HCO Websites</div>
+            </div>
+            <a href="https://www.abercrombie.com" target="_blank">
+              <img class="anf-img" src="resources/img/ss_anf.png">
+            </a>
+            <a href="https://www.hollisterco.com" target="_blank">
+              <img class="hco-img" src="resources/img/ss_hco.png">
+            </a>
+          </div>
+          <div class="square">
+            <a href="https://kevinmtate.github.io/matchgame/" target="_blank">
+              <div class="image-overlay">
+                <div class="project-title">Matchgame</div>
+              </div>
+              <img src="resources/img/ss_matchgame.png">
+            </a>
+          </div>
+          <div class="square">
+            <a href="https://kevinmtate.github.io/trackster/" target="_blank">
+              <div class="image-overlay">
+                <div class="project-title">Trackster</div>
+              </div>
+              <img src="resources/img/ss_trackster.png">
+            </a>
+          </div>
         </div>
-        <a href="https://www.abercrombie.com" target="_blank">
-          <img class="anf-img" src="resources/img/ss_anf.png">
-        </a>
-        <a href="https://www.hollisterco.com" target="_blank">
-          <img class="hco-img" src="resources/img/ss_hco.png">
-        </a>
-      </div>
-      <div class="square">
-        <a href="https://kevinmtate.github.io/matchgame/" target="_blank">
-          <div class="image-overlay">
-            <div class="project-title">Matchgame</div>
-          </div>
-          <img src="resources/img/ss_matchgame.png">
-        </a>
-      </div>
-      <div class="square">
-        <a href="https://kevinmtate.github.io/trackster/" target="_blank">
-          <div class="image-overlay">
-            <div class="project-title">Trackster</div>
-          </div>
-          <img src="resources/img/ss_trackster.png">
-        </a>
       </div>
     </section>
+
+    <footer id="contact">
+
+    </footer>
 
     <script src="main.js"></script>
   </body>

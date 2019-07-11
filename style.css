@@ -5,6 +5,7 @@
     position: fixed;
     transition: 2s;
     width: 100%;
+    z-index: -1;
 }
 
 .background-intro {
@@ -57,7 +58,7 @@ header {
 /* NAV */
 nav {
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     right: -50px;
     top: 35px;
     transition: 2s;
@@ -108,6 +109,7 @@ nav {
     color: black;
     font-size: 1.5em;
     opacity: 0;
+    text-decoration: none;
     transition: 1s;
 }
 
@@ -115,13 +117,46 @@ nav {
     opacity: .75 !important;
 }
 
+/* CONTAINER */
+.container {
+    margin: 20vh 50px;
+}
+
+/* ABOUT ME PARAGRAPH */
+.about {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.about p {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+    line-height: 28px;
+    margin: 0 150px;
+    padding: 50px;
+    text-align: center;
+}
+
+.about q {
+    font-style: italic;
+}
+
 /* PORTFOLIO GRID */
 .portfolio {
+    display: flex;
+    height: 100vh;
+}
+
+.portfolio-grid {
     display: grid;
     grid-gap: 50px;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    margin-top: 20vh;
-    padding: 0 50px;
+    margin: auto;
 }
 
 .square {
@@ -163,6 +198,7 @@ nav {
     justify-content: center;
     letter-spacing: 2px;
     margin: auto;
+    text-align: center;
     width: 40%;
 }
 

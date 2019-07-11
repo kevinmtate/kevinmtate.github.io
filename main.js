@@ -5,7 +5,6 @@ let isMobile = window.innerWidth <= 450 ? true : false;
 document.addEventListener("DOMContentLoaded", function() {
 
     setTimeout(function() { intro() }, 1);
-    // intro();
     addEventHandlers();
 
 });
