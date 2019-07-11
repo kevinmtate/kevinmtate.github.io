@@ -49,6 +49,14 @@ const hamburgerMenuClick = () => {
 };
 
 const contactLinkClick = () => {
+    const isPopupVisible = event.target.nextElementSibling.classList.contains('popup-visible');
+
     console.log(event.target);
-    event.target.classList.add('popup-visible');
+
+    if (!isPopupVisible) {
+        event.target.nextElementSibling.classList.add('popup-visible');
+    } else {
+        console.log('NYC');
+        event.target.nextElementSibling.classList.remove('popup-visible');
+    }
 };

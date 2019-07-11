@@ -236,35 +236,38 @@ footer ul {
     display: flex;
     justify-content: space-evenly;
     padding: 25px;
-    position: relative;
 }
 
 footer a {
     color: white;
     /* color: red; */
     /* color: gray; */
-    cursor: pointer;
+    position: relative;
 }
 
 footer a i {
-    transform: scale(2.5);
+    cursor: pointer;
+    z-index: 5;
 }
 
 .popup {
     background-color: rgba(245,245,245,.9);
     border-radius: 5px;
+    bottom: 0;
     color: red;
     font-size: 1.5em;
     font-weight: bold;
-    left: 13%;
     opacity: 0;
-    padding: 15px;
+    padding: 10px;
     position: absolute;
-    top: 0;
+    text-align: center;
     transition: 1s;
+    white-space: nowrap;
+    z-index: -1;
 }
 
 .popup-visible {
+    bottom: 65px;
     opacity: 1;
-    top: -75px;
+    z-index: 1;
 }
