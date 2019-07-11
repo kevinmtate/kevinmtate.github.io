@@ -134,7 +134,7 @@ nav {
     justify-content: center;
 }
 
-.about p {
+.about-paragraph {
     background-color: rgba(0, 0, 0, .5);
     border-radius: 5px;
     color: white;
@@ -143,11 +143,15 @@ nav {
     line-height: 28px;
     margin: 0 150px;
     padding: 50px;
+}
+
+.quote {
+    font-style: italic;
     text-align: center;
 }
 
-.about q {
-    font-style: italic;
+blockquote {
+    padding: 50px;
 }
 
 /* PORTFOLIO GRID */
