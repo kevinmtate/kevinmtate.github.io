@@ -9,6 +9,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
+const addEventHandlers = () => {
+
+    document.querySelector('.ham-menu').addEventListener("click", hamburgerMenuClick);
+    [...document.querySelectorAll('.link-with-popup')].forEach(function(el) {
+        el.addEventListener("click", contactLinkClick);
+    });
+
+};
+
 const intro = () => {
     document.querySelector('.background').classList.add('background-intro');
     document.querySelector('.name').classList.add('name-intro');
@@ -39,11 +48,7 @@ const hamburgerMenuClick = () => {
     }
 };
 
-
-
-
-const addEventHandlers = () => {
-
-    document.querySelector('.ham-menu').addEventListener("click", hamburgerMenuClick);
-
+const contactLinkClick = () => {
+    console.log(event.target);
+    event.target.classList.add('popup-visible');
 };
