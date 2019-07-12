@@ -97,7 +97,7 @@ nav {
     background-color: rgba(245, 245, 245, .9);
     border-radius: 5px;
     display: flex;
-    left: -700px;
+    left: -125%;
     letter-spacing: 1px;
     line-height: 25px;
     opacity: 0;
@@ -340,11 +340,11 @@ footer a i {
 
     nav {
         align-items: unset;
-        top: 10px;
+        top: 25px;
     }
 
     .nav-intro {
-        left: 10px;
+        left: 15px;
     }
 
     .nav-links-list {
