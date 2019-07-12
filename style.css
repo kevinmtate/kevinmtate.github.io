@@ -61,9 +61,8 @@ header {
 }
 
 .background-image-credit {
-    position: absolute;
-    right: 0;
-    top: 0;
+    color: white;
+    opacity: .8;
 }
 
 /* NAV */
@@ -187,7 +186,7 @@ blockquote {
 .portfolio-grid {
     display: grid;
     grid-gap: 50px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     margin: auto;
 }
 
@@ -312,7 +311,7 @@ footer a i {
 }
 
 .popup-visible {
-    bottom: 50px;
+    bottom: 60px;
     opacity: 1;
     z-index: 1;
 }
