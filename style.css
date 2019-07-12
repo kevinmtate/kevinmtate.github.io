@@ -2,6 +2,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/* BACKGROUND */
 .background {
     background-size: cover;
     background-image: url("nycbi.jpg");

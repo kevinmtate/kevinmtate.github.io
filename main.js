@@ -1,7 +1,3 @@
-let navItemIsOpen = false;
-let hamburgerExpanded = false;
-let isMobile = window.innerWidth <= 450 ? true : false;
-
 document.addEventListener("DOMContentLoaded", function() {
 
     setTimeout(function() { intro() }, 1);
@@ -21,13 +17,7 @@ const addEventHandlers = () => {
         el.addEventListener("click", contactLinkClick);
     });
 
-    window.addEventListener("scroll", function() {
-        if (window.scrollY > 0) {
-            document.querySelector('.scroll-to-top').classList.add('scroll-to-top-visible');
-        } else {
-            document.querySelector('.scroll-to-top').classList.remove('scroll-to-top-visible');
-        }
-    })
+    window.addEventListener("scroll", scrollToTop);
 
     document.querySelector('.scroll-to-top').addEventListener("click", function() {
         window.scrollTo(0, 0);
@@ -69,6 +59,9 @@ const contactLinkClick = () => {
     const isPopupVisible = event.target.nextElementSibling.classList.contains('popup-visible');
 
     if (!isPopupVisible) {
+        [...document.querySelectorAll('.popup')].forEach(function(el) {
+            el.classList.remove('popup-visible');
+        });
         event.target.nextElementSibling.classList.add('popup-visible');
     } else {
         event.target.nextElementSibling.classList.remove('popup-visible');
@@ -79,4 +72,12 @@ const smoothScrolling = () => {
     document.getElementById(event.target.getAttribute('section')).scrollIntoView({
         behavior: 'smooth'
     });
+};
+
+const scrollToTop = () => {
+    if (window.scrollY > 0) {
+        document.querySelector('.scroll-to-top').classList.add('scroll-to-top-visible');
+    } else {
+        document.querySelector('.scroll-to-top').classList.remove('scroll-to-top-visible');
+    }
 };
