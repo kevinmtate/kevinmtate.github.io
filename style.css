@@ -152,8 +152,8 @@ nav {
 /* ABOUT ME PARAGRAPH */
 .about {
     display: flex;
-    height: 100vh;
     margin: auto;
+    padding: 21vh 0;
 }
 
 .about-paragraph {
@@ -326,7 +326,7 @@ footer a i {
 @media only screen and (max-width: 1170px) {
     .portfolio {
         height: initial;
-        padding: 100px 0;
+        padding: 21vh 0;
     }
 }
 
