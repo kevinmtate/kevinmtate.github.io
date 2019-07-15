@@ -1,10 +1,10 @@
-var navLinksList = document.querySelector('.nav-links ul');
-var navLinks = document.querySelectorAll('.nav-links li a');
-var hamOneEl = document.querySelector('.ham.one');
-var hamTwoEl = document.querySelector('.ham.two');
-var hamThreeEl = document.querySelector('.ham.three');
-var popupsList = document.querySelectorAll('.popup');
-var scrollToTopEl = document.querySelector('.scroll-to-top');
+const navLinksList = document.querySelector('.nav-links ul');
+const navLinks = document.querySelectorAll('.nav-links li a');
+const hamOneEl = document.querySelector('.ham.one');
+const hamTwoEl = document.querySelector('.ham.two');
+const hamThreeEl = document.querySelector('.ham.three');
+const popupsList = document.querySelectorAll('.popup');
+const scrollToTopEl = document.querySelector('.scroll-to-top');
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -51,7 +51,7 @@ function hamburgerMenuClick() {
 };
 
 function contactLinkClick() {
-    var isPopupVisible = event.target.nextElementSibling.classList.contains('popup-visible');
+    let isPopupVisible = event.target.nextElementSibling.classList.contains('popup-visible');
 
     if (!isPopupVisible) {
         [...popupsList].forEach(function(el) {
