@@ -1,3 +1,11 @@
+const navLinksList = document.querySelector('.nav-links ul');
+const navLinks = document.querySelectorAll('.nav-links li a');
+const hamOneEl = document.querySelector('.ham.one');
+const hamTwoEl = document.querySelector('.ham.two');
+const hamThreeEl = document.querySelector('.ham.three');
+const popupsList = document.querySelectorAll('.popup');
+const scrollToTopEl = document.querySelector('.scroll-to-top');
+
 document.addEventListener("DOMContentLoaded", function() {
 
     setTimeout(function() { intro() }, 1);
@@ -5,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-const addEventHandlers = () => {
+function addEventHandlers() {
 
     document.querySelector('.ham-menu').addEventListener("click", hamburgerMenuClick);
 
@@ -25,41 +33,28 @@ const addEventHandlers = () => {
 
 };
 
-const intro = () => {
+function intro() {
     document.querySelector('.background').classList.add('background-intro');
     document.querySelector('.name').classList.add('name-intro');
     document.querySelector('.title').classList.add('title-intro');
     document.querySelector('nav').classList.add('nav-intro');
 };
 
-const hamburgerMenuClick = () => {
-    const navLinks = document.querySelector('.nav-links ul');
-    const hamOne = document.querySelector('.ham.one');
-    const hamTwo = document.querySelector('.ham.two');
-    const hamThree = document.querySelector('.ham.three');
-    const navLinksVisible = navLinks.classList.contains('nav-links-visible');
-    
-    if (!navLinksVisible) {
-        navLinks.classList.add("nav-links-visible");
-        [...document.querySelectorAll('.nav-links li a')].forEach(function(el) {
-            el.classList.add("nav-link-opaque");
-        });
-        hamOne.classList.add('one-clicked');
-        hamTwo.classList.add('two-clicked');
-        hamThree.classList.add('three-clicked');
-    } else {
-        navLinks.classList.remove("nav-links-visible");
-        hamOne.classList.remove('one-clicked');
-        hamTwo.classList.remove('two-clicked');
-        hamThree.classList.remove('three-clicked');
-    }
+function hamburgerMenuClick() {
+    navLinksList.classList.toggle("nav-links-visible");
+    [...navLinks].forEach(function(el) {
+        el.classList.toggle("nav-link-opaque");
+    });
+    hamOneEl.classList.toggle('one-clicked');
+    hamTwoEl.classList.toggle('two-clicked');
+    hamThreeEl.classList.toggle('three-clicked');
 };
 
-const contactLinkClick = () => {
-    const isPopupVisible = event.target.nextElementSibling.classList.contains('popup-visible');
+function contactLinkClick() {
+    let isPopupVisible = event.target.nextElementSibling.classList.contains('popup-visible');
 
     if (!isPopupVisible) {
-        [...document.querySelectorAll('.popup')].forEach(function(el) {
+        [...popupsList].forEach(function(el) {
             el.classList.remove('popup-visible');
         });
         event.target.nextElementSibling.classList.add('popup-visible');
@@ -68,16 +63,16 @@ const contactLinkClick = () => {
     }
 };
 
-const smoothScrolling = () => {
+function smoothScrolling() {
     document.getElementById(event.target.getAttribute('section')).scrollIntoView({
         behavior: 'smooth'
     });
 };
 
-const scrollToTop = () => {
+function scrollToTop() {
     if (window.scrollY > 0) {
-        document.querySelector('.scroll-to-top').classList.add('scroll-to-top-visible');
+        scrollToTopEl.classList.add('scroll-to-top-visible');
     } else {
-        document.querySelector('.scroll-to-top').classList.remove('scroll-to-top-visible');
+        scrollToTopEl.classList.remove('scroll-to-top-visible');
     }
 };
