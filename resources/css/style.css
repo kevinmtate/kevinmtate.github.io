@@ -37,12 +37,13 @@ header {
 }
 
 .banner {
-    margin: 34vh auto auto auto;
+    margin: 32vh auto auto auto;
 }
 
 .name {
     color: rgba(255, 0, 0, .75);
     font-size: 5em;
+    font-weight: normal;
     left: -100vw;
     position: relative;
     text-transform: uppercase;
