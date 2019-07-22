@@ -5,7 +5,7 @@ html {
 /* BACKGROUND */
 .background {
     background-size: cover;
-    background-image: url("nycbi.jpg");
+    background-image: url("./../img/nycbi.jpg");
     height: 100vh;
     position: fixed;
     transition: 2s;
