@@ -1,36 +1,25 @@
 (function() {
     const elements = {
         backgroundEl: document.querySelector('.background'),
-        hamOneEl: document.querySelector('.ham.one'),
-        hamTwoEl: document.querySelector('.ham.two'),
-        hamThreeEl: document.querySelector('.ham.three'),
+        hamList: document.querySelectorAll('.ham'),
+        hamMenu: document.querySelector('.ham-menu'),
+        linksWithPopups: document.querySelectorAll('.link-with-popup'),
         nameEl: document.querySelector('.name'),
         navEl: document.querySelector('nav'),
         navLinks: document.querySelectorAll('.nav-links li a'),
         navLinksList: document.querySelector('.nav-links ul'),
         popupsList: document.querySelectorAll('.popup'),
+        scrollEls: document.querySelectorAll('.scroll'),
         scrollToTopEl: document.querySelector('.scroll-to-top'),
         titleEl: document.querySelector('.title'),
     }
 
     const addEventHandlers = () => {
-
-        document.querySelector('.ham-menu').addEventListener("click", hamburgerMenuClick);
-    
-        [...document.querySelectorAll('.scroll')].forEach(function(el) {
-            el.addEventListener("click", smoothScrolling);
-        });
-    
-        [...document.querySelectorAll('.link-with-popup')].forEach(function(el) {
-            el.addEventListener("click", contactLinkClick);
-        });
-    
+        elements.hamMenu.addEventListener("click", hamburgerMenuClick);
+        [...elements.scrollEls].forEach(el => el.addEventListener("click", smoothScrolling));
+        [...elements.linksWithPopups].forEach(el => el.addEventListener("click", contactLinkClick));
         window.addEventListener("scroll", scrollToTop);
-    
-        document.querySelector('.scroll-to-top').addEventListener("click", function() {
-            window.scrollTo(0, 0);
-        });
-    
+        elements.scrollToTopEl.addEventListener("click", () => window.scrollTo(0, 0));
     };
     
     const intro = () => {
@@ -42,21 +31,15 @@
     
     const hamburgerMenuClick = () => {
         elements.navLinksList.classList.toggle("nav-links-visible");
-        [...elements.navLinks].forEach(function(el) {
-            el.classList.toggle("nav-link-opaque");
-        });
-        elements.hamOneEl.classList.toggle('one-clicked');
-        elements.hamTwoEl.classList.toggle('two-clicked');
-        elements.hamThreeEl.classList.toggle('three-clicked');
+        [...elements.navLinks].forEach(el => el.classList.toggle("nav-link-opaque"));
+        [...elements.hamList].forEach(ham => ham.classList.toggle('clicked'));
     };
     
     const contactLinkClick = (event) => {
         let isPopupVisible = event.target.nextElementSibling.classList.contains('popup-visible');
     
         if (!isPopupVisible) {
-            [...elements.popupsList].forEach(function(el) {
-                el.classList.remove('popup-visible');
-            });
+            [...elements.popupsList].forEach(el => el.classList.remove('popup-visible'));
             event.target.nextElementSibling.classList.add('popup-visible');
         } else {
             event.target.nextElementSibling.classList.remove('popup-visible');
@@ -76,9 +59,7 @@
     };    
 
     document.addEventListener("DOMContentLoaded", function() {
-
         setTimeout(function() { intro() }, 1);
         addEventHandlers();
-    
     });
 })();
