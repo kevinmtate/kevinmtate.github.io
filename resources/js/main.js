@@ -1,20 +1,19 @@
 (function() {
-    const navLinksList = document.querySelector('.nav-links ul');
-    const navLinks = document.querySelectorAll('.nav-links li a');
-    const hamOneEl = document.querySelector('.ham.one');
-    const hamTwoEl = document.querySelector('.ham.two');
-    const hamThreeEl = document.querySelector('.ham.three');
-    const popupsList = document.querySelectorAll('.popup');
-    const scrollToTopEl = document.querySelector('.scroll-to-top');
+    const elements = {
+        backgroundEl: document.querySelector('.background'),
+        hamOneEl: document.querySelector('.ham.one'),
+        hamTwoEl: document.querySelector('.ham.two'),
+        hamThreeEl: document.querySelector('.ham.three'),
+        nameEl: document.querySelector('.name'),
+        navEl: document.querySelector('nav'),
+        navLinks: document.querySelectorAll('.nav-links li a'),
+        navLinksList: document.querySelector('.nav-links ul'),
+        popupsList: document.querySelectorAll('.popup'),
+        scrollToTopEl: document.querySelector('.scroll-to-top'),
+        titleEl: document.querySelector('.title'),
+    }
 
-    document.addEventListener("DOMContentLoaded", function() {
-
-        setTimeout(function() { intro() }, 1);
-        addEventHandlers();
-    
-    });
-
-    function addEventHandlers() {
+    const addEventHandlers = () => {
 
         document.querySelector('.ham-menu').addEventListener("click", hamburgerMenuClick);
     
@@ -34,28 +33,28 @@
     
     };
     
-    function intro() {
-        document.querySelector('.background').classList.add('background-intro');
-        document.querySelector('.name').classList.add('name-intro');
-        document.querySelector('.title').classList.add('title-intro');
-        document.querySelector('nav').classList.add('nav-intro');
+    const intro = () => {
+        elements.backgroundEl.classList.add('background-intro');
+        elements.nameEl.classList.add('name-intro');
+        elements.titleEl.classList.add('title-intro');
+        elements.navEl.classList.add('nav-intro');
     };
     
-    function hamburgerMenuClick() {
-        navLinksList.classList.toggle("nav-links-visible");
-        [...navLinks].forEach(function(el) {
+    const hamburgerMenuClick = () => {
+        elements.navLinksList.classList.toggle("nav-links-visible");
+        [...elements.navLinks].forEach(function(el) {
             el.classList.toggle("nav-link-opaque");
         });
-        hamOneEl.classList.toggle('one-clicked');
-        hamTwoEl.classList.toggle('two-clicked');
-        hamThreeEl.classList.toggle('three-clicked');
+        elements.hamOneEl.classList.toggle('one-clicked');
+        elements.hamTwoEl.classList.toggle('two-clicked');
+        elements.hamThreeEl.classList.toggle('three-clicked');
     };
     
-    function contactLinkClick() {
+    const contactLinkClick = (event) => {
         let isPopupVisible = event.target.nextElementSibling.classList.contains('popup-visible');
     
         if (!isPopupVisible) {
-            [...popupsList].forEach(function(el) {
+            [...elements.popupsList].forEach(function(el) {
                 el.classList.remove('popup-visible');
             });
             event.target.nextElementSibling.classList.add('popup-visible');
@@ -64,17 +63,22 @@
         }
     };
     
-    function smoothScrolling() {
+    const smoothScrolling = (event) => {
         document.getElementById(event.target.getAttribute('section')).scrollIntoView({
             behavior: 'smooth'
         });
     };
     
-    function scrollToTop() {
-        if (window.scrollY > 0) {
-            scrollToTopEl.classList.add('scroll-to-top-visible');
-        } else {
-            scrollToTopEl.classList.remove('scroll-to-top-visible');
-        }
+    const scrollToTop = () => {
+        window.scrollY > 0 ? 
+            elements.scrollToTopEl.classList.add('scroll-to-top-visible') : 
+            elements.scrollToTopEl.classList.remove('scroll-to-top-visible');
     };    
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+        setTimeout(function() { intro() }, 1);
+        addEventHandlers();
+    
+    });
 })();
