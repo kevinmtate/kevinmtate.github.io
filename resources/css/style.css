@@ -2,6 +2,15 @@ html {
     scroll-behavior: smooth;
 }
 
+/* some reset */
+h1, p, ul, body {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
 /* BACKGROUND */
 .background {
     background-size: cover;
@@ -28,12 +37,13 @@ header {
 }
 
 .banner {
-    margin: 34vh auto auto auto;
+    margin: 32vh auto auto auto;
 }
 
 .name {
     color: rgba(255, 0, 0, .75);
     font-size: 5em;
+    font-weight: normal;
     left: -100vw;
     position: relative;
     text-transform: uppercase;
