@@ -2,6 +2,15 @@ html {
     scroll-behavior: smooth;
 }
 
+/* some reset */
+h1, p, ul, body {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
 /* BACKGROUND */
 .background {
     background-size: cover;
