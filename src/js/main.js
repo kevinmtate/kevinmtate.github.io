@@ -1,22 +1,6 @@
 (function() {
-    const elements = {
-        backgroundEl: document.querySelector('.background'),
-        hamOneEl: document.querySelector('.ham.one'),
-        hamTwoEl: document.querySelector('.ham.two'),
-        hamThreeEl: document.querySelector('.ham.three'),
-        nameEl: document.querySelector('.name'),
-        navEl: document.querySelector('nav'),
-        navLinks: document.querySelectorAll('.nav-links li a'),
-        navLinksList: document.querySelector('.nav-links ul'),
-        popupsList: document.querySelectorAll('.popup'),
-        scrollToTopEl: document.querySelector('.back-to-top'),
-        titleEl: document.querySelector('.title'),
-    }
-
     document.addEventListener("DOMContentLoaded", function() {
-
         addEventHandlers();
-    
     });
 
     const addEventHandlers = () => {
@@ -40,20 +24,23 @@
     };
     
     const hamburgerMenuClick = () => {
-        elements.navLinksList.classList.toggle("nav-links-visible");
-        [...elements.navLinks].forEach(function(el) {
-            el.classList.toggle("nav-link-opaque");
-        });
-        elements.hamOneEl.classList.toggle('one-clicked');
-        elements.hamTwoEl.classList.toggle('two-clicked');
-        elements.hamThreeEl.classList.toggle('three-clicked');
+        const navEl         = document.querySelector('nav');
+        const hamOneEl      = document.querySelector('.ham.one');
+        const hamTwoEl      = document.querySelector('.ham.two');
+        const hamThreeEl    = document.querySelector('.ham.three');
+
+        hamOneEl.classList.toggle('one-clicked');
+        hamTwoEl.classList.toggle('two-clicked');
+        hamThreeEl.classList.toggle('three-clicked');
+        navEl.classList.toggle('nav-expanded');
     };
     
     const contactLinkClick = (event) => {
+        const popupElList = document.querySelectorAll('.popup');
         let isPopupVisible = event.target.nextElementSibling.classList.contains('popup-visible');
     
         if (!isPopupVisible) {
-            [...elements.popupsList].forEach(function(el) {
+            [...popupElList].forEach(function(el) {
                 el.classList.remove('popup-visible');
             });
             event.target.nextElementSibling.classList.add('popup-visible');
@@ -69,8 +56,10 @@
     };
     
     const scrollToTop = () => {
+        const scrollToTopEl = document.querySelector('.back-to-top');
+
         window.scrollY > 0 ? 
-            elements.scrollToTopEl.classList.add('back-to-top-visible') : 
-            elements.scrollToTopEl.classList.remove('back-to-top-visible');
+            scrollToTopEl.classList.add('back-to-top-visible') : 
+            scrollToTopEl.classList.remove('back-to-top-visible');
     };    
 })();

@@ -1,86 +1,93 @@
-/* NAV */
+// nav.scss
 
-@keyframes nav-intro {
-  from {
-    left: -10%;
-  }
-  to {
-    left: 0;
+$nav-left: 10px;
+
+.ham-menu {
+  animation: ham-intro 2s;
+  cursor: pointer;
+  left: $nav-left;
+  position: fixed;
+  top: 25px;
+  z-index: 100;
+
+  .ham {
+    background-color: $red;
+    height: 3px;
+    margin-bottom: 10px;
+    transition: 1s;
+    width: 45px;
+
+    &.one {
+      &-clicked {
+        transform: rotate(45deg) translate(6px, 5px);
+      }
+    }
+    
+    &.two {
+      transition: .5s;
+
+      &-clicked {
+        opacity: 0;
+      }
+    }
+    
+    &.three {
+      &-clicked {
+        transform: rotate(-45deg) translate(12px, -14px);
+      }
+    }
   }
 }
 
 nav {
-  align-items: center;
-  animation: nav-intro 2s forwards;
-  display: flex;
+  background-color: $white;
+  border-bottom: 1px solid $red;
+  left: -100%;
+  opacity: 1;
   position: fixed;
-  top: 35px;
+  top: 0;
+  transition: left 1s;
+  width: 100%;
   z-index: 10;
 
-  .ham-menu {
-    cursor: pointer;
+  &.nav-expanded {
+    left: 0;
+  }
 
-    .ham {
-      background-color: $red;
-      height: 3px;
-      margin-top: 10px;
-      position: relative;
-      transition: 1s;
-      width: 45px;
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 25px 0;
 
-      &.one {
-        &-clicked {
-          transform: rotate(45deg) translate(6px, 5px);
-        }
-      }
-      
-      &.two {
-        transition: .5s;
-
-        &-clicked {
-          opacity: 0;
-        }
-      }
-      
-      &.three {
-        &-clicked {
-          transform: rotate(-45deg) translate(12px, -14px);
-        }
+    li {
+      a {
+        color: $black;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+        text-decoration: none;
       }
     }
   }
 
-  .nav-links {
-    ul {
-      display: flex;
-      left: -125%;
-      letter-spacing: 1px;
-      line-height: 25px;
-      opacity: 0;
-      padding: 10px 0;
-      position: relative;
-      transition: 1s;
-      visibility: hidden;
+  @media only screen and (max-width: 767px) {
+   
+  }
+}
 
-      &.nav-links-visible {
-        left: 25px;
-        opacity: 1;
-        visibility: visible;
-      }
+@keyframes nav-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
-      li a {
-        color: $black;
-        font-size: 1.5em;
-        margin: 25px;
-        opacity: 0;
-        text-decoration: none;
-        transition: 1s;
-        white-space: nowrap;
-
-        &.nav-link-opaque {
-          opacity: .75 !important;
-        }
-      }
-    }
+@keyframes ham-intro {
+  from {
+    left: -10%;
+  }
+  to {
+    left: $nav-left;
   }
 }
