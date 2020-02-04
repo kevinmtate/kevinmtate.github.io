@@ -1,0 +1,50 @@
+// header.scss
+
+@keyframes name-intro {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes title-intro {
+  from {
+    right: -100vw;
+  }
+  to {
+    right: 0;
+  }
+}
+
+header {
+  display: flex;
+  height: 100vh;
+  text-align: center;
+
+  > div {
+    margin: auto;
+    margin-top: 32vh;
+
+    h1 {
+      animation: name-intro 2s forwards;
+      color: $red;
+      font-size: 5em;
+      font-weight: normal;
+      position: relative;
+      text-transform: uppercase;
+
+      .capital {
+        font-size: 1.25em;
+        text-transform: uppercase;
+      }
+    }
+
+    p {
+      animation: title-intro 2s forwards;
+      font-size: 2em;
+      position: relative;
+    }
+  }
+}

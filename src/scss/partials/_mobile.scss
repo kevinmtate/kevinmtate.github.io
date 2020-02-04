@@ -1,0 +1,48 @@
+
+/* Breakpoint for project grid wrap */
+@media only screen and (max-width: 1170px) {
+  .portfolio {
+      height: initial;
+      padding: 21vh 0;
+  }
+}
+
+/* PHONES */
+@media only screen and (max-width: 700px) {
+  html {
+      font-size: 12px;
+  }
+
+  nav {
+      align-items: unset;
+      top: 25px;
+      display: block;
+  }
+
+  .nav-intro {
+      left: 15px;
+  }
+
+  .nav-links-list {
+      display: block;
+      margin-top: 10px;
+  }
+
+  .nav-links-visible {
+      left: 0px;
+  }
+
+  .about-paragraph, blockquote {
+      padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .square {
+      height: 250px;
+  }
+
+  .portfolio-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}

@@ -9,9 +9,15 @@
         navLinks: document.querySelectorAll('.nav-links li a'),
         navLinksList: document.querySelector('.nav-links ul'),
         popupsList: document.querySelectorAll('.popup'),
-        scrollToTopEl: document.querySelector('.scroll-to-top'),
+        scrollToTopEl: document.querySelector('.back-to-top'),
         titleEl: document.querySelector('.title'),
     }
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+        addEventHandlers();
+    
+    });
 
     const addEventHandlers = () => {
 
@@ -27,17 +33,10 @@
     
         window.addEventListener("scroll", scrollToTop);
     
-        document.querySelector('.scroll-to-top').addEventListener("click", function() {
+        document.querySelector('.back-to-top').addEventListener("click", function() {
             window.scrollTo(0, 0);
         });
     
-    };
-    
-    const intro = () => {
-        elements.backgroundEl.classList.add('background-intro');
-        elements.nameEl.classList.add('name-intro');
-        elements.titleEl.classList.add('title-intro');
-        elements.navEl.classList.add('nav-intro');
     };
     
     const hamburgerMenuClick = () => {
@@ -71,14 +70,7 @@
     
     const scrollToTop = () => {
         window.scrollY > 0 ? 
-            elements.scrollToTopEl.classList.add('scroll-to-top-visible') : 
-            elements.scrollToTopEl.classList.remove('scroll-to-top-visible');
+            elements.scrollToTopEl.classList.add('back-to-top-visible') : 
+            elements.scrollToTopEl.classList.remove('back-to-top-visible');
     };    
-
-    document.addEventListener("DOMContentLoaded", function() {
-
-        setTimeout(function() { intro() }, 1);
-        addEventHandlers();
-    
-    });
 })();

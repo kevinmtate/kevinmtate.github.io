@@ -1,0 +1,408 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  margin: 0 5%;
+}
+
+.color-scheme {
+  background-color: #fff;
+  border: 1px solid #f00;
+  border-radius: 5px;
+  color: #000;
+}
+
+/* BACKGROUND */
+@keyframes background-intro {
+  from {
+    transform: 0;
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+.background {
+  animation: background-intro 2s forwards;
+  background-size: cover;
+  background-image: url("./../src/img/nycbi.jpg");
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+}
+
+footer .background-image-credit {
+  color: #fff;
+  opacity: 0.8;
+}
+footer ul {
+  background-color: rgba(128, 128, 128, 0.9);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+footer ul li a {
+  color: #fff;
+  position: relative;
+}
+footer ul li a i {
+  cursor: pointer;
+  z-index: 5;
+}
+footer ul li a .popup {
+  bottom: 0;
+  font-size: 1.25em;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  transition: 500ms;
+  white-space: nowrap;
+  z-index: -1;
+}
+footer ul li a .popup.popup-visible {
+  bottom: 60px;
+  opacity: 1;
+  z-index: 1;
+}
+
+@keyframes name-intro {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes title-intro {
+  from {
+    right: -100vw;
+  }
+  to {
+    right: 0;
+  }
+}
+header {
+  display: flex;
+  height: 100vh;
+  text-align: center;
+}
+header > div {
+  margin: auto;
+  margin-top: 32vh;
+}
+header > div h1 {
+  animation: name-intro 2s forwards;
+  color: #f00;
+  font-size: 5em;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+}
+header > div h1 .capital {
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+header > div p {
+  animation: title-intro 2s forwards;
+  font-size: 2em;
+  position: relative;
+}
+
+/* NAV */
+@keyframes nav-intro {
+  from {
+    left: -10%;
+  }
+  to {
+    left: 0;
+  }
+}
+nav {
+  align-items: center;
+  animation: nav-intro 2s forwards;
+  display: flex;
+  position: fixed;
+  top: 35px;
+  z-index: 10;
+}
+nav .ham-menu {
+  cursor: pointer;
+}
+nav .ham-menu .ham {
+  background-color: #f00;
+  height: 3px;
+  margin-top: 10px;
+  position: relative;
+  transition: 1s;
+  width: 45px;
+}
+nav .ham-menu .ham.one-clicked {
+  transform: rotate(45deg) translate(6px, 5px);
+}
+nav .ham-menu .ham.two {
+  transition: 0.5s;
+}
+nav .ham-menu .ham.two-clicked {
+  opacity: 0;
+}
+nav .ham-menu .ham.three-clicked {
+  transform: rotate(-45deg) translate(12px, -14px);
+}
+nav .nav-links ul {
+  display: flex;
+  left: -125%;
+  letter-spacing: 1px;
+  line-height: 25px;
+  opacity: 0;
+  padding: 10px 0;
+  position: relative;
+  transition: 1s;
+  visibility: hidden;
+}
+nav .nav-links ul.nav-links-visible {
+  left: 25px;
+  opacity: 1;
+  visibility: visible;
+}
+nav .nav-links ul li a {
+  color: #000;
+  font-size: 1.5em;
+  margin: 25px;
+  opacity: 0;
+  text-decoration: none;
+  transition: 1s;
+  white-space: nowrap;
+}
+nav .nav-links ul li a.nav-link-opaque {
+  opacity: 0.75 !important;
+}
+
+/* ABOUT ME PARAGRAPH */
+.about {
+  display: flex;
+  padding: 21vh 0;
+}
+
+.about-paragraph {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  color: white;
+  font-size: 1.5em;
+  letter-spacing: 1.5px;
+  line-height: 28px;
+  margin: auto;
+  padding: 50px;
+}
+
+.quote {
+  font-style: italic;
+  text-align: center;
+}
+
+blockquote {
+  padding: 50px;
+}
+
+/* PORTFOLIO GRID */
+.portfolio {
+  display: flex;
+  height: 100vh;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  margin: auto;
+}
+
+.square {
+  border-radius: 10px;
+  cursor: pointer;
+  height: 350px;
+  position: relative;
+  width: 100%;
+}
+
+.square img {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.image-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.image-overlay:hover {
+  opacity: 0;
+}
+
+.project-title {
+  align-items: center;
+  display: flex;
+  font-size: 1.1em;
+  height: 15%;
+  justify-content: center;
+  letter-spacing: 2px;
+  margin: auto;
+  text-align: center;
+  width: 40%;
+}
+
+.portfolio-grid .square a {
+  color: black;
+}
+
+.anfhco {
+  display: flex;
+}
+
+.anfhco a {
+  width: 50%;
+}
+
+.anfhco .image-overlay {
+  width: 50%;
+}
+
+.anfhco > img {
+  width: 50%;
+}
+
+.anfhco .anf-br {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.anfhco .hco-br {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.back-to-top {
+  background-color: #f00;
+  border-radius: 5px;
+  bottom: 75px;
+  color: rgba(245, 245, 245, 0.8);
+  cursor: pointer;
+  opacity: 0;
+  padding: 10px;
+  position: fixed;
+  right: -60px;
+  transition: 1s;
+}
+.back-to-top.back-to-top-visible {
+  opacity: 1;
+  right: 45px;
+}
+
+/* Breakpoint for project grid wrap */
+@media only screen and (max-width: 1170px) {
+  .portfolio {
+    height: initial;
+    padding: 21vh 0;
+  }
+}
+/* PHONES */
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 12px;
+  }
+
+  nav {
+    align-items: unset;
+    top: 25px;
+    display: block;
+  }
+
+  .nav-intro {
+    left: 15px;
+  }
+
+  .nav-links-list {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .nav-links-visible {
+    left: 0px;
+  }
+
+  .about-paragraph, blockquote {
+    padding: 20px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .square {
+    height: 250px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

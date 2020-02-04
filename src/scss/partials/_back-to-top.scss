@@ -1,0 +1,19 @@
+// back-to-top.scss
+
+.back-to-top {
+  background-color: $red;
+  border-radius: 5px;
+  bottom: 75px;
+  color:rgba(245, 245, 245, .8);
+  cursor: pointer;
+  opacity: 0;
+  padding: 10px;
+  position: fixed;
+  right: -60px;
+  transition: 1s;
+
+  &.back-to-top-visible {
+    opacity: 1;
+    right: 45px;
+  }
+}

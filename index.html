@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kevin Tate</title>
-    <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./build/style.css">
     <script src="https://kit.fontawesome.com/ff9573f63f.js"></script>
   </head>
   <body>
@@ -18,7 +18,7 @@
       </div>
     </header>
 
-    <nav>
+    <nav class="container">
       <div class="ham-menu">
         <div class="ham one"></div>
         <div class="ham two"></div>
@@ -29,67 +29,66 @@
           <li><a class="scroll" section="about" href="#about">about me</a></li>
           <li><a class="scroll" section="portfolio" href="#portfolio">projects</a></li>
           <li><a class="scroll" section="contact" href="#contact">contact me</a></li>
-          <li><a href="resources/resume/KevinTateResume.docx" download>resume</a></li>
+          <li><a href="src/resume/KevinTateResume.docx" download>resume</a></li>
         </ul>
       </div>
     </nav>
 
-    <section class="container">
-      <div id="about" class="about scroll">
-        <div class="about-paragraph">
-          <p>
-            My name is Kevin Tate and I am a Web Developer living in New York City. Between reading 
-            history books and singing Hamilton, I love to code and build websites. I have over three 
-            years of experience in the software development industry in multiple roles. I am a self-taught 
-            web developer because coding is my passion and designing pretty websites is fun.
-            What's one quote that describes me you ask?
-            <blockquote class="quote">
-              " Look around, look around, at how lucky we are to be alive right now. <br>History is 
-              happening in Manhattan and we just happen to be in the greatest city in the world "<br>
-              - Hamilton the musical, lyrics by Lin-Manuel Miranda
-            </blockquote>
-            Looking forward to hearing from you,<br>
-            Kevin
-          </p>
-        </div>
+    <section id="about" class="about scroll container">
+      <div class="about-paragraph">
+        <p>
+          My name is Kevin Tate and I am a Web Developer living in New York City. Between reading 
+          history books and singing Hamilton, I love to code and build websites. I have over three 
+          years of experience in the software development industry in multiple roles. I am a self-taught 
+          web developer because coding is my passion and designing pretty websites is fun.
+          What's one quote that describes me you ask?
+          <blockquote class="quote">
+            " Look around, look around, at how lucky we are to be alive right now. <br>History is 
+            happening in Manhattan and we just happen to be in the greatest city in the world "<br>
+            - Hamilton the musical, lyrics by Lin-Manuel Miranda
+          </blockquote>
+          Looking forward to hearing from you,<br>
+          Kevin
+        </p>
       </div>
-      <div id="portfolio" class="portfolio">
-        <div class="portfolio-grid">
-          <div class="square anfhco">
-            <a href="https://www.abercrombie.com" target="_blank">
-              <div class="image-overlay anf-br">
-                <div class="project-title color-scheme">ANF</div>
-              </div>
-              <img class="anf-br" src="resources/img/ss_anf.png">
-            </a>
-            <a href="https://www.hollisterco.com" target="_blank">
-              <div class="image-overlay hco-br">
-                <div class="project-title color-scheme">HCO</div>
-              </div>
-              <img class="hco-br" src="resources/img/ss_hco.png">
-            </a>
-          </div>
-          <div class="square">
-            <a href="https://kevinmtate.github.io/matchgame/" target="_blank">
-              <div class="image-overlay">
-                <div class="project-title color-scheme">Matchgame</div>
-              </div>
-              <img src="resources/img/ss_matchgame.png">
-            </a>
-          </div>
-          <div class="square">
-            <a href="https://kevinmtate.github.io/trackster/" target="_blank">
-              <div class="image-overlay">
-                <div class="project-title color-scheme">Trackster</div>
-              </div>
-              <img src="resources/img/ss_trackster.png">
-            </a>
-          </div>
+    </section>
+
+    <section id="portfolio" class="portfolio container">
+      <div class="portfolio-grid">
+        <div class="square anfhco">
+          <a href="https://www.abercrombie.com" target="_blank">
+            <div class="image-overlay anf-br">
+              <div class="project-title color-scheme">ANF</div>
+            </div>
+            <img class="anf-br" src="src/img/ss_anf.png">
+          </a>
+          <a href="https://www.hollisterco.com" target="_blank">
+            <div class="image-overlay hco-br">
+              <div class="project-title color-scheme">HCO</div>
+            </div>
+            <img class="hco-br" src="src/img/ss_hco.png">
+          </a>
+        </div>
+        <div class="square">
+          <a href="https://kevinmtate.github.io/matchgame/" target="_blank">
+            <div class="image-overlay">
+              <div class="project-title color-scheme">Matchgame</div>
+            </div>
+            <img src="src/img/ss_matchgame.png">
+          </a>
+        </div>
+        <div class="square">
+          <a href="https://kevinmtate.github.io/trackster/" target="_blank">
+            <div class="image-overlay">
+              <div class="project-title color-scheme">Trackster</div>
+            </div>
+            <img src="src/img/ss_trackster.png">
+          </a>
         </div>
       </div>
     </section>
 
-    <div class="scroll-to-top">
+    <div class="back-to-top">
       <i class="fas fa-arrow-up fa-2x"></i>
     </div>
 
@@ -115,6 +114,6 @@
       </ul>
     </footer>
 
-    <script src="./resources/js/main.js"></script>
+    <script src="./src/js/main.js"></script>
   </body>
 </html>
