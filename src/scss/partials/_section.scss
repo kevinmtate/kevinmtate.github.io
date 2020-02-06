@@ -1,110 +1,108 @@
+// section.scss
 
+section {
 
-/* ABOUT ME PARAGRAPH */
-.about {
-  display: flex;
-  padding: 21vh 0;
-}
+  /* ABOUT ME PARAGRAPH */
+  &#about {
+    display: flex;
+    padding: 21vh 0;
 
-.about-paragraph {
-  background-color: rgba(0, 0, 0, .5);
-  border-radius: 5px;
-  color: white;
-  font-size: 1.5em;
-  letter-spacing: 1.5px;
-  line-height: 28px;
-  margin: auto;
-  padding: 50px;
-}
+    .about-paragraph {
+      background-color: rgba(0, 0, 0, .5);
+      border-radius: 5px;
+      color: white;
+      font-size: 1.5em;
+      letter-spacing: 1.5px;
+      line-height: 28px;
+      margin: auto;
+      padding: 50px;
 
-.quote {
-  font-style: italic;
-  text-align: center;
-}
+      blockquote {
+        padding: 50px;
+        font-style: italic;
+        text-align: center;
+      }
+    }
+  }
 
-blockquote {
-  padding: 50px;
-}
+  /* PORTFOLIO GRID */
+  &#portfolio {
+    display: flex;
+    height: 100vh;
 
-/* PORTFOLIO GRID */
-.portfolio {
-  display: flex;
-  height: 100vh
-}
+    .portfolio-grid {
+      display: grid;
+      grid-gap: 50px;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      margin: auto;
 
-.portfolio-grid {
-  display: grid;
-  grid-gap: 50px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  margin: auto;
-}
+      .square {
+        border-radius: 10px;
+        cursor: pointer;
+        height: 350px;
+        position: relative;
+        width: 100%;
 
-.square {
-  border-radius: 10px;
-  cursor: pointer;
-  height: 350px;
-  position: relative;
-  width: 100%;
-}
+        a {
+          color: $black;
 
-.square img {
-  border-radius: 10px;
-  height: 100%;
-  width: 100%;
-}
+          .image-overlay {
+            background-color: rgba(0, 0, 0, .75);
+            border-radius: 10px;
+            display: flex;
+            height: 100%;
+            position: absolute;
+            transition: .3s;
+            width: 100%;
 
-.image-overlay {
-  background-color: rgba(0, 0, 0, .75);
-  border-radius: 10px;
-  display: flex;
-  height: 100%;
-  position: absolute;
-  transition: .3s;
-  width: 100%;
-}
+            &:hover {
+              opacity: 0;
+            }
 
-.image-overlay:hover {
-  opacity: 0;
-}
+            .project-title {
+              align-items: center;
+              display: flex;
+              font-size: 1.1em;
+              height: 15%;
+              justify-content: center;
+              letter-spacing: 2px;
+              margin: auto;
+              text-align: center;
+              width: 40%;
+            }
+          }
 
-.project-title {
-  align-items: center;
-  display: flex;
-  font-size: 1.1em;
-  height: 15%;
-  justify-content: center;
-  letter-spacing: 2px;
-  margin: auto;
-  text-align: center;
-  width: 40%;
-}
+          img {
+            border-radius: 10px;
+            height: 100%;
+            width: 100%;
+          }
+        }
 
-.portfolio-grid .square a {
-  color: black;
-}
+        &.anfhco {
+          display: flex;
 
-.anfhco {
-  display: flex;
-}
+          a {
+            width: 50%;
 
-.anfhco a {
-  width: 50%;
-}
+            .image-overlay {
+              width: 50%;
+            }
 
-.anfhco .image-overlay {
-  width: 50%;
-}
+            img {
+              &.anf-br {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+              }
 
-.anfhco > img {
-  width: 50%;
-}
-
-.anfhco .anf-br {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.anfhco .hco-br {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+              &.hco-br {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -52,6 +53,30 @@ table {
   border-spacing: 0;
 }
 
+@keyframes background-intro {
+  from {
+    transform: scale(1) rotate(180deg);
+  }
+  to {
+    transform: scale(1.05) rotate(180deg);
+  }
+}
+img.background {
+  animation: background-intro 1s forwards;
+  bottom: 0;
+  filter: grayscale(50%);
+  position: fixed;
+  top: 5vh;
+  transform: rotate(180deg);
+  max-width: 100%;
+  z-index: -1;
+}
+@media (max-width: 1200px) {
+  img.background {
+    max-width: 1200px;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -65,25 +90,6 @@ html {
   border: 1px solid #f00;
   border-radius: 5px;
   color: #000;
-}
-
-/* BACKGROUND */
-@keyframes background-intro {
-  from {
-    transform: 0;
-  }
-  to {
-    transform: scale(1.05);
-  }
-}
-.background {
-  animation: background-intro 2s forwards;
-  background-size: cover;
-  background-image: url("./../src/img/nycbi.jpg");
-  height: 100vh;
-  position: fixed;
-  width: 100%;
-  z-index: -1;
 }
 
 footer .background-image-credit {
@@ -121,49 +127,71 @@ footer ul li a .popup.popup-visible {
   z-index: 1;
 }
 
-@keyframes name-intro {
+header {
+  align-items: center;
+  background-color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  height: 5vh;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 25px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+header .id-panel {
+  animation: id-panel-intro 1s 0.5s forwards;
+  position: relative;
+  opacity: 0;
+  right: 0;
+}
+header .id-panel p {
+  text-transform: uppercase;
+}
+
+@keyframes header-intro {
   from {
-    left: -100vw;
+    top: -5vh;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes id-panel-intro {
+  from {
+    opacity: 0;
+    right: -50%;
+  }
+  to {
+    opacity: 1;
+    right: 0;
+  }
+}
+nav {
+  animation: nav-intro 1s;
+  left: 0;
+  position: relative;
+}
+nav ul {
+  display: flex;
+}
+nav ul li {
+  margin-right: 25px;
+}
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+}
+@keyframes nav-intro {
+  from {
+    left: -50%;
   }
   to {
     left: 0;
   }
 }
-@keyframes title-intro {
-  from {
-    right: -100vw;
-  }
-  to {
-    right: 0;
-  }
-}
-header {
-  display: flex;
-  height: 100vh;
-  text-align: center;
-}
-header > div {
-  margin: auto;
-  margin-top: 32vh;
-}
-header > div h1 {
-  animation: name-intro 2s forwards;
-  color: #f00;
-  font-size: 5em;
-  font-weight: normal;
-  position: relative;
-  text-transform: uppercase;
-}
-header > div h1 .capital {
-  font-size: 1.25em;
-  text-transform: uppercase;
-}
-header > div p {
-  animation: title-intro 2s forwards;
-  font-size: 2em;
-  position: relative;
-}
-
 .ham-menu {
   animation: ham-intro 2s;
   cursor: pointer;
@@ -192,39 +220,6 @@ header > div p {
   transform: rotate(-45deg) translate(12px, -14px);
 }
 
-nav {
-  background-color: #fff;
-  border-bottom: 1px solid #f00;
-  left: -100%;
-  opacity: 1;
-  position: fixed;
-  top: 0;
-  transition: left 1s;
-  width: 100%;
-  z-index: 10;
-}
-nav.nav-expanded {
-  left: 0;
-}
-nav ul {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 25px 0;
-}
-nav ul li a {
-  color: #000;
-  font-size: 1.5em;
-  letter-spacing: 1px;
-  text-decoration: none;
-}
-@keyframes nav-opacity {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @keyframes ham-intro {
   from {
     left: -10%;
@@ -233,13 +228,15 @@ nav ul li a {
     left: 10px;
   }
 }
-/* ABOUT ME PARAGRAPH */
-.about {
+section {
+  /* ABOUT ME PARAGRAPH */
+  /* PORTFOLIO GRID */
+}
+section#about {
   display: flex;
   padding: 21vh 0;
 }
-
-.about-paragraph {
+section#about .about-paragraph {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   color: white;
@@ -249,44 +246,32 @@ nav ul li a {
   margin: auto;
   padding: 50px;
 }
-
-.quote {
+section#about .about-paragraph blockquote {
+  padding: 50px;
   font-style: italic;
   text-align: center;
 }
-
-blockquote {
-  padding: 50px;
-}
-
-/* PORTFOLIO GRID */
-.portfolio {
+section#portfolio {
   display: flex;
   height: 100vh;
 }
-
-.portfolio-grid {
+section#portfolio .portfolio-grid {
   display: grid;
   grid-gap: 50px;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   margin: auto;
 }
-
-.square {
+section#portfolio .portfolio-grid .square {
   border-radius: 10px;
   cursor: pointer;
   height: 350px;
   position: relative;
   width: 100%;
 }
-
-.square img {
-  border-radius: 10px;
-  height: 100%;
-  width: 100%;
+section#portfolio .portfolio-grid .square a {
+  color: #000;
 }
-
-.image-overlay {
+section#portfolio .portfolio-grid .square a .image-overlay {
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 10px;
   display: flex;
@@ -295,12 +280,10 @@ blockquote {
   transition: 0.3s;
   width: 100%;
 }
-
-.image-overlay:hover {
+section#portfolio .portfolio-grid .square a .image-overlay:hover {
   opacity: 0;
 }
-
-.project-title {
+section#portfolio .portfolio-grid .square a .image-overlay .project-title {
   align-items: center;
   display: flex;
   font-size: 1.1em;
@@ -311,35 +294,32 @@ blockquote {
   text-align: center;
   width: 40%;
 }
-
-.portfolio-grid .square a {
-  color: black;
+section#portfolio .portfolio-grid .square a img {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
 }
-
-.anfhco {
+section#portfolio .portfolio-grid .square.anfhco {
   display: flex;
 }
-
-.anfhco a {
+section#portfolio .portfolio-grid .square.anfhco a {
   width: 50%;
 }
-
-.anfhco .image-overlay {
+section#portfolio .portfolio-grid .square.anfhco a .image-overlay {
   width: 50%;
 }
-
-.anfhco > img {
-  width: 50%;
-}
-
-.anfhco .anf-br {
+section#portfolio .portfolio-grid .square.anfhco a img.anf-br {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-
-.anfhco .hco-br {
+section#portfolio .portfolio-grid .square.anfhco a img.hco-br {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .back-to-top {

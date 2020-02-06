@@ -14,23 +14,3 @@ html {
   border-radius: 5px;
   color: $black;
 }
-
-/* BACKGROUND */
-@keyframes background-intro {
-  from {
-    transform: 0;
-  }
-  to {
-    transform: scale(1.05);
-  }
-}
-
-.background {
-  animation: background-intro 2s forwards;
-  background-size: cover;
-  background-image: url("./../src/img/nycbi.jpg");
-  height: 100vh;
-  position: fixed;
-  width: 100%;
-  z-index: -1;
-}

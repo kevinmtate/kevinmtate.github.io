@@ -1,50 +1,48 @@
 // header.scss
 
-@keyframes name-intro {
-  from {
-    left: -100vw;
-  }
-  to {
-    left: 0;
-  }
-}
-
-@keyframes title-intro {
-  from {
-    right: -100vw;
-  }
-  to {
-    right: 0;
-  }
-}
-
 header {
+  align-items: center;
+  // animation: header-intro $intro-timing;
+  background-color: $white;
+  box-sizing: border-box;
   display: flex;
-  height: 100vh;
-  text-align: center;
+  height: 5vh;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 25px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 
-  > div {
-    margin: auto;
-    margin-top: 32vh;
-
-    h1 {
-      animation: name-intro 2s forwards;
-      color: $red;
-      font-size: 5em;
-      font-weight: normal;
-      position: relative;
-      text-transform: uppercase;
-
-      .capital {
-        font-size: 1.25em;
-        text-transform: uppercase;
-      }
-    }
+  .id-panel {
+    animation: id-panel-intro $intro-timing .5s forwards;
+    position: relative;
+    opacity: 0;
+    right: 0;
 
     p {
-      animation: title-intro 2s forwards;
-      font-size: 2em;
-      position: relative;
+      text-transform: uppercase;
     }
+  }
+}
+
+@keyframes header-intro {
+  from {
+    top: -5vh;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes id-panel-intro {
+  from {
+    opacity: 0;
+    right: -50%;
+  }
+  to {
+    opacity: 1;
+    right: 0;
   }
 }
