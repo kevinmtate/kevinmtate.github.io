@@ -3,8 +3,8 @@
 $nav-left: 10px;
 
 nav {
-  animation: nav-intro $intro-timing;
   left: 0;
+  opacity: 0;
   position: relative;
 
   ul {
@@ -14,7 +14,7 @@ nav {
       margin-right: 25px;
 
       a {
-        color: $black;
+        color: $white;
         text-decoration: none;
       }
     }
@@ -22,61 +22,5 @@ nav {
 
   @media only screen and (max-width: $mobile-breakpoint) {
    
-  }
-}
-
-@keyframes nav-intro {
-  from {
-    left: -50%;
-  }
-  to {
-    left: 0;
-  }
-}
-
-// HAM MENU
-.ham-menu {
-  animation: ham-intro 2s;
-  cursor: pointer;
-  left: $nav-left;
-  position: fixed;
-  top: 25px;
-  z-index: 100;
-
-  .ham {
-    background-color: $red;
-    height: 3px;
-    margin-bottom: 10px;
-    transition: 1s;
-    width: 45px;
-
-    &.one {
-      &-clicked {
-        transform: rotate(45deg) translate(6px, 5px);
-      }
-    }
-    
-    &.two {
-      transition: .5s;
-
-      &-clicked {
-        opacity: 0;
-      }
-    }
-    
-    &.three {
-      &-clicked {
-        transform: rotate(-45deg) translate(12px, -14px);
-      }
-    }
-  }
-}
-
-@keyframes ham-intro {
-  from {
-    left: -10%;
-  }
-  to {
-    left: $nav-left;
   }
 }

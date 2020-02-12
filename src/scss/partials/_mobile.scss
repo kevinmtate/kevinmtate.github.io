@@ -1,6 +1,7 @@
+// mobile.scss
 
 /* Breakpoint for project grid wrap */
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: $desktop-breakpoint) {
   .portfolio {
       height: initial;
       padding: 21vh 0;
@@ -8,7 +9,7 @@
 }
 
 /* PHONES */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: $mobile-breakpoint) {
   html {
       font-size: 12px;
   }

@@ -1,0 +1,50 @@
+// animation.scss
+$intro-timing: .5s;
+$delay-start: .5s;
+
+@keyframes background-intro {
+  from {
+    transform: scale(1.025) rotate(180deg);
+  }
+  to {
+    transform: scale(1) rotate(180deg);
+  }
+}
+@keyframes id_panel--intro {
+  from {
+    opacity: 1;
+    left: 360%;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes nav-intro {
+  from {
+    left: -50%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+.background img {
+  animation: background-intro 3s;
+}
+header .id_panel {
+  &--name {
+    animation: id_panel--intro $intro-timing $delay-start forwards;
+  }
+  &--title {
+    animation: id_panel--intro $intro-timing ($delay-start + .5s) forwards;
+  }
+  &--location {
+    animation: id_panel--intro $intro-timing ($delay-start + 1s) forwards;
+  }
+}
+nav {
+  animation: nav-intro $intro-timing ($delay-start + 2s) forwards;
+}

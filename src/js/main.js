@@ -1,7 +1,7 @@
 (function() {
   document.addEventListener("DOMContentLoaded", function() {
     addEventHandlers();
-    containerScroll();
+    // containerScroll();
   });
 
   const addEventHandlers = () => {

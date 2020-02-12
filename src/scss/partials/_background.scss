@@ -1,25 +1,21 @@
 // background.scss
 
-@keyframes background-intro {
-  from {
-    transform: scale(1) rotate(180deg);
-  }
-  to {
-    transform: scale(1.05) rotate(180deg);
-  }
-}
-
-img.background {
-  animation: background-intro $intro-timing forwards;
+.background {
   bottom: 0;
-  filter: grayscale(50%);
+  height: 100vh;
   position: fixed;
-  top: 5vh;
-  transform: rotate(180deg);
-  max-width: 100%;
-  z-index: -1;
+  top: 0;
+  width: 100vw;
+  z-index: 0;
+  
+  img {
+    filter: grayscale(50%);
+    height: auto;
+    transform: rotate(180deg);
+    width: 100%;
+  }
 
-  @media (max-width: 1200px) {
-    max-width: 1200px;
+  @media (max-width: 1300px) {
+    min-width: 1300px;
   }
 }

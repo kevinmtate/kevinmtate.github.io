@@ -2,9 +2,9 @@
 
 header {
   align-items: center;
-  // animation: header-intro $intro-timing;
-  background-color: $white;
+  // background-color: $white;
   box-sizing: border-box;
+  color: $white;
   display: flex;
   height: 5vh;
   justify-content: space-between;
@@ -15,34 +15,19 @@ header {
   width: 100%;
   z-index: 10;
 
-  .id-panel {
-    animation: id-panel-intro $intro-timing .5s forwards;
+  .id_panel {
     position: relative;
-    opacity: 0;
     right: 0;
 
-    p {
+    > div {
+      display: inline-block;
       text-transform: uppercase;
     }
-  }
-}
-
-@keyframes header-intro {
-  from {
-    top: -5vh;
-  }
-  to {
-    top: 0;
-  }
-}
-
-@keyframes id-panel-intro {
-  from {
-    opacity: 0;
-    right: -50%;
-  }
-  to {
-    opacity: 1;
-    right: 0;
+    
+    &--name, &--title, &--location {
+      left: 0;
+      opacity: 0;
+      position: relative;
+    }
   }
 }
