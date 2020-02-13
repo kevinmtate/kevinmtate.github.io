@@ -14,3 +14,24 @@ html {
   border-radius: 5px;
   color: $black;
 }
+
+.viewport {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  transition: 1s all;
+  left: 0;
+
+  &.show {
+    
+    &--about {
+      left: -100vw;
+    }
+  }
+
+  section {
+    width: 100vw;
+  }
+}

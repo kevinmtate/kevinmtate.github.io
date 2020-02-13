@@ -88,6 +88,22 @@ html {
   color: #000;
 }
 
+.viewport {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  transition: 1s all;
+  left: 0;
+}
+.viewport.show--about {
+  left: -100vw;
+}
+.viewport section {
+  width: 100vw;
+}
+
 footer .background-image-credit {
   color: #fff;
   opacity: 0.8;
@@ -166,98 +182,33 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
 }
-section {
-  /* ABOUT ME PARAGRAPH */
-  /* PORTFOLIO GRID */
+body {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
 }
+
 section#about {
+  background-color: #f8f8f8;
   display: flex;
-  padding: 21vh 0;
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 section#about .about-paragraph {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  color: white;
-  font-size: 1.5em;
-  letter-spacing: 1.5px;
-  line-height: 28px;
-  margin: auto;
+  border-radius: 1px;
+  color: black;
   padding: 50px;
+  margin: auto;
+  width: 95%;
+  box-sizing: border-box;
 }
 section#about .about-paragraph blockquote {
   padding: 50px;
   font-style: italic;
   text-align: center;
-}
-section#portfolio {
-  display: flex;
-  height: 100vh;
-}
-section#portfolio .portfolio-grid {
-  display: grid;
-  grid-gap: 50px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  margin: auto;
-}
-section#portfolio .portfolio-grid .square {
-  border-radius: 10px;
-  cursor: pointer;
-  height: 350px;
-  position: relative;
-  width: 100%;
-}
-section#portfolio .portfolio-grid .square a {
-  color: #000;
-}
-section#portfolio .portfolio-grid .square a .image-overlay {
-  background-color: rgba(0, 0, 0, 0.75);
-  border-radius: 10px;
-  display: flex;
-  height: 100%;
-  position: absolute;
-  transition: 0.3s;
-  width: 100%;
-}
-section#portfolio .portfolio-grid .square a .image-overlay:hover {
-  opacity: 0;
-}
-section#portfolio .portfolio-grid .square a .image-overlay .project-title {
-  align-items: center;
-  display: flex;
-  font-size: 1.1em;
-  height: 15%;
-  justify-content: center;
-  letter-spacing: 2px;
-  margin: auto;
-  text-align: center;
-  width: 40%;
-}
-section#portfolio .portfolio-grid .square a img {
-  border-radius: 10px;
-  height: 100%;
-  width: 100%;
-}
-section#portfolio .portfolio-grid .square.anfhco {
-  display: flex;
-}
-section#portfolio .portfolio-grid .square.anfhco a {
-  width: 50%;
-}
-section#portfolio .portfolio-grid .square.anfhco a .image-overlay {
-  width: 50%;
-}
-section#portfolio .portfolio-grid .square.anfhco a img.anf-br {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-section#portfolio .portfolio-grid .square.anfhco a img.hco-br {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-body {
-  font-size: 16px;
-  font-family: "Open Sans", sans-serif;
 }
 
 @keyframes background-intro {

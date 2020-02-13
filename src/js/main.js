@@ -1,15 +1,22 @@
 (function() {
   document.addEventListener("DOMContentLoaded", function() {
-    addEventHandlers();
+    // addEventHandlers();
     // containerScroll();
+
+    const viewport = document.querySelector('.viewport');
+    const navLinks = document.querySelectorAll('nav li a');
+
+    navLinks[0].addEventListener('click', () => {
+      viewport.classList.toggle('show--about');
+    });
   });
 
   const addEventHandlers = () => {
 
     // document.querySelector('.ham-menu').addEventListener("click", hamburgerMenuClick);
 
-    [...document.querySelectorAll('.scroll')].forEach(function(el) {
-        el.addEventListener("click", smoothScrolling);
+    document.getElementById('about').addEventListener('click', () => {
+      document.getElementById('about').classList.toggle('show');
     });
 
     [...document.querySelectorAll('.link-with-popup')].forEach(function(el) {
