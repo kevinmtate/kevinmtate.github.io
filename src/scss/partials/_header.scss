@@ -1,21 +1,16 @@
 // header.scss
 
 header {
-  align-items: center;
-  // background-color: $white;
-  box-sizing: border-box;
   color: $white;
   display: flex;
-  height: 5vh;
-  justify-content: space-between;
-  left: 0;
-  padding: 0 25px;
+  right: 0;
+  padding: 10px 25px;
   position: fixed;
   top: 0;
-  width: 100%;
   z-index: 10;
 
   .id_panel {
+    font-size: 25px;
     position: relative;
     right: 0;
 
@@ -26,7 +21,7 @@ header {
     
     &--name, &--title, &--location {
       left: 0;
-      opacity: 1;
+      opacity: 0;
       position: relative;
     }
   }

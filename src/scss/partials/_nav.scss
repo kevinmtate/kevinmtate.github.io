@@ -3,19 +3,25 @@
 $nav-left: 10px;
 
 nav {
+  font-size: 50px;
   left: 0;
   opacity: 0;
-  position: relative;
+  padding: 10px;
+  position: fixed;
+  top: 12vw;
 
   ul {
-    display: flex;
 
     li {
-      margin-right: 25px;
+      margin-top: 15px;
 
-      a {
+      a, span {
         color: $white;
-        text-decoration: none;
+      }
+
+      span.resume_file_info {
+        font-size: 25px;
+        margin-left: 5px;
       }
     }
   }
