@@ -2,21 +2,25 @@
 
 section#about {
   display: flex;
+  justify-content: flex-end;
+  position: relative;
 
-  // &:before {
-  //   background-color: $white;
-  //   content: '';
-  //   height: 150%;
-  //   // right: -110%;
-  //   transform: rotate(-10deg);
-  //   width: 100%;
-  //   z-index: 1;
-  // }
+  &:before {
+    background-color: $offwhite;
+    content: '';
+    height: 200%;
+    left: 40%;
+    position: absolute;
+    top: -50%;
+    transform: rotate(-10deg);
+    width: 100%;
+  }
 
   .about-paragraph {
     color: $black;
     padding: 50px;
-    margin: auto;
+    position: relative;
+    width: 50%;
 
     blockquote {
       padding: 25px;

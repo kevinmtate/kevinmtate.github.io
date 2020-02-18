@@ -82,10 +82,10 @@ html {
 
 .content {
   height: 100vw;
-  width: 100vh;
+  overflow-y: scroll;
   transform: rotate(-90deg) translateY(-100vh);
   transform-origin: top right;
-  overflow-y: scroll;
+  width: 100vh;
 }
 .content section {
   height: 100vh;
@@ -160,6 +160,7 @@ nav {
   padding: 10px;
   position: fixed;
   top: 12vw;
+  z-index: 100;
 }
 nav ul li {
   margin-top: 15px;
@@ -178,11 +179,24 @@ body {
 
 section#about {
   display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+section#about:before {
+  background-color: #f8f8f8;
+  content: "";
+  height: 200%;
+  left: 40%;
+  position: absolute;
+  top: -50%;
+  transform: rotate(-10deg);
+  width: 100%;
 }
 section#about .about-paragraph {
   color: #000;
   padding: 50px;
-  margin: auto;
+  position: relative;
+  width: 50%;
 }
 section#about .about-paragraph blockquote {
   padding: 25px;
