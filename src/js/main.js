@@ -2,12 +2,16 @@
   document.addEventListener("DOMContentLoaded", function() {
     // addEventHandlers();
 
-    const viewport = document.querySelector('.viewport');
-    const navLinks = document.querySelectorAll('nav li a');
+    const vpw = window.innerWidth;
+    const vph = window.innerHeight;
+    const diff = vpw - vph;
 
-    navLinks[0].addEventListener('click', () => {
-      viewport.classList.toggle('show--about');
-    });
+    const sections = document.querySelectorAll('.content section');
+    [...sections].forEach(el => {
+      el.style.transform = 'rotate(90deg) translateY(' + diff / 2 + 'px)';
+      el.style.marginTop = diff + 'px';
+    })
+    sections[0].style.marginTop = diff / 2 + 'px';
   });
 
   const addEventHandlers = () => {

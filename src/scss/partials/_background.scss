@@ -1,21 +1,14 @@
 // background.scss
 
 .background {
-  bottom: 0;
-  height: 100vh;
+  left: 0;
+  min-width: 1333px;
   position: fixed;
   top: 0;
-  width: 100vw;
-  z-index: 0;
   
   img {
-    filter: grayscale(50%);
     height: auto;
     transform: rotate(180deg);
     width: 100%;
-  }
-
-  @media (max-width: 1300px) {
-    min-width: 1300px;
   }
 }

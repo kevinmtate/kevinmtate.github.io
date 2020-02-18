@@ -1,0 +1,14 @@
+// content.scss
+
+.content {
+  height: 100vw;
+  width: 100vh;
+  transform: rotate(-90deg) translateY(-100vh);
+	transform-origin: top right;
+  overflow-y: scroll;
+
+  section {
+    height: 100vh;
+    width: 100vw;
+  }
+}

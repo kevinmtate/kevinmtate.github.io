@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Comfortaa&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,23 +54,15 @@ table {
 }
 
 .background {
-  bottom: 0;
-  height: 100vh;
+  left: 0;
+  min-width: 1333px;
   position: fixed;
   top: 0;
-  width: 100vw;
-  z-index: 0;
 }
 .background img {
-  filter: grayscale(50%);
   height: auto;
   transform: rotate(180deg);
   width: 100%;
-}
-@media (max-width: 1300px) {
-  .background {
-    min-width: 1300px;
-  }
 }
 
 html {
@@ -88,19 +80,15 @@ html {
   color: #000;
 }
 
-.viewport {
-  display: flex;
-  position: fixed;
-  width: 100vw;
+.content {
+  height: 100vw;
+  width: 100vh;
+  transform: rotate(-90deg) translateY(-100vh);
+  transform-origin: top right;
+  overflow-y: scroll;
+}
+.content section {
   height: 100vh;
-  top: 0;
-  transition: 1s all;
-  left: 0;
-}
-.viewport.show--about {
-  left: -100vw;
-}
-.viewport section {
   width: 100vw;
 }
 
@@ -149,7 +137,9 @@ header {
   z-index: 10;
 }
 header .id_panel {
+  font-family: sans-serif;
   font-size: 25px;
+  letter-spacing: 1px;
   position: relative;
   right: 0;
 }
@@ -183,38 +173,30 @@ nav ul li span.resume_file_info {
 }
 body {
   font-size: 16px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Comfortaa", serif;
 }
 
 section#about {
-  background-color: #f8f8f8;
   display: flex;
-  opacity: 0.9;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  height: 100vh;
-  width: 100vw;
 }
 section#about .about-paragraph {
-  border-radius: 1px;
-  color: black;
+  color: #000;
   padding: 50px;
   margin: auto;
-  width: 95%;
-  box-sizing: border-box;
 }
 section#about .about-paragraph blockquote {
-  padding: 50px;
+  padding: 25px;
   font-style: italic;
   text-align: center;
 }
 
 @keyframes background-intro {
   from {
+    filter: grayscale(1);
     transform: scale(1.025) rotate(180deg);
   }
   to {
+    filter: grayscale(0);
     transform: scale(1) rotate(180deg);
   }
 }
@@ -239,7 +221,7 @@ section#about .about-paragraph blockquote {
   }
 }
 .background img {
-  animation: background-intro 3s;
+  animation: background-intro ease-out 3s;
 }
 
 header .id_panel--name {
