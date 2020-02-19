@@ -9,13 +9,16 @@
   img {
     height: auto;
     transform: rotate(180deg);
-    transition: filter $scrollAnim-timing;
     width: 100%;
   }
 
-  &.background--scrolled {
-    img {
-      filter: grayscale(1);
-    }
+  .background-filter {
+    background-color: black;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 }

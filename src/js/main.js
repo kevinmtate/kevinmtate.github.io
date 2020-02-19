@@ -8,20 +8,29 @@
   const init = () => {
     initContentWidth();
 
-    const contentEl   = document.querySelector('.content');
-    const titleEl     = document.querySelector('header');
-    const navEl       = document.querySelector('nav');
-    const background  = document.querySelector('.background');
+    const contentEl         = document.querySelector('.content');
+    const titleEl           = document.querySelector('header');
+    const navUl             = document.querySelector('nav ul');
+    const backgroundFilter  = document.querySelector('.background-filter');
+    const overlay           = document.querySelector('.overlay');
 
     contentEl.addEventListener('scroll', () => {
-      if (contentEl.scrollTop) {
-        titleEl.classList.add('title--scrolled');
-        navEl.classList.add('nav--scrolled');
-        background.classList.add('background--scrolled');
-      } else {
+      const scrollTop = contentEl.scrollTop;
+
+      scrollTop ? 
+        titleEl.classList.add('title--scrolled') :
         titleEl.classList.remove('title--scrolled');
-        navEl.classList.remove('nav--scrolled');
-        background.classList.remove('background--scrolled');
+
+      if ((scrollTop / window.innerHeight) < .4) {
+        navUl.style.top = scrollTop + "px";
+      }
+      if ((scrollTop / window.innerWidth) < .7) {
+        // overlay
+      }
+      if (backgroundFilter.style.opacity < .75) {
+        backgroundFilter.style.opacity = scrollTop / 1000;
+      } else if (scrollTop === 0) {
+        backgroundFilter.style.opacity = 0;
       }
     });
   }

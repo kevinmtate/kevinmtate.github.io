@@ -7,7 +7,7 @@ header {
   padding: 10px 25px;
   position: fixed;
   top: 0;
-  transition: color $scrollAnim-timing;
+  transition: color .5s;
   z-index: 10;
 
   &.title--scrolled {

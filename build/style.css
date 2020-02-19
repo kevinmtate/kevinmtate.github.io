@@ -62,11 +62,16 @@ table {
 .background img {
   height: auto;
   transform: rotate(180deg);
-  transition: filter 3s;
   width: 100%;
 }
-.background.background--scrolled img {
-  filter: grayscale(1);
+.background .background-filter {
+  background-color: black;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 html {
@@ -109,6 +114,7 @@ body {
 .content {
   height: 100vw;
   -ms-overflow-style: none;
+  overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
   transform: rotate(-90deg) translateY(-100vh);
@@ -121,10 +127,9 @@ body {
 }
 .content .overlay {
   background-color: #f8f8f8;
-  content: "";
   height: 100%;
   left: -25%;
-  position: absolute;
+  position: fixed;
   top: 122%;
   transform: rotate(-10deg);
   width: 200%;
@@ -172,7 +177,7 @@ header {
   padding: 10px 25px;
   position: fixed;
   top: 0;
-  transition: color 3s;
+  transition: color 0.5s;
   z-index: 10;
 }
 header.title--scrolled {
@@ -196,21 +201,22 @@ header .id_panel--name, header .id_panel--title, header .id_panel--location {
 }
 
 nav {
-  font-size: 50px;
-  left: 0;
+  font-size: 3vw;
+  left: -50%;
   padding: 10px;
   position: fixed;
-  bottom: 0;
-  transition: all 3s;
+  bottom: 40%;
   z-index: 100;
-  animation: nav-intro 3s;
+  animation: nav-intro 0.5s 2.5s forwards;
+}
+nav ul {
+  position: relative;
 }
 nav ul li {
   margin-bottom: 15px;
 }
 nav ul li a, nav ul li span {
   color: #fff;
-  transition: all 3s;
 }
 nav ul li span.resume_file_info {
   font-size: 25px;
@@ -219,12 +225,9 @@ nav ul li span.resume_file_info {
 nav.nav--scrolled {
   bottom: 0;
 }
-nav.nav--scrolled ul li a, nav.nav--scrolled ul li span {
-  color: #000;
-}
 @keyframes nav-intro {
   from {
-    left: -500%;
+    left: -50%;
   }
   to {
     left: 0;

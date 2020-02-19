@@ -3,6 +3,7 @@
 .content {
   height: 100vw;
   -ms-overflow-style: none;
+  overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
   transform: rotate(-90deg) translateY(-100vh);
@@ -16,10 +17,9 @@
 
   .overlay {
     background-color: $offwhite;
-    content: '';
     height: 100%;
     left: -25%;
-    position: absolute;
+    position: fixed;
     top: 122%;
     transform: rotate(-10deg);
     width: 200%;
