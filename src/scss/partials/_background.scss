@@ -5,10 +5,17 @@
   min-width: 1333px;
   position: fixed;
   top: 0;
-  
+
   img {
     height: auto;
     transform: rotate(180deg);
+    transition: filter $scrollAnim-timing;
     width: 100%;
+  }
+
+  &.background--scrolled {
+    img {
+      filter: grayscale(1);
+    }
   }
 }

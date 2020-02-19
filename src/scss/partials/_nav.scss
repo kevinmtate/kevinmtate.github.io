@@ -1,23 +1,22 @@
 // nav.scss
 
-$nav-left: 10px;
-
 nav {
   font-size: 50px;
   left: 0;
-  opacity: 0;
   padding: 10px;
   position: fixed;
-  top: 12vw;
+  bottom: 0;
+  transition: all $scrollAnim-timing;
   z-index: 100;
 
   ul {
 
     li {
-      margin-top: 15px;
+      margin-bottom: 15px;
 
       a, span {
         color: $white;
+        transition: all $scrollAnim-timing;
       }
 
       span.resume_file_info {
@@ -27,6 +26,26 @@ nav {
     }
   }
 
+  &.nav--scrolled {
+    bottom: 0;
+
+    ul li a, ul li span {
+      color: $black;
+    }
+  }
+
+  // animation
+  @keyframes nav-intro {
+    from {
+      left: -500%;
+    }
+    to {
+      left: 0;
+    }
+  }
+  animation: nav-intro 3s;
+
+  // media queries
   @media only screen and (max-width: $mobile-breakpoint) {
    
   }

@@ -7,7 +7,12 @@ header {
   padding: 10px 25px;
   position: fixed;
   top: 0;
+  transition: color $scrollAnim-timing;
   z-index: 10;
+
+  &.title--scrolled {
+    color: $black;
+  }
 
   .id_panel {
     font-family: sans-serif;

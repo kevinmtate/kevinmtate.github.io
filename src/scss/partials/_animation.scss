@@ -1,6 +1,4 @@
 // animation.scss
-$intro-timing: .5s;
-$delay-start: .5s;
 
 @keyframes background-intro {
   from {
@@ -24,16 +22,6 @@ $delay-start: .5s;
     left: 0;
   }
 }
-@keyframes nav-intro {
-  from {
-    left: -50%;
-    opacity: 0;
-  }
-  to {
-    left: 0;
-    opacity: 1;
-  }
-}
 
 .background img {
   animation: background-intro ease-out 3s;
@@ -48,7 +36,4 @@ header .id_panel {
   &--location {
     animation: id_panel--intro $intro-timing ($delay-start + 1s) forwards;
   }
-}
-nav {
-  animation: nav-intro $intro-timing ($delay-start + 2s) forwards;
 }

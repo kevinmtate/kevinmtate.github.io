@@ -62,7 +62,11 @@ table {
 .background img {
   height: auto;
   transform: rotate(180deg);
+  transition: filter 3s;
   width: 100%;
+}
+.background.background--scrolled img {
+  filter: grayscale(1);
 }
 
 html {
@@ -106,16 +110,24 @@ body {
   height: 100vw;
   -ms-overflow-style: none;
   overflow-y: scroll;
+  position: relative;
   transform: rotate(-90deg) translateY(-100vh);
   transform-origin: top right;
   width: 100vh;
 }
-.content::-webkit-scrollbar {
-  display: none;
-}
 .content section {
   height: 100vh;
   width: 100vw;
+}
+.content .overlay {
+  background-color: #f8f8f8;
+  content: "";
+  height: 100%;
+  left: -25%;
+  position: absolute;
+  top: 122%;
+  transform: rotate(-10deg);
+  width: 200%;
 }
 
 footer .background-image-credit {
@@ -160,7 +172,11 @@ header {
   padding: 10px 25px;
   position: fixed;
   top: 0;
+  transition: color 3s;
   z-index: 10;
+}
+header.title--scrolled {
+  color: #000;
 }
 header .id_panel {
   font-family: sans-serif;
@@ -182,25 +198,52 @@ header .id_panel--name, header .id_panel--title, header .id_panel--location {
 nav {
   font-size: 50px;
   left: 0;
-  opacity: 0;
   padding: 10px;
   position: fixed;
-  top: 12vw;
+  bottom: 0;
+  transition: all 3s;
   z-index: 100;
+  animation: nav-intro 3s;
 }
 nav ul li {
-  margin-top: 15px;
+  margin-bottom: 15px;
 }
 nav ul li a, nav ul li span {
   color: #fff;
+  transition: all 3s;
 }
 nav ul li span.resume_file_info {
   font-size: 25px;
   margin-left: 5px;
 }
+nav.nav--scrolled {
+  bottom: 0;
+}
+nav.nav--scrolled ul li a, nav.nav--scrolled ul li span {
+  color: #000;
+}
+@keyframes nav-intro {
+  from {
+    left: -500%;
+  }
+  to {
+    left: 0;
+  }
+}
 body {
   font-size: 16px;
   font-family: "Comfortaa", serif;
+}
+
+h2 {
+  font-size: 50px;
+  margin-bottom: 25px;
+  text-decoration: underline;
+}
+
+p, blockquote {
+  letter-spacing: 1px;
+  line-height: 1.25em;
 }
 
 section#about {
@@ -208,21 +251,11 @@ section#about {
   justify-content: flex-end;
   position: relative;
 }
-section#about:before {
-  background-color: #f8f8f8;
-  content: "";
-  height: 200%;
-  left: 40%;
-  position: absolute;
-  top: -50%;
-  transform: rotate(-10deg);
-  width: 100%;
-}
 section#about .about-paragraph {
   color: #000;
-  padding: 50px;
+  padding: 65px;
   position: relative;
-  width: 50%;
+  width: 65%;
 }
 section#about .about-paragraph blockquote {
   padding: 25px;
@@ -250,16 +283,6 @@ section#about .about-paragraph blockquote {
     left: 0;
   }
 }
-@keyframes nav-intro {
-  from {
-    left: -50%;
-    opacity: 0;
-  }
-  to {
-    left: 0;
-    opacity: 1;
-  }
-}
 .background img {
   animation: background-intro ease-out 3s;
 }
@@ -272,10 +295,6 @@ header .id_panel--title {
 }
 header .id_panel--location {
   animation: id_panel--intro 0.5s 1.5s forwards;
-}
-
-nav {
-  animation: nav-intro 0.5s 2.5s forwards;
 }
 
 .back-to-top {

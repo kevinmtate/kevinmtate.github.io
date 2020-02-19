@@ -5,22 +5,11 @@ section#about {
   justify-content: flex-end;
   position: relative;
 
-  &:before {
-    background-color: $offwhite;
-    content: '';
-    height: 200%;
-    left: 40%;
-    position: absolute;
-    top: -50%;
-    transform: rotate(-10deg);
-    width: 100%;
-  }
-
   .about-paragraph {
     color: $black;
-    padding: 50px;
+    padding: 65px;
     position: relative;
-    width: 50%;
+    width: 65%;
 
     blockquote {
       padding: 25px;
