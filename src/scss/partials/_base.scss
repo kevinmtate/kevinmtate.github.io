@@ -4,6 +4,13 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  &:-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
 .container {
   margin: 0 5%;
 }
@@ -13,4 +20,17 @@ html {
   border: 1px solid $red;
   border-radius: 5px;
   color: $black;
+}
+
+// hide scrollbars
+body::-webkit-scrollbar { display: none; }
+body {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.content::-webkit-scrollbar { display: none; }
+.content {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
 }

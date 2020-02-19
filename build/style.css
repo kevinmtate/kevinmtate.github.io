@@ -69,6 +69,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body:-webkit-scrollbar {
+  display: none;
+}
+
 .container {
   margin: 0 5%;
 }
@@ -80,12 +84,34 @@ html {
   color: #000;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.content {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
 .content {
   height: 100vw;
+  -ms-overflow-style: none;
   overflow-y: scroll;
   transform: rotate(-90deg) translateY(-100vh);
   transform-origin: top right;
   width: 100vh;
+}
+.content::-webkit-scrollbar {
+  display: none;
 }
 .content section {
   height: 100vh;

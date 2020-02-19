@@ -2,10 +2,15 @@
 
 .content {
   height: 100vw;
+  -ms-overflow-style: none;
   overflow-y: scroll;
   transform: rotate(-90deg) translateY(-100vh);
 	transform-origin: top right;
   width: 100vh;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   section {
     height: 100vh;
