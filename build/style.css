@@ -217,13 +217,14 @@ nav ul li {
 }
 nav ul li a, nav ul li span {
   color: #fff;
+  transition: color 0.5s;
 }
 nav ul li span.resume_file_info {
   font-size: 25px;
   margin-left: 5px;
 }
-nav.nav--scrolled {
-  bottom: 0;
+nav.nav--scrolled ul li a, nav.nav--scrolled ul li span {
+  color: #000;
 }
 @keyframes nav-intro {
   from {

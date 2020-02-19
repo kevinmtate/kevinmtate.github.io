@@ -17,6 +17,7 @@ nav {
 
       a, span {
         color: $white;
+        transition: color .5s;
       }
 
       span.resume_file_info {
@@ -27,7 +28,11 @@ nav {
   }
 
   &.nav--scrolled {
-    bottom: 0;
+    ul li {
+      a, span {
+        color: $black;
+      }
+    }
   }
 
   // animation

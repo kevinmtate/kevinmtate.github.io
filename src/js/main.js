@@ -10,25 +10,27 @@
 
     const contentEl         = document.querySelector('.content');
     const titleEl           = document.querySelector('header');
-    const navUl             = document.querySelector('nav ul');
+    const navEl             = document.querySelector('nav');
+    const navUl             = navEl.querySelector('ul');
     const backgroundFilter  = document.querySelector('.background-filter');
-    const overlay           = document.querySelector('.overlay');
 
     contentEl.addEventListener('scroll', () => {
       const scrollTop = contentEl.scrollTop;
 
-      scrollTop ? 
-        titleEl.classList.add('title--scrolled') :
-        titleEl.classList.remove('title--scrolled');
-
-      if ((scrollTop / window.innerHeight) < .4) {
-        navUl.style.top = scrollTop + "px";
+      if (scrollTop) {
+        titleEl.classList.add('title--scrolled');
+        navEl.classList.add('nav--scrolled');
       }
-      if ((scrollTop / window.innerWidth) < .7) {
-        // overlay
+      else {
+        titleEl.classList.remove('title--scrolled');
+        navEl.classList.remove('nav--scrolled');
+      }
+
+      if ((scrollTop / 2 / window.innerHeight) < .4) {
+        navUl.style.top = scrollTop / 2 + "px";
       }
       if (backgroundFilter.style.opacity < .75) {
-        backgroundFilter.style.opacity = scrollTop / 1000;
+        backgroundFilter.style.opacity = scrollTop / 2000;
       } else if (scrollTop === 0) {
         backgroundFilter.style.opacity = 0;
       }
