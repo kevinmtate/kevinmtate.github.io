@@ -121,18 +121,29 @@ body {
   transform-origin: top right;
   width: 100vh;
 }
-.content section {
-  height: 100vh;
-  width: 100vw;
-}
 .content .overlay {
   background-color: #f8f8f8;
-  height: 100%;
+  height: 200%;
   left: -25%;
   position: fixed;
   top: 122%;
   transform: rotate(-10deg);
   width: 200%;
+}
+.content section {
+  display: flex;
+  height: 100vh;
+  justify-content: flex-end;
+  width: 100vw;
+}
+.content section .section-content {
+  color: #000;
+  height: 65%;
+  padding: 5% 0;
+  width: 65%;
+}
+.content section .section-content .project {
+  padding: 10px 0;
 }
 
 footer .background-image-credit {
@@ -245,22 +256,23 @@ h2 {
   text-decoration: underline;
 }
 
-p, blockquote {
+h3 {
+  font-size: 20px;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+h4 {
+  font-weight: 700;
+  margin: 10px 0;
+  text-decoration: underline;
+}
+
+p, ul, blockquote {
   letter-spacing: 1px;
   line-height: 1.25em;
 }
 
-section#about {
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-}
-section#about .about-paragraph {
-  color: #000;
-  padding: 65px;
-  position: relative;
-  width: 65%;
-}
 section#about .about-paragraph blockquote {
   padding: 25px;
   font-style: italic;

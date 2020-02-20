@@ -1,15 +1,8 @@
 // about-me.scss
 
 section#about {
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
 
   .about-paragraph {
-    color: $black;
-    padding: 5% 0;
-    position: relative;
-    width: 65%;
 
     blockquote {
       padding: 25px;

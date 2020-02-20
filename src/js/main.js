@@ -16,6 +16,7 @@
 
     contentEl.addEventListener('scroll', () => {
       const scrollTop = contentEl.scrollTop;
+      const filterOpacity = 0.5;
 
       if (scrollTop) {
         titleEl.classList.add('title--scrolled');
@@ -28,9 +29,14 @@
 
       if ((scrollTop / 2 / window.innerHeight) < .4) {
         navUl.style.top = scrollTop / 2 + "px";
+      } else {
+        navUl.style.top = window.innerHeight * .4 + "px";
       }
-      if (backgroundFilter.style.opacity < .75) {
+
+      if (backgroundFilter.style.opacity < filterOpacity) {
         backgroundFilter.style.opacity = scrollTop / 2000;
+      } else if (backgroundFilter.style.opacity > filterOpacity) {
+        backgroundFilter.style.opacity = filterOpacity;
       } else if (scrollTop === 0) {
         backgroundFilter.style.opacity = 0;
       }
