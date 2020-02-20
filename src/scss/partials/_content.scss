@@ -10,31 +10,55 @@
 	transform-origin: top right;
   width: 100vh;
 
-  .overlay {
-    background-color: $offwhite;
-    height: 200%;
-    left: -25%;
-    position: fixed;
-    top: 122%;
-    transform: rotate(-10deg);
-    width: 200%;
+  .start {
+    height: 115vh;
+    width: 0;
   }
 
-  section {
-    display: flex;
+  .angle {
+    background-color: $offwhite;
+    height: 200%;
+    left: -2%;
+    position: absolute;
+    top: -25%;
+    transform: rotate(-5deg);
+    width: 100%;
+  }
+
+  > section {
+    background-color: $offwhite;
     height: 100vh;
-    justify-content: flex-end;
-    width: 100vw;
+    width: 1000px;
 
     .section-content {
       color: $black;
-      height: 65%;
-      padding: 5% 0;
-      width: 65%;
+      padding: 5% 25px;
+      position: relative;
 
       .project {
         padding: 10px 0;
+
+        ul {
+          list-style-type: disc;
+          padding-left: 25px;
+
+          li a {
+            text-decoration: none;
+          }
+        }
       }
+    }
+
+    &#about {
+      blockquote {
+        padding: 25px;
+        font-style: italic;
+        text-align: center;
+      }
+    }
+
+    &#portfolio {
+
     }
   }
 }

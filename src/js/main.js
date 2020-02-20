@@ -44,14 +44,15 @@
   }
 
   const initContentWidth = () => {
-    const diff     = window.innerWidth - window.innerHeight;
-    const sections = document.querySelectorAll('.content section');
+    const width         = 1000;
+    const height        = window.innerHeight;
+    const diff          = width - height;
+    const sections      = document.querySelectorAll('.content section');
 
     [...sections].forEach(el => {
       el.style.transform = 'rotate(90deg) translateY(' + diff / 2 + 'px)';
       el.style.marginTop = diff + 'px';
     })
-    sections[0].style.marginTop = diff / 2 + 'px';
   }
 
 

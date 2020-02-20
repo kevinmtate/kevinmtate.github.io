@@ -5,6 +5,8 @@ html {
 }
 
 body {
+  overflow-y: hidden;
+
   &:-webkit-scrollbar {
     display: none;
   }
@@ -19,6 +21,14 @@ body {
   border: 1px solid $red;
   border-radius: 5px;
   color: $black;
+}
+
+.flex {
+  display: flex;
+
+  &-end {
+    justify-content: flex-end;
+  }
 }
 
 // hide scrollbars

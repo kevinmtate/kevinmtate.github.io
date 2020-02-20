@@ -78,6 +78,9 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-y: hidden;
+}
 body:-webkit-scrollbar {
   display: none;
 }
@@ -91,6 +94,13 @@ body:-webkit-scrollbar {
   border: 1px solid #f00;
   border-radius: 5px;
   color: #000;
+}
+
+.flex {
+  display: flex;
+}
+.flex-end {
+  justify-content: flex-end;
 }
 
 body::-webkit-scrollbar {
@@ -121,31 +131,44 @@ body {
   transform-origin: top right;
   width: 100vh;
 }
-.content .overlay {
+.content .start {
+  height: 115vh;
+  width: 0;
+}
+.content .angle {
   background-color: #f8f8f8;
   height: 200%;
-  left: -25%;
-  position: fixed;
-  top: 122%;
-  transform: rotate(-10deg);
-  width: 200%;
+  left: -2%;
+  position: absolute;
+  top: -25%;
+  transform: rotate(-5deg);
+  width: 100%;
 }
-.content section {
-  display: flex;
+.content > section {
+  background-color: #f8f8f8;
   height: 100vh;
-  justify-content: flex-end;
-  width: 100vw;
+  width: 1000px;
 }
-.content section .section-content {
+.content > section .section-content {
   color: #000;
-  height: 65%;
-  padding: 5% 0;
-  width: 65%;
+  padding: 5% 25px;
+  position: relative;
 }
-.content section .section-content .project {
+.content > section .section-content .project {
   padding: 10px 0;
 }
-
+.content > section .section-content .project ul {
+  list-style-type: disc;
+  padding-left: 25px;
+}
+.content > section .section-content .project ul li a {
+  text-decoration: none;
+}
+.content > section#about blockquote {
+  padding: 25px;
+  font-style: italic;
+  text-align: center;
+}
 footer .background-image-credit {
   color: #fff;
   opacity: 0.8;
@@ -271,12 +294,6 @@ h4 {
 p, ul, blockquote {
   letter-spacing: 1px;
   line-height: 1.25em;
-}
-
-section#about .about-paragraph blockquote {
-  padding: 25px;
-  font-style: italic;
-  text-align: center;
 }
 
 @keyframes background-intro {
