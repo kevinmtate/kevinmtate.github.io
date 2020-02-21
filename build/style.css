@@ -132,7 +132,7 @@ body {
   width: 100vh;
 }
 .content .start {
-  height: 115vh;
+  height: 115vw;
   width: 0;
 }
 .content .angle {
