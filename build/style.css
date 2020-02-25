@@ -133,21 +133,27 @@ body {
 }
 .content .start {
   height: 115vw;
-  width: 0;
 }
-.content .angle {
-  background-color: #f8f8f8;
-  height: 200%;
-  left: -2%;
+.content .content-background {
+  background: #f8f8f8;
+  height: 100vw;
+  left: 0;
   position: absolute;
-  top: -25%;
+  top: 115vw;
+  width: 100vh;
+}
+.content .content-background .angle {
+  background-color: #f8f8f8;
+  height: 100%;
+  left: -20%;
+  position: absolute;
+  top: -4%;
   transform: rotate(-5deg);
-  width: 100%;
+  width: 150vh;
 }
 .content > section {
-  background-color: #f8f8f8;
   height: 100vh;
-  width: 1000px;
+  width: 1500px;
 }
 .content > section .section-content {
   color: #000;

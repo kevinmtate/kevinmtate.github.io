@@ -12,23 +12,31 @@
 
   .start {
     height: 115vw;
-    width: 0;
   }
 
-  .angle {
-    background-color: $offwhite;
-    height: 200%;
-    left: -2%;
+  .content-background {
+    background: $offwhite;
+    height: 100vw;
+    left: 0;
     position: absolute;
-    top: -25%;
-    transform: rotate(-5deg);
-    width: 100%;
+    top: 115vw;
+    width: 100vh;
+
+    .angle {
+      background-color: $offwhite;
+      height: 100%;
+      left: -20%;
+      position: absolute;
+      top: -4%;
+      transform: rotate(-5deg);
+      width: 150vh;
+    }
   }
+
 
   > section {
-    background-color: $offwhite;
     height: 100vh;
-    width: 1000px;
+    width: 1500px;
 
     .section-content {
       color: $black;

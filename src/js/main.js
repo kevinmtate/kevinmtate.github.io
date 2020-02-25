@@ -13,10 +13,11 @@
     const navEl             = document.querySelector('nav');
     const navUl             = navEl.querySelector('ul');
     const backgroundFilter  = document.querySelector('.background-filter');
+    const contentBackground = contentEl.querySelector('.content-background');
+    const filterOpacity = 0.5;
 
     contentEl.addEventListener('scroll', () => {
       const scrollTop = contentEl.scrollTop;
-      const filterOpacity = 0.5;
 
       if (scrollTop) {
         titleEl.classList.add('title--scrolled');
@@ -40,11 +41,15 @@
       } else if (scrollTop === 0) {
         backgroundFilter.style.opacity = 0;
       }
+
+      if (scrollTop / window.innerWidth >= .7) {
+        contentBackground.style.top = "45vw";
+      }
     });
   }
 
   const initContentWidth = () => {
-    const width         = 1000;
+    const width         = 1500;
     const height        = window.innerHeight;
     const diff          = width - height;
     const sections      = document.querySelectorAll('.content section');
@@ -53,7 +58,7 @@
       el.style.transform = 'rotate(90deg) translateY(' + diff / 2 + 'px)';
       el.style.marginTop = diff + 'px';
     })
-  }
+  };
 
 
 
