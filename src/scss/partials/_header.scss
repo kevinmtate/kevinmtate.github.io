@@ -1,35 +1,25 @@
 // header.scss
 
 header {
-  color: $white;
-  display: flex;
-  right: 0;
-  padding: 10px 25px;
+  background: $white;
+  border-bottom: 1px solid gray;
+  color: $black;
+  left: 0;
   position: fixed;
+  text-align: center;
+  text-transform: uppercase;
   top: 0;
-  transition: color .5s;
-  z-index: 10;
+  width: 100%;
+  z-index: 1;
 
-  &.title--scrolled {
-    color: $black;
-  }
-
-  .id_panel {
+  h1 {
+    left: 50%;
     font-family: sans-serif;
-    font-size: 25px;
-    letter-spacing: 1px;
-    position: relative;
-    right: 0;
-
-    > div {
-      display: inline-block;
-      text-transform: uppercase;
-    }
-    
-    &--name, &--title, &--location {
-      left: 0;
-      opacity: 0;
-      position: relative;
-    }
+    font-size: 32px;
+    margin-bottom: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }

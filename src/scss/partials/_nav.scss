@@ -1,50 +1,28 @@
 // nav.scss
-$nav-left: -50%;
-
 nav {
-  font-size: 3vw;
-  left: $nav-left;
-  padding: 10px;
-  position: fixed;
-  bottom: 40%;
-  z-index: 100;
+  align-items: center;
+  display: flex;
+  font-size: 30px;
+  height: 100px;
+  justify-content: space-between;
+  padding: 0 5%;
 
-  ul {
-    position: relative;
+  a {
+    color: $gray;
+    font-size: 16px;
+    padding: 0 10px;
+    text-decoration: none;
+    text-transform: none;
+    transition: color .1s;
 
-    li {
-      margin-bottom: 15px;
+    span.resume_file_info {
+      margin-left: 5px;
+    }
 
-      a, span {
-        color: $white;
-        transition: color .5s;
-      }
-
-      span.resume_file_info {
-        font-size: 25px;
-        margin-left: 5px;
-      }
+    &:hover {
+      color: $scarlet;
     }
   }
-
-  &.nav--scrolled {
-    ul li {
-      a, span {
-        color: $black;
-      }
-    }
-  }
-
-  // animation
-  @keyframes nav-intro {
-    from {
-      left: $nav-left;
-    }
-    to {
-      left: 0;
-    }
-  }
-  animation: nav-intro $intro-timing ($delay-start + 2s) forwards;
 
   // media queries
   @media only screen and (max-width: $mobile-breakpoint) {
