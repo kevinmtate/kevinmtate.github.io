@@ -85,17 +85,6 @@ body:-webkit-scrollbar {
   display: none;
 }
 
-.container {
-  margin: 0 5%;
-}
-
-.color-scheme {
-  background-color: #fff;
-  border: 1px solid #f00;
-  border-radius: 5px;
-  color: #000;
-}
-
 .flex {
   display: flex;
 }
@@ -112,11 +101,11 @@ body {
   overflow: -moz-scrollbars-none;
 }
 
-.content::-webkit-scrollbar {
+.content-container::-webkit-scrollbar {
   display: none;
 }
 
-.content {
+.content-container {
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
 }
@@ -125,21 +114,17 @@ body {
   height: 100vw;
   -ms-overflow-style: none;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
   position: relative;
   transform: rotate(-90deg) translateY(-100vh);
   transform-origin: top right;
   width: 100vh;
-}
-.content .start {
-  height: 115vw;
 }
 .content .content-background {
   background: #f8f8f8;
   height: 100vw;
   left: 0;
   position: absolute;
-  top: 115vw;
   width: 100vh;
 }
 .content .content-background .angle {
@@ -151,26 +136,41 @@ body {
   transform: rotate(-5deg);
   width: 150vh;
 }
-.content > section {
-  height: 100vh;
-  width: 1500px;
+.content .content-background.content-fixed {
+  top: 45vw;
 }
-.content > section .section-content {
+.content .content-background.content-scroller {
+  top: 115vw;
+}
+.content .content-container {
+  height: 100vw;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 2;
+}
+.content .content-container .start {
+  height: 115vw;
+}
+.content .content-container > section {
+  height: 100vh;
+  width: 1000px;
+}
+.content .content-container > section .section-content {
   color: #000;
   padding: 5% 25px;
   position: relative;
 }
-.content > section .section-content .project {
+.content .content-container > section .section-content .project {
   padding: 10px 0;
 }
-.content > section .section-content .project ul {
+.content .content-container > section .section-content .project ul {
   list-style-type: disc;
   padding-left: 25px;
 }
-.content > section .section-content .project ul li a {
+.content .content-container > section .section-content .project ul li a {
   text-decoration: none;
 }
-.content > section#about blockquote {
+.content .content-container > section#about blockquote {
   padding: 25px;
   font-style: italic;
   text-align: center;

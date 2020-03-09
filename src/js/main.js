@@ -7,17 +7,34 @@
 
   const init = () => {
     initContentWidth();
+    initContentScroller();
+  }
 
+  const initContentWidth = () => {
+    const width         = 1000;
+    const height        = window.innerHeight;
+    const diff          = width - height;
+    const sections      = document.querySelectorAll('.content section');
+
+    [...sections].forEach(el => {
+      el.style.transform = 'rotate(90deg) translateY(' + diff / 2 + 'px)';
+      el.style.marginTop = diff + 'px';
+    })
+  };
+
+  const initContentScroller = () => {
     const contentEl         = document.querySelector('.content');
+    const contentContainer  = contentEl.querySelector('.content-container');
     const titleEl           = document.querySelector('header');
     const navEl             = document.querySelector('nav');
     const navUl             = navEl.querySelector('ul');
     const backgroundFilter  = document.querySelector('.background-filter');
-    const contentBackground = contentEl.querySelector('.content-background');
-    const filterOpacity = 0.5;
+    const contentFixed      = contentEl.querySelector('.content-fixed');
+    const contentScroller   = contentContainer.querySelector('.content-scroller');
+    const filterOpacity     = 0.5;
 
-    contentEl.addEventListener('scroll', () => {
-      const scrollTop = contentEl.scrollTop;
+    contentContainer.addEventListener('scroll', () => {
+      const scrollTop = contentContainer.scrollTop;
 
       if (scrollTop) {
         titleEl.classList.add('title--scrolled');
@@ -43,22 +60,14 @@
       }
 
       if (scrollTop / window.innerWidth >= .7) {
-        contentBackground.style.top = "45vw";
+        contentFixed.style.display    = "block";
+        contentScroller.style.display = "none";
+      } else {
+        contentFixed.style.display    = "none";
+        contentScroller.style.display = "block";
       }
     });
   }
-
-  const initContentWidth = () => {
-    const width         = 1500;
-    const height        = window.innerHeight;
-    const diff          = width - height;
-    const sections      = document.querySelectorAll('.content section');
-
-    [...sections].forEach(el => {
-      el.style.transform = 'rotate(90deg) translateY(' + diff / 2 + 'px)';
-      el.style.marginTop = diff + 'px';
-    })
-  };
 
 
 

@@ -12,17 +12,6 @@ body {
   }
 }
 
-.container {
-  margin: 0 5%;
-}
-
-.color-scheme {
-  background-color: $white;
-  border: 1px solid $red;
-  border-radius: 5px;
-  color: $black;
-}
-
 .flex {
   display: flex;
 
@@ -38,8 +27,8 @@ body {
   overflow: -moz-scrollbars-none;
 }
 
-.content::-webkit-scrollbar { display: none; }
-.content {
+.content-container::-webkit-scrollbar { display: none; }
+.content-container {
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
 }
