@@ -1,13 +1,15 @@
 // background.scss
 
 .background {
-  left: 0;
-  min-width: 1333px;
-  position: fixed;
-  top: 0;
+  max-width: 4032px;
+  margin: auto;
+  padding-top: 50px;
+  width: 90%;
 
   img {
     animation: background-intro ease-out 3s;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
     height: auto;
     transform: rotate(180deg);
     width: 100%;

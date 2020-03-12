@@ -1,25 +1,5 @@
 // header.scss
 
 header {
-  background: $white;
-  border-bottom: 1px solid gray;
-  color: $black;
-  left: 0;
-  position: fixed;
-  text-align: center;
-  text-transform: uppercase;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-
-  h1 {
-    left: 50%;
-    font-family: sans-serif;
-    font-size: 32px;
-    margin-bottom: 10px;
-    padding: 10px;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+  height: 100px;
 }

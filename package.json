@@ -17,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/kevinmtate/kevinmtate.github.io/issues"
   },
-  "homepage": "https://github.com/kevinmtate/kevinmtate.github.io#readme"
+  "homepage": "https://github.com/kevinmtate/kevinmtate.github.io#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-transform-arrow-functions": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "babel-cli": "^6.26.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "babel-preset-env": "^1.7.0"
+  }
 }
