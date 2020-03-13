@@ -1,11 +1,11 @@
 (function() {
   document.addEventListener("DOMContentLoaded", function() {
-    // addEventHandlers();
 
     init();
   });
 
   const init = () => {
+<<<<<<< HEAD
     initContentWidth();
     initContentScroller();
   }
@@ -81,11 +81,9 @@
     window.onscroll();
 
   };
-  
-  const smoothScrolling = (event) => {
-    document.getElementById(event.target.getAttribute('section')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  };
+=======
 
+  }
+>>>>>>> v4
+  
 })();

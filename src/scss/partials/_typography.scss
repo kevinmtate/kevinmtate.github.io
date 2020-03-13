@@ -1,33 +1,11 @@
 // typography.scss
 
-// @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sen&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
+
 
 body { 
   font-size: 16px;
-  // font-family: 'Open Sans', sans-serif;
-  font-family: 'Comfortaa', serif;
-}
-
-h2 {
-  font-size: 50px;
-  margin-bottom: 25px;
-  text-decoration: underline;
-}
-
-h3 {
-  font-size: 20px;
-  margin: 10px 0;
-  font-weight: 700;
-}
-
-h4 {
-  font-weight: 700;
-  margin: 10px 0;
-  text-decoration: underline;
-}
-
-p, ul, blockquote {
-  letter-spacing: 1px;
-  line-height: 1.25em;
+  font-family: 'Sen', sans-serif;
+  font-family: 'Noto Serif', serif;
 }
