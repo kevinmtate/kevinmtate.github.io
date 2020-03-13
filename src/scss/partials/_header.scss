@@ -1,5 +1,80 @@
 // header.scss
 
 header {
-  height: 100px;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+
+  img {
+    height: auto;
+    width: 100%;
+
+    &.background-image {
+      animation: scaleBgrndImg 1s;
+      min-width: 1335px;
+      transform: rotate(180deg);
+
+      @keyframes scaleBgrndImg {
+        from { transform: scale(1.1) rotate(180deg); }
+        to { transform: scale(1) rotate(180deg); }
+      }
+    }
+  }
+
+  .header {
+
+    &-overlay {
+      background-color: rgba(0,0,0,.65);
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    &-content {
+      left: 10%;
+      position: absolute;
+      top: 25%;
+      width: 90%;
+
+      h1 {
+        color: $white;
+        font-size: 6em;
+        letter-spacing: 1px;
+        margin-bottom: 50px;
+      }
+      
+      nav {
+        animation: fadein .5s forwards 1s;
+        box-sizing: border-box;
+        display: flex;
+        opacity: 0;
+        transition: opacity 2s;
+        width: 100%;
+    
+        a {
+          border: 1px solid $scarlet;
+          color: $white;
+          cursor: pointer;
+          margin-right: 15%;
+          padding: 25px 50px;
+          opacity: .85;
+          text-decoration: none;
+          transition: background-color .1s;
+    
+          &:hover {
+            background-color: $scarlet;
+          }
+        }
+    
+        @keyframes fadein {
+          from { opacity: 0; }
+          to { opacity: .85; }
+        }
+      }
+    }
+
+  }
 }

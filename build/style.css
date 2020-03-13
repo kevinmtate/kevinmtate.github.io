@@ -2,7 +2,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css?family=Comfortaa&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Sen&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -53,31 +54,6 @@ table {
   border-spacing: 0;
 }
 
-.background {
-  max-width: 4032px;
-  margin: auto;
-  padding-top: 50px;
-  width: 90%;
-}
-.background img {
-  animation: background-intro ease-out 3s;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  height: auto;
-  transform: rotate(180deg);
-  width: 100%;
-}
-
-@keyframes background-intro {
-  from {
-    filter: grayscale(1);
-    transform: scale(1.025) rotate(180deg);
-  }
-  to {
-    filter: grayscale(0);
-    transform: scale(1) rotate(180deg);
-  }
-}
 .back-to-top {
   background-color: #f00;
   border-radius: 5px;
@@ -97,65 +73,6 @@ table {
 
 html {
   scroll-behavior: smooth;
-}
-
-.flex {
-  display: flex;
-}
-.flex-end {
-  justify-content: flex-end;
-}
-
-.content h3 {
-  font-size: 20px;
-  margin: 10px 0;
-  font-weight: 700;
-}
-.content h4 {
-  font-weight: 700;
-  margin: 10px 0;
-  text-decoration: underline;
-}
-.content p, .content ul, .content blockquote {
-  letter-spacing: 1px;
-  line-height: 1.25em;
-}
-.content > section {
-  background-color: #fff;
-  padding: 5%;
-  width: 100%;
-}
-.content > section h2 {
-  font-size: 50px;
-  margin-bottom: 25px;
-  text-decoration: underline;
-}
-.content > section.background--gray {
-  background-color: #808080;
-}
-.content > section .section-content {
-  border: 1px solid #000;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  color: #000;
-  max-width: 1240px;
-  padding: 5% 25px;
-  position: relative;
-}
-.content > section .section-content .project {
-  padding: 10px 0;
-}
-.content > section .section-content .project ul {
-  list-style-type: disc;
-  padding-left: 25px;
-}
-.content > section .section-content .project ul li a {
-  text-decoration: none;
-}
-.content > section#about blockquote {
-  padding: 25px;
-  font-style: italic;
-  text-align: center;
 }
 
 footer .background-image-credit {
@@ -194,58 +111,82 @@ footer ul li a .popup.popup-visible {
 }
 
 header {
-  height: 100px;
-}
-
-nav {
-  align-items: center;
-  background: #fff;
-  border-bottom: 1px solid #808080;
-  box-sizing: border-box;
-  display: flex;
-  height: 100px;
-  justify-content: space-between;
-  padding: 0 5%;
+  height: 100vh;
   position: relative;
+  overflow: hidden;
+  width: 100vw;
+}
+header img {
+  height: auto;
   width: 100%;
-  z-index: 10;
 }
-nav.sticky {
-  position: fixed;
-  top: 0;
-  animation: sticky 0.5s forwards;
+header img.background-image {
+  animation: scaleBgrndImg 1s;
+  min-width: 1335px;
+  transform: rotate(180deg);
 }
-nav h1 {
-  font-family: sans-serif;
-  font-size: 32px;
-  font-variant: small-caps;
-}
-nav a {
-  color: #808080;
-  font-size: 16px;
-  padding: 0 10px;
-  text-decoration: none;
-  text-transform: none;
-  transition: color 0.1s;
-}
-nav a span.resume_file_info {
-  margin-left: 5px;
-}
-nav a:hover {
-  color: #ff2400;
-}
-@keyframes sticky {
+@keyframes scaleBgrndImg {
   from {
-    top: -100px;
+    transform: scale(1.1) rotate(180deg);
   }
   to {
-    top: 0;
+    transform: scale(1) rotate(180deg);
+  }
+}
+header .header-overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+header .header-content {
+  left: 10%;
+  position: absolute;
+  top: 25%;
+  width: 90%;
+}
+header .header-content h1 {
+  color: #fff;
+  font-size: 6em;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+}
+header .header-content nav {
+  animation: fadein 0.5s forwards 1s;
+  box-sizing: border-box;
+  display: flex;
+  opacity: 0;
+  transition: opacity 2s;
+  width: 100%;
+}
+header .header-content nav a {
+  border: 1px solid #ff2400;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 15%;
+  padding: 25px 50px;
+  opacity: 0.85;
+  text-decoration: none;
+  transition: background-color 0.1s;
+}
+header .header-content nav a:hover {
+  background-color: #ff2400;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.85;
   }
 }
 
 body {
   font-size: 16px;
-  font-family: "Comfortaa", serif;
+  font-family: "Sen", sans-serif;
+  font-family: "Noto Serif", serif;
 }
 
 /* Breakpoint for project grid wrap */
