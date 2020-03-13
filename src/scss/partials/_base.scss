@@ -3,35 +3,3 @@
 html {
   scroll-behavior: smooth;
 }
-<<<<<<< HEAD
-
-body {
-  overflow-y: hidden;
-
-  &:-webkit-scrollbar {
-    display: none;
-  }
-}
-
-.flex {
-  display: flex;
-
-  &-end {
-    justify-content: flex-end;
-  }
-}
-
-// hide scrollbars
-body::-webkit-scrollbar { display: none; }
-body {
-  -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
-}
-
-.content-container::-webkit-scrollbar { display: none; }
-.content-container {
-  -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
-}
-=======
->>>>>>> v4
