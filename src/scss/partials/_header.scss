@@ -47,7 +47,7 @@ header {
       }
       
       nav {
-        animation: fadein .5s forwards 1s;
+        animation: fadein 1s forwards 1.5s;
         box-sizing: border-box;
         display: flex;
         opacity: 0;
@@ -60,18 +60,18 @@ header {
           cursor: pointer;
           margin-right: 15%;
           padding: 25px 50px;
-          opacity: .85;
           text-decoration: none;
           transition: background-color .1s;
     
           &:hover {
             background-color: $scarlet;
+            opacity: .75;
           }
         }
     
         @keyframes fadein {
           from { opacity: 0; }
-          to { opacity: .85; }
+          to { opacity: 1; }
         }
       }
     }
