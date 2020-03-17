@@ -75,39 +75,11 @@ html {
   scroll-behavior: smooth;
 }
 
-footer .background-image-credit {
+footer {
+  background-color: #000;
   color: #fff;
-  opacity: 0.8;
-}
-footer ul {
-  background-color: rgba(128, 128, 128, 0.9);
-  display: flex;
-  justify-content: space-evenly;
-  padding: 10px;
-}
-footer ul li a {
-  color: #fff;
-  position: relative;
-}
-footer ul li a i {
-  cursor: pointer;
-  z-index: 5;
-}
-footer ul li a .popup {
-  bottom: 0;
-  font-size: 1.25em;
-  opacity: 0;
-  padding: 10px;
-  position: absolute;
-  text-align: center;
-  transition: 500ms;
-  white-space: nowrap;
-  z-index: -1;
-}
-footer ul li a .popup.popup-visible {
-  bottom: 60px;
-  opacity: 1;
-  z-index: 1;
+  height: 100px;
+  width: 100%;
 }
 
 header {
@@ -154,7 +126,7 @@ header .header-content h1 {
   margin-bottom: 50px;
 }
 header .header-content nav {
-  animation: fadein 1s forwards 1.5s;
+  animation: fadein 1s forwards 1s;
   box-sizing: border-box;
   display: flex;
   opacity: 0;
@@ -187,6 +159,51 @@ body {
   font-size: 16px;
   font-family: "Sen", sans-serif;
   font-family: "Noto Serif", serif;
+}
+
+section {
+  padding: 200px 10%;
+  text-align: center;
+}
+section h2 {
+  color: #000;
+  font-size: 4em;
+  margin-bottom: 50px;
+}
+section h2 span.red_dot {
+  color: #ff2400;
+}
+section p {
+  color: #000;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  line-height: 1.25em;
+  opacity: 0.75;
+}
+section#section--about .resume_download {
+  color: blue;
+  display: block;
+  font-size: 1.25em;
+  margin-top: 50px;
+  text-decoration: none;
+}
+section#section--contact {
+  background-color: #F5F5F5;
+}
+section#section--contact .contact {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+section#section--projects {
+  background-color: #24292e;
+  color: #fff;
+}
+section#section--projects h2 {
+  color: #fff;
+}
+section#section--projects p {
+  color: #fff;
 }
 
 /* Breakpoint for project grid wrap */

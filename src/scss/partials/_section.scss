@@ -1,0 +1,56 @@
+section {
+  padding: 200px 10%;
+  text-align: center;
+
+  h2 {
+    color: $black;
+    font-size: 4em;
+    margin-bottom: 50px;
+
+    span.red_dot {
+      color: $scarlet;
+    }
+  }
+
+  p {
+    color: $black;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    line-height: 1.25em;
+    opacity: .75;
+  }
+
+  &#section--about {
+
+    .resume_download {
+      color: blue;
+      display: block;
+      font-size: 1.25em;
+      margin-top: 50px;
+      text-decoration: none;
+    }
+  }
+
+  &#section--contact {
+    background-color: $lightgray;
+
+    .contact {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &#section--projects {
+    background-color: $lightblack;
+    color: $white;
+
+    h2 {
+      color: $white;
+    }
+
+    p {
+      color: $white;
+    }
+  }
+}
